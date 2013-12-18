@@ -1,0 +1,12 @@
+doctype 5
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/javascripts/lib/bootstrap/css/bootstrap.css')
+    script(type="text/javascript",src="/javascripts/lib/jquery/jquery-1.9.1.js")
+    script(type="text/javascript",src="/javascripts/lib/bootstrap/js/bootstrap.js")
+    block selfCSSfile
+    block selfJSfile
+  body
+    div#container
+    block content
