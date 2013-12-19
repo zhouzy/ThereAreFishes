@@ -3,10 +3,13 @@ html
   head
     title= title
     link(rel='stylesheet', href='/javascripts/lib/bootstrap/css/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/common.css')
     script(type="text/javascript",src="/javascripts/lib/jquery/jquery-1.9.1.js")
     script(type="text/javascript",src="/javascripts/lib/bootstrap/js/bootstrap.js")
     block selfCSSfile
     block selfJSfile
   body
-    div#container
-    block content
+    block statusBar
+    div#container.container
+        block navBar
+        block content

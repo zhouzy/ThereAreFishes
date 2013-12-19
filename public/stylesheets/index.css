@@ -1,7 +1,18 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+#topStatus{
 }
-a {
-  color: #00B7FF;
+#container{
 }
+#navBar{
+}
+#content{
+    min-height:70%;
+    _height:70%;
+}
+.item{
+    padding:5px;
+}
+.item img{
+    width:260px;
+    height: 180px;
+}
+

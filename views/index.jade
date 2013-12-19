@@ -1,9 +1,34 @@
-extends layout
+extends indexlayout
+block selfCSSfile
+    link(rel='stylesheet', href='/stylesheets/index.css')
 block selfJSfile
     script(type="text/javascript",src="/javascripts/func/index.js")
-block content
-    div#state
-    div#storyList
-    div#map
-
-
+    script(type="text/javascript",src="http://api.map.baidu.com/api?v=2.0&ak=KN8ipINyWjl55TErrURM3gRu")
+block statusBar
+    nav#topStatus.navbar.navbar-default.navbar-fixed-top(role=navigation)
+        div.container
+            img()
+            div#searchBlock.input-group
+                input.form-control(type="text")
+                span.input-group-btn.glyphicon.glyphicon-search
+                    button.btn.btn-default(type="button")Go
+            button.btn.btn-default
+                span.glyphicon.glyphicon-user
+                    |登陆
+            button.btn.btn-default
+                span.glyphicon.glyphicon-user
+                    |注册
+block item
+    div.itemA
+    a(href="void(0)")
+        img(src="/images/flower.png")
+    p 标题
+    p 作者
+    div
+       button.btn.btn-default
+            span.glyphicon.glyphicon-globe 在地图中查看
+script(type="text/javascript")
+    var map = new BMap.Map("bdMap");            // 创建Map实例
+    var point = new BMap.Point(116.404, 39.915); // 创建点坐标
+    map.centerAndZoom(point,15);                 // 初始化地图,设置中心点坐标和地图级别。
+    map.enableScrollWheelZoom();                 //启用滚轮放大缩小
