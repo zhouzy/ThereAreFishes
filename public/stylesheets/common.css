@@ -2,5 +2,19 @@ html{
     height:100%;
 }
 body{
-    padding-top:70px;
+    padding-top:60px;
+}
+#topStatus{
+    min-height: 45px;
+    background: none;
+}
+#logo{
+    height:45px;
+}
+#topBarSearch,#topBarUser{
+    padding-top: 5px;
+}
+#content{
+    min-height:70%;
+    _height:70%;
 }
