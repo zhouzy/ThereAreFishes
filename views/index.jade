@@ -27,19 +27,21 @@ block statusBar
                     button.btn.btn-default
                         span.glyphicon.glyphicon-user
                             |注册
-block item
+block itemContent
     div.item
         div.card
             div.photo
-                img(src="/image/flower.png")
+                img(src="/images/flower.png")
             div.des
-    a(href="void(0)")
-        img(src="/images/flower.png")
-    p 标题
-    p 作者
-    div
-       button.btn.btn-default
-            span.glyphicon.glyphicon-globe 在地图中查看
+                p|地点
+                p|鱼饵
+                p|鱼钩型号
+    div.itemInfo
+        p 标题
+        p 作者
+        div
+           button.btn.btn-default
+                span.glyphicon.glyphicon-globe 在地图中查看
 script(type="text/javascript")
     var map = new BMap.Map("bdMap");            // 创建Map实例
     var point = new BMap.Point(116.404, 39.915); // 创建点坐标
