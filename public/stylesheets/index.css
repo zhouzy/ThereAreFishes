@@ -1,9 +1,40 @@
 .item{
-    padding:5px;
+	position:relative;
+	width:280px;
+	height:180px;
+	-webkit-perspective:500px;
+	-moz-perspective:500px;
 }
-.item img{
-    width:260px;
-    height: 180px;
+.card{
+	position:absolute;
+	width:100%;
+	height:100%;
+	-webkit-backface-visibility:hidden;
+	-webkit-transform-style:preserve-3d;
+	-webkit-transition-duration:1s;
+	-moz-backface-visibility:hidden;
+	-moz-transform-style:preserve-3d;
+	-moz-transition-duration:1s;
+}
+.photo,.des{
+	position: absolute;
+    width: 100%;
+    height: 100%;
+	-webkit-transform-style:preserve-3d;
+    -webkit-backface-visibility: hidden;
+	-moz-transform-style:preserve-3d;
+    -moz-backface-visibility: hidden;
+}
+
+.des{
+	background-color:#FFFFCC;
+	-webkit-transform:rotateY(180deg);
+	-moz-transform:rotateY(180deg);
+}
+
+.item:hover .card{
+	-webkit-transform:rotateY(180deg);
+	-moz-transform:rotateY(180deg);
 }
 
 
