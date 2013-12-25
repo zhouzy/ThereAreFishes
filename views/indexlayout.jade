@@ -1,7 +1,7 @@
 doctype 5
 html
     head
-        title= title
+        title #{title}
         link(rel='stylesheet', href='/javascripts/lib/bootstrap/css/bootstrap.css')
         link(rel='stylesheet', href='/stylesheets/common.css')
         script(type="text/javascript",src="/javascripts/lib/jquery/jquery-1.9.1.js")
@@ -12,23 +12,4 @@ html
         block statusBar
         div#container.container
             block navBar
-            div.row
-                div#itemContentList.col-md-12
-                    div.row
-                        div.col-md-3.itemContent
-                            block itemContent
-                        div.col-md-3.itemContent
-                            block itemContent
-                        div.col-md-3.itemContent
-                            block itemContent
-                        div.col-md-3.itemContent
-                            block itemContent
-                    div.row
-                        div.col-md-3.itemContent
-                            block itemContent
-                        div.col-md-3.itemContent
-                            block itemContent
-                        div.col-md-3.itemContent
-                            block itemContent
-                        div.col-md-3.itemContent
-                            block itemContent
+            block itemContent

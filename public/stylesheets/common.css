@@ -3,10 +3,11 @@ html{
 }
 body{
     padding-top:60px;
+    background:url("/images/bg.gif") repeat #edece9;
 }
 #topStatus{
     min-height: 45px;
-    background: none;
+    background:#ffffff;
 }
 #logo{
     height:45px;

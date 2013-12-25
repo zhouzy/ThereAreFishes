@@ -1,25 +1,32 @@
 .itemContent{
-    padding:5px;
+    margin:5px;
+    padding:0px;
+    width:24%;
+    box-shadow: 0 1px 3px rgba(0,0,0,.3);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.3);
+    font-size: 0.625em;
+}
+.item,.itemInfo{
+    width:100%;
+    height:220px;
 }
 .item{
 	position:relative;
-	width:280px;
-	height:180px;
 	-webkit-perspective:500px;
 	-moz-perspective:500px;
 }
-.item .card{
+.card{
 	position:absolute;
 	width:100%;
 	height:100%;
-	-webkit-backface-visibility:hidden;
 	-webkit-transform-style:preserve-3d;
 	-webkit-transition-duration:1s;
 	-moz-backface-visibility:hidden;
 	-moz-transform-style:preserve-3d;
 	-moz-transition-duration:1s;
 }
-.item .card .photo,.item .card .des{
+.photo,.des{
 	position: absolute;
     width: 100%;
     height: 100%;
@@ -29,20 +36,57 @@
     -moz-backface-visibility: hidden;
 }
 
-.item .card .des{
-	background-color:#FFFFCC;
+.photo img{
+    width:100%;
+    height:80%;
+}
+.abstract{
+    background-color:#FFF;
+    width:100%;
+    height:20%;
+}
+
+.item .des{
+    background-color:#FFF;
 	-webkit-transform:rotateY(180deg);
 	-moz-transform:rotateY(180deg);
 }
-.item .card .photo img{
-    width:100%;
-    height:100%;
-}
+
 .item:hover .card{
 	-webkit-transform:rotateY(180deg);
 	-moz-transform:rotateY(180deg);
 }
 .itemInfo{
-
+    background-color:#FAFAFA;
+    border-top:1px solid #F2F2F2;
+    padding:0 5px;
+    height:50px;
+}
+.itemInfo .userInfo,.itemInfo .mapBtn{
+    display:inline-block;
+}
+.userInfo{
+    width:65%;
+}
+.mapBtn{
+    width:35%;
+}
+.userName{
+    display:inline-block;
+    line-height:49px;
+    border-left:1px solid #F2F2F2;
+    font-size:0.625em;
+}
+.avatar{
+    width:40px;
+    height:40px;
+    margin:5px 5px 5px 0;
+}
+.fishtool{
+    margin:5px;
+    height:60px;
+    background-color: #FAFAFA;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.3);
 }
 

@@ -15,7 +15,7 @@ block statusBar
                         span.glyphicon.glyphicon-list
                 div#topBarSearch.col-md-8
                     div.input-group
-                        span.input-group-addon 搜索:
+                        span.input-group-addon 搜索
                         input.form-control(type="text")
                         span.input-group.input-group-btn
                             button.btn.btn-default
@@ -28,20 +28,37 @@ block statusBar
                         span.glyphicon.glyphicon-user
                             |注册
 block itemContent
-    div.item
-        div.card
-            div.photo
-                img(src="/images/flower.png")
-            div.des
-                p|地点
-                p|鱼饵
-                p|鱼钩型号
-    div.itemInfo
-        p 标题
-        p 作者
-        div
-           button.btn.btn-default
-                span.glyphicon.glyphicon-globe 在地图中查看
+    div.row
+        div#itemContentList.col-md-12
+            each item, i in itemList
+                if i%4==0
+                    div.row
+                if i<8
+                    div.col-md-3.itemContent
+                        div.item
+                            div.card
+                                div.photo
+                                    img(src="/images/flower.png")
+                                    p.abstract
+                                        |钓了3条两斤多的鲤鱼，安逸的很,纯天然
+                                div.des
+                                    div.fishtool
+                                        h4 鱼竿
+                                        p 酒鬼溪钓硬调4.5
+                                    div.fishtool
+                                        h4 鱼饵
+                                        p 渔痴孟公鲤.秘方包
+                                    div.fishtool
+                                        h4 鱼钩
+                                        p 伊势尼鱼钩
+                        div.itemInfo
+                            div.userInfo
+                                a(href="javascript:void(0)")
+                                    img.avatar(src="/images/header.jpg")
+                                div.userName #{itemList[i].userInfo.userName}
+                            div.mapBtn
+                               button.btn.btn-default
+                                    span.glyphicon.glyphicon-globe 查看地图
 script(type="text/javascript")
     var map = new BMap.Map("bdMap");            // 创建Map实例
     var point = new BMap.Point(116.404, 39.915); // 创建点坐标
