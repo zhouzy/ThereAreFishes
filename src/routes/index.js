@@ -1,5 +1,6 @@
-var users = require("../dao/users");
-var fishing = require("../dao/fishing");
+var users = require("../dao/users")
+    ,fishing = require("../dao/fishing");
+
 exports.index = function(req, res){
     var model = {
         title:"这儿有鱼"
@@ -11,11 +12,10 @@ exports.index = function(req, res){
                 user.fishing = fishing;
             })
         }
-
     }
+
     function render(){
         users.getUserList( userListCallBack);
-
     }
 
     res.render('index',model);

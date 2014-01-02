@@ -5,14 +5,26 @@
  * Time: 下午5:23
  * To change this template use File | Settings | File Templates.
  */
-var dbUtils = require('../utils/dbUtils');
-
-exports.getFishingByUserId = function(userId,callback){
-    dbUtils.query(userId,function(fishing){
-        if(fishing){
-            callback(fishing);
-        }else{
-            throw new Error("-userId:" + userId + "对应fishing 为空");
-        }
-    });
+var dbUtils = require('../utils/dbUtils')
+    ,events = require('events')
+    ,util = require('util')
+    ,logUtils = require('LogUtils')
+    ,fishing = exports.modal = new Fishing();
+function Fishing(){
+    events.EventEmitter.call();
 }
+utils.inherits(Fishing,events.EventEmitter);
+
+Fishing.prototype.getFishingByUserId = function(userId){
+    dbUtils.query(userId);
+}
+
+fishing.on("DB_QUERY_FAILURE",function(data){
+    console.log(logUtils("FISHING_QUERY_FAILURE"));
+    this.emit("FISHING_QUERY_FAILURE",data);
+});
+
+fishing.on("DB_QUERY_SUCCESS",function(data){
+    console.log(logUtils("FISHING_QUERY_SUCCESS"));
+    this.emit("FISHING_QUERY_SUCCESS",data);
+});
