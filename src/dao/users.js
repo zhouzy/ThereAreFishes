@@ -7,24 +7,10 @@
  */
 var dbUtils = require('../utils/dbUtils')
     ,events = require('events')
-    ,util = require('util')
-    ,logUtils = require('LogUtils')
-    ,user = exports.modal = new User();
-function User(){
-    events.EventEmitter.call();
-}
-utils.inherits(User,events.EventEmitter);
+    ,util = require('util');
 
-User.prototype.getUserList = function(docId){
-    dbUtils.query(docId);
-}
-
-user.on("DB_QUERY_FAILURE",function(data){
-    console.log(logUtils("USER_QUERY_FAILURE"));
-    this.emit("USER_QUERY_FAILURE",data);
-});
-
-user.on("DB_QUERY_SUCCESS",function(data){
-    console.log(logUtils("USER_QUERY_SUCCESS"));
-    this.emit("USER_QUERY_SUCCESS",data);
-});
+exports.query = function(docId,callback){
+    dbUtils.query(docId,function(data){
+        callback(data);
+    });
+};

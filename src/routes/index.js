@@ -1,28 +1,31 @@
 var users = require("../dao/users")
     ,fishing = require("../dao/fishing")
-    ,dbUtils = require('../utils/dbUtils')
+    ,logUtils = require('../utils/LogUtils')
     ,events = require('events')
-    ,util = require('util')
-    ,logUtils = require('LogUtils');
+    ,util = require('util');
 
 exports.index = function(req, res){
-
+    var userCount = 0;
     var model = {
         title:"这儿有鱼"
-    }
-        ,emitter = new events.EventEmitter();
+    };
 
     function userListCallBack(userList){
+        model.itemList = userList;
+        userCount = userList.length;
         for(var i= 0,j=userList.length;i<j;i++){
-            emitter.on("FISHING_QUERY_SUCCESS",function(data){
-                userList[i].fishing = data;
-                if(i === userList.length-1){
-                    model.itemList = userList;
-                    res.render('index',model);
-                }
-            });
+            getFishingByUserId(userList[i]);
         }
     }
-    emitter.on("USER_QUERY_SUCCESS",userListCallBack);
+    function getFishingByUserId(user){
+        fishing.getFishingByUserId(user.userId,function(fishing){
+            userCount--;
+            user.fishing = fishing;
+            if(userCount === 0){
+                res.render('index',model);
+            }
+        });
+    }
+    users.query("userList",userListCallBack);
 };
 
