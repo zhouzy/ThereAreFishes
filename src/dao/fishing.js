@@ -11,6 +11,6 @@ var dbUtils = require('../utils/dbUtils')
 
 exports.getFishingByUserId = function(userId,callback){
     dbUtils.query(userId,function(data){
-        callback(data);
+        callback(data.fishing);
     });
 }

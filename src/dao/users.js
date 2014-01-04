@@ -11,6 +11,6 @@ var dbUtils = require('../utils/dbUtils')
 
 exports.query = function(docId,callback){
     dbUtils.query(docId,function(data){
-        callback(data);
+        callback(data.userList);
     });
 };

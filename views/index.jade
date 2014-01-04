@@ -38,24 +38,24 @@ block itemContent
                         div.item
                             div.card
                                 div.photo
-                                    img(src="/images/flower.png")
+                                    img(src="#{itemList[i].fishing[0].photoUrl}")
                                     p.abstract
-                                        |钓了3条两斤多的鲤鱼，安逸的很,纯天然
+                                        |#{itemList[i].fishing[0].abstract}
                                 div.des
                                     div.fishtool
                                         h4 鱼竿
-                                        p 酒鬼溪钓硬调4.5
+                                        p #{itemList[i].fishing[0].fishTools.fishingRod}
                                     div.fishtool
                                         h4 鱼饵
-                                        p 渔痴孟公鲤.秘方包
+                                        p #{itemList[i].fishing[0].fishTools.bait}
                                     div.fishtool
                                         h4 鱼钩
-                                        p 伊势尼鱼钩
+                                        p #{itemList[i].fishing[0].fishTools.fishhook}
                         div.itemInfo
                             div.userInfo
                                 a(href="javascript:void(0)")
                                     img.avatar(src="/images/header.jpg")
-                                div.userName #{itemList[i].userInfo.userName}
+                                div.userName #{itemList[i].username}
                             div.mapBtn
                                button.btn.btn-default
                                     span.glyphicon.glyphicon-globe 查看地图

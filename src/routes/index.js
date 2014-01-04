@@ -14,14 +14,15 @@ exports.index = function(req, res){
         model.itemList = userList;
         userCount = userList.length;
         for(var i= 0,j=userList.length;i<j;i++){
-            getFishingByUserId(userList[i]);
+            getFishingByUserId(i);
         }
     }
-    function getFishingByUserId(user){
-        fishing.getFishingByUserId(user.userId,function(fishing){
+    function getFishingByUserId(i){
+        fishing.getFishingByUserId(model.itemList[i].userId,function(fishing){
             userCount--;
-            user.fishing = fishing;
+            model.itemList[i].fishing = fishing;
             if(userCount === 0){
+                console.log(JSON.stringify(model));
                 res.render('index',model);
             }
         });

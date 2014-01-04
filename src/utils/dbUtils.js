@@ -14,11 +14,11 @@ var events = require('events')
 exports.query = function(docId,callback){
     db.get(docId,function(err,doc){
         if(err){
-            console.log(logUtils.format("DB_QUERY_FAILURE"));
+            console.log(logUtils.format("DB_QUERY_FAILURE",null,"{docId:" + docId + "}"));
             callback(null);
         }else{
-            console.log(logUtils.format("DB_QUERY_SUCCESS"));
-            callback(doc.userList);
+            console.log(logUtils.format("DB_QUERY_SUCCESS",null,"{docId:" + docId + "}"));
+            callback(doc);
         }
     });
 };
