@@ -27,6 +27,6 @@ exports.index = function(req, res){
             }
         });
     }
-    users.query("userList",userListCallBack);
+    users.query(userListCallBack);
 };
 

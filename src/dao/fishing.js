@@ -6,15 +6,16 @@
  * 查询user对应的fishing信息
  */
 
-require("../utils/dbUtils");
-var mongoose = require('mongoose')
-    ,events = require('events')
+var events = require('events')
     ,util = require('util')
-    ,MySchema = require('../Schema/FishingSchema');
+    ,dbUtils = require("../utils/dbUtils")
+    ,mongoose = require("mongoose")
+    ,mySchema = require('../Schema/mySchema');
 
-exports.getFishingByUserId = function(callback){
-    var fishing = mongoose.model("userList",MySchema.fishingSchema);
-    fishing.find({}).exec(function(){
+exports.getFishingByUserId = function(userId,callback){
+    var Fishing = dbUtils.db.model("Fishing",mySchema.Fishing);
+    Fishing.find({userId:userId}).select("fishing").exec(function(err,data){
+        console.log(data);
         callback(data);
     });
 }

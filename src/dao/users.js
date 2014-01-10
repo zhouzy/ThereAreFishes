@@ -5,17 +5,16 @@
  * Time: 下午5:23
  * To change this template use File | Settings | File Templates.
  */
-
-require("../utils/dbUtils");
-
-var mongoose = require('mongoose')
-    ,events = require('events')
+var events = require('events')
     ,util = require('util')
-    ,MySchema = require('../Schema/UserSchema');
+    ,dbUtils = require("../utils/dbUtils")
+    ,mongoose = require("mongoose")
+    ,mySchema = require('../Schema/mySchema');
 
-exports.getFishingByUserId = function(callback){
-    var userList = mongoose.model("userList",mongoose.Schema({userList:[MySchema.UserSchema]}));
-    userList.find({}).exec(function(){
+exports.query = function(callback){
+    var User = dbUtils.db.model("User",mySchema.User);
+    User.find().limit(10).exec(function(err,data){
+        console.log(data);
         callback(data);
     });
 }

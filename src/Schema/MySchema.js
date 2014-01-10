@@ -6,11 +6,17 @@
  * 定义User Schema
  */
 var mongoose = require("mongoose");
-exports.UserSchema = new mongoose.Schema({
+exports.User = new mongoose.Schema({
     userId: String,
     email: String,
     phoneNo: String,
     username: String,
     avertarUrl:String
+});
+exports.Fishing = new mongoose.Schema({
+    userId:String,
+    photoUrl: String,
+    abstract: String,
+    fishing:[]
 });
 
