@@ -11,12 +11,13 @@ exports.User = new mongoose.Schema({
     email: String,
     phoneNo: String,
     username: String,
-    avertarUrl:String
+    avertarUrl:String,
+    fishings:[]
 });
 exports.Fishing = new mongoose.Schema({
     userId:String,
     photoUrl: String,
     abstract: String,
-    fishing:[]
+    fishTools:{fishhook: String, fishingRod:String, bait:String}
 });
 

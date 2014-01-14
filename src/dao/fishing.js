@@ -14,7 +14,7 @@ var events = require('events')
 
 exports.getFishingByUserId = function(userId,callback){
     var Fishing = dbUtils.db.model("Fishing",mySchema.Fishing);
-    Fishing.find({userId:userId}).select("fishing").exec(function(err,data){
+    Fishing.find({userId:userId}).exec(function(err,data){
         console.log(data);
         callback(data);
     });

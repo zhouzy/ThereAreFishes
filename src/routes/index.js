@@ -1,6 +1,5 @@
 var users = require("../dao/users")
     ,fishing = require("../dao/fishing")
-    ,logUtils = require('../utils/LogUtils')
     ,events = require('events')
     ,util = require('util');
 
@@ -18,9 +17,9 @@ exports.index = function(req, res){
         }
     }
     function getFishingByUserId(i){
-        fishing.getFishingByUserId(model.itemList[i].userId,function(fishing){
+        fishing.getFishingByUserId(model.itemList[i].userId,function(fishings){
             userCount--;
-            model.itemList[i].fishing = fishing;
+            model.itemList[i].fishings = fishings;
             if(userCount === 0){
                 console.log(JSON.stringify(model));
                 res.render('index',model);

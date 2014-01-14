@@ -14,7 +14,6 @@ var events = require('events')
 exports.query = function(callback){
     var User = dbUtils.db.model("User",mySchema.User);
     User.find().limit(10).exec(function(err,data){
-        console.log(data);
         callback(data);
     });
 }
