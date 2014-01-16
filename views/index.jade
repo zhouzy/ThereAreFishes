@@ -27,6 +27,28 @@ block statusBar
                     button#newUserBtn.btn.btn-default
                         span.glyphicon.glyphicon-user
                             |注册
+    div.bodyMask
+    div#loginPanel
+        div.sheet
+            div.head
+                h2 登陆
+            div.body
+                div.loginConnect
+                    h5 使用合作网站账号登陆
+                div.loginForm
+                    h5 使用注册邮箱登陆
+                    form.form-horizontal(role="form")
+                        div.form-group
+                            div.col-sm-10
+                                input.form-control(type="email",placeholder="Email")
+                        div.form-group
+                            div.col-sm-10
+                                input.form-control(type="password",placeholder="Password")
+                        div.form-group
+                            div.col-sm-10
+                                button.btn.btn-default(type="submit") 登陆
+                div.clearfix
+            a.closeBtn
 block itemContent
     div.row
         div#itemContentList.col-md-12

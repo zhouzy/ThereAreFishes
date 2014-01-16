@@ -9,9 +9,8 @@ function search(keyword,callback){
 
 }
 function goLogin(){
-
 }
-function doLogin(username,email,password){
+function doLogin(email,password){
 
 }
 function newUser(){
@@ -21,17 +20,21 @@ function newUser(){
 function dropDownList(){
 
 }
+$(function(){
+    $("#topStatus #searchBtn").on("click",function(){
 
-$("#topStatus #searchBtn").on("click",function(){
+    });
+    $("#topStatus #doLoginBtn").on("click",function(){
+        $(".bodyMask").show();
+        $("#loginPanel").slideDown("slow");
+    });
+    $("#loginPanel .closeBtn").on("click",function(){
+        $("#loginPanel").slideUp("slow");
+    });
+    $("#topStatus #newUserBtn").on("click",function(){
 
+    });
+    $("#topStatus #topBarOptions").on("click",function(){
+
+    });
 });
-$("#topStatus #doLoginBtn").on("click",function(){
-
-});
-$("#topStatus #newUserBtn").on("click",function(){
-
-});
-$("#topStatus #topBarOptions").on("click",function(){
-
-});
-
