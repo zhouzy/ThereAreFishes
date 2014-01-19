@@ -33,7 +33,7 @@ div{
     z-index: 99990;
     display:none;
 }
-#loginPanel{
+.loginPanel{
     position: fixed;
     top: 45px;
     left: 50%;
@@ -41,7 +41,8 @@ div{
     z-index: 99991;
     display: none;
 }
-#loginPanel .sheet{
+
+.loginPanel .sheet{
     position: relative;
     width:800px;
     margin: auto;
@@ -57,40 +58,43 @@ div{
     -webkit-border-bottom-left-radius: 5px;
     -webkit-border-bottom-right-radius: 5px;
 }
-#loginPanel .head{
+.loginPanel .head{
     padding:15px;
     border-bottom: 1px solid #f6f4ee;
 }
-#loginPanel .body{
+.loginPanel .body{
     padding:15px 10px;
 }
-#loginPanel h2,#loginPanel h5{
+.loginPanel h2,.loginPanel h5{
     padding:0px;
     margin:0px;
 }
-#loginPanel h2{
+.loginPanel h2{
     font-size: 1.4em;
     text-align:center;
 }
-#loginPanel h5{
+.loginPanel h5{
     margin-bottom: 14px;
     font-size: 14px;
     font-weight: 700;
     color: #444;
 }
-#loginPanel .loginConnect, #loginPanel .loginForm{
+.loginPanel .loginConnect, .loginPanel .loginForm{
     width: 389px;
     height: 200px;
     float: left;
     padding: 10px 80px;
 }
-#loginPanel .loginConnect{
+#registerPanel .loginConnect,#registerPanel .loginForm{
+    height: 230px;
+}
+.loginPanel .loginConnect{
     border-right: 1px solid #f6f4ee;
 }
-#loginPanel .loginForm{
+.loginPanel .loginForm{
     border-left: 1px solid #fff;
 }
-#loginPanel a.closeBtn{
+.loginPanel a.closeBtn{
     display: block;
     position: absolute;
     width: 20px;
@@ -100,6 +104,6 @@ div{
     cursor:pointer;
     background: url(../images/sheet_close.gif) no-repeat 0 0;
 }
-#loginPanel a.closeBtn:hover{
+.loginPanel a.closeBtn:hover{
     background: url(../images/sheet_close.gif) no-repeat 0 -60px;
 }

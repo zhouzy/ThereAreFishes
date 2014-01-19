@@ -24,11 +24,11 @@ block statusBar
                     button#doLoginBtn.btn.btn-default
                         span.glyphicon.glyphicon-user
                             |登陆
-                    button#newUserBtn.btn.btn-default
+                    button#registerBtn.btn.btn-default
                         span.glyphicon.glyphicon-user
                             |注册
     div.bodyMask
-    div#loginPanel
+    div#loginPanel.loginPanel
         div.sheet
             div.head
                 h2 登陆
@@ -47,6 +47,31 @@ block statusBar
                         div.form-group
                             div.col-sm-10
                                 button.btn.btn-default(type="submit") 登陆
+                div.clearfix
+            a.closeBtn
+
+    div#registerPanel.loginPanel
+        div.sheet
+            div.head
+                h2 注册
+            div.body
+                div.loginConnect
+                    h5 使用合作网站账号注册
+                div.loginForm
+                    h5 使用邮箱注册
+                    form.form-horizontal(role="form",action="/doRegister",onsubmit="return validateForm(this,'register');")
+                        div.form-group
+                            div.col-sm-10
+                                input.email.form-control(type="email",name="email",placeholder="Email")
+                        div.form-group
+                            div.col-sm-10
+                                input.password.form-control(type="password",name="password",placeholder="输入密码")
+                        div.form-group
+                            div.col-sm-10
+                                input.password2.form-control(type="password",name="password2",placeholder="确认密码")
+                        div.form-group
+                            div.col-sm-10
+                                button.btn.btn-default(type="submit") 注册
                 div.clearfix
             a.closeBtn
 block itemContent
