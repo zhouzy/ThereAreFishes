@@ -12,10 +12,12 @@ var events = require('events')
     ,mongoose = require("mongoose")
     ,mySchema = require('../Schema/mySchema');
 
-exports.getFishingByUserId = function(userId,callback){
+var fishing = exports = module.exports = {};
+fishing.getFishingByUserId = function(userId,callback){
     var Fishing = dbUtils.db.model("Fishing",mySchema.Fishing);
     Fishing.find({userId:userId}).exec(function(err,data){
         console.log(data);
         callback(data);
     });
-}
+};
+

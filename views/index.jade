@@ -40,10 +40,10 @@ block statusBar
                     form.form-horizontal(role="form")
                         div.form-group
                             div.col-sm-10
-                                input.form-control(type="email",placeholder="Email")
+                                input.form-control(type="email",name="email",placeholder="Email")
                         div.form-group
                             div.col-sm-10
-                                input.form-control(type="password",placeholder="Password")
+                                input.form-control(type="password",name="password",placeholder="Password")
                         div.form-group
                             div.col-sm-10
                                 button.btn.btn-default(type="submit") 登陆
@@ -59,7 +59,7 @@ block statusBar
                     h5 使用合作网站账号注册
                 div.loginForm
                     h5 使用邮箱注册
-                    form.form-horizontal(role="form",action="/doRegister",onsubmit="return validateForm(this,'register');")
+                    form.form-horizontal(role="form",action="/doRegister",onsubmit="return validateForm(this,'register');",method="post")
                         div.form-group
                             div.col-sm-10
                                 input.email.form-control(type="email",name="email",placeholder="Email")

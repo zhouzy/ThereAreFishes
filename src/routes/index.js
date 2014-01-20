@@ -1,8 +1,8 @@
-var users = require("../dao/users")
-    ,fishing = require("../dao/fishing")
+var dao = require("../dao")
     ,events = require('events')
     ,util = require('util');
 
+exports.userRoute = require("./user");
 exports.index = function(req, res){
     var userCount = 0;
     var model = {
@@ -17,7 +17,7 @@ exports.index = function(req, res){
         }
     }
     function getFishingByUserId(i){
-        fishing.getFishingByUserId(model.itemList[i].userId,function(fishings){
+        dao.fishingDao.getFishingByUserId(model.itemList[i].userId,function(fishings){
             userCount--;
             model.itemList[i].fishings = fishings;
             if(userCount === 0){
@@ -26,6 +26,6 @@ exports.index = function(req, res){
             }
         });
     }
-    users.query(userListCallBack);
+    dao.userDao.query(userListCallBack);
 };
 
