@@ -7,7 +7,9 @@
  */
 var mongoose= require('mongoose')
     ,db = mongoose.createConnection("localhost","ThereAreFishes");
-
 db.on('error',console.error.bind(console,'连接错误:'));
+var DB = module.exports = exports = {};
 
-exports.db = db;
+DB.getDB = function(){
+    return db;
+};

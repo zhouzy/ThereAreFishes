@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c29543b7-baaf-4310-93e0-38936d0715f6" name="Default" comment="2014/01/20&#10;项目配置文件&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dao/fishingDao.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.jade" afterPath="$PROJECT_DIR$/views/index.jade" />
+    <list default="true" id="c29543b7-baaf-4310-93e0-38936d0715f6" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/common/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/common/lib/msgUtils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dao/lib/userDao.js" />
+      <change type="DELETED" beforePath="D:\webproject\ThereAreFishes\src\dao\userDao.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\webproject\ThereAreFishes\src\utils\AsyncProxyImpl.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\webproject\ThereAreFishes\src\utils\index.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dao/index.js" afterPath="$PROJECT_DIR$/src/dao/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes/index.js" afterPath="$PROJECT_DIR$/src/routes/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Schema/mySchema.js" afterPath="$PROJECT_DIR$/src/Schema/mySchema.js" />
-      <change type="MOVED" beforePath="D:\webproject\ThereAreFishes\src\dao\fishing.js" afterPath="$PROJECT_DIR$/src/dao/index.js" />
-      <change type="MOVED" beforePath="D:\webproject\ThereAreFishes\src\dao\users.js" afterPath="$PROJECT_DIR$/src/dao/userDao.js" />
-      <change type="MOVED" beforePath="D:\webproject\ThereAreFishes\src\routes\doRegister.js" afterPath="$PROJECT_DIR$/src/routes/user.js" />
+      <change type="MOVED" beforePath="D:\webproject\ThereAreFishes\src\dao\fishingDao.js" afterPath="$PROJECT_DIR$/src/dao/lib/fishingDao.js" />
+      <change type="MOVED" beforePath="D:\webproject\ThereAreFishes\src\routes\user.js" afterPath="$PROJECT_DIR$/src/routes/lib/user.js" />
+      <change type="MOVED" beforePath="D:\webproject\ThereAreFishes\src\utils\LogUtils.js" afterPath="$PROJECT_DIR$/src/common/lib/logUtils.js" />
+      <change type="MOVED" beforePath="D:\webproject\ThereAreFishes\src\utils\dbUtils.js" afterPath="$PROJECT_DIR$/src/common/lib/dbUtils.js" />
     </list>
     <ignored path="thereAreFish.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,46 +38,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="fishingDao.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dao/fishingDao.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="20" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0" vertical-offset="183" max-vertical-offset="551">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/routes/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="21" selection-start="505" selection-end="505" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="703">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="user.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/routes/user.js">
+        <entry file="file://$PROJECT_DIR$/src/routes/lib/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="35" selection-start="286" selection-end="286" vertical-scroll-proportion="0.4169279" vertical-offset="0" max-vertical-offset="323">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="userDao.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dao/userDao.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="1" selection-start="568" selection-end="568" vertical-scroll-proportion="0.0" vertical-offset="297" max-vertical-offset="703">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="2" selection-start="947" selection-end="947" vertical-scroll-proportion="0.0" vertical-offset="359" max-vertical-offset="798">
+            <state line="10" column="33" selection-start="333" selection-end="333" vertical-scroll-proportion="0.5846154" vertical-offset="0" max-vertical-offset="399">
               <folding />
             </state>
           </provider>
@@ -119,14 +86,24 @@
         <option value="$PROJECT_DIR$/src/routes/doRegister.js" />
         <option value="$PROJECT_DIR$/views/index.jade" />
         <option value="$PROJECT_DIR$/src/Schema/mySchema.js" />
-        <option value="$PROJECT_DIR$/src/utils/index.js" />
         <option value="$PROJECT_DIR$/src/dao/fishing.js" />
         <option value="$PROJECT_DIR$/src/dao/users.js" />
         <option value="$PROJECT_DIR$/src/dao/index.js" />
-        <option value="$PROJECT_DIR$/src/routes/index.js" />
-        <option value="$PROJECT_DIR$/src/routes/user.js" />
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/src/routes/user.js" />
+        <option value="$PROJECT_DIR$/src/utils/msgJSON.js" />
+        <option value="$PROJECT_DIR$/src/utils/logUtils.js" />
+        <option value="$PROJECT_DIR$/src/utils/index.js" />
         <option value="$PROJECT_DIR$/src/dao/userDao.js" />
+        <option value="$PROJECT_DIR$/src/common/lib/msgJSON.js" />
+        <option value="$PROJECT_DIR$/src/common/index.js" />
+        <option value="$PROJECT_DIR$/src/common/lib/msgUtils.js" />
+        <option value="$PROJECT_DIR$/src/routes/index.js" />
+        <option value="/dns.js" />
+        <option value="$PROJECT_DIR$/src/common/lib/dbUtils.js" />
+        <option value="$PROJECT_DIR$/src/dao/lib/userDao.js" />
+        <option value="$PROJECT_DIR$/src/dao/lib/fishingDao.js" />
+        <option value="$PROJECT_DIR$/src/routes/lib/user.js" />
       </list>
     </option>
   </component>
@@ -178,6 +155,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -223,28 +201,6 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="utils" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thereAreFish" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThereAreFishes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Schema" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -278,6 +234,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="routes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thereAreFish" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThereAreFishes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="dao" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -292,63 +270,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thereAreFish" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThereAreFishes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thereAreFish" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThereAreFishes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thereAreFish" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThereAreFishes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="express" />
+              <option name="myItemId" value="common" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -380,17 +311,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\webproject\ThereAreFishes\src" />
       <recent name="D:\webproject\ThereAreFishes\src\dao" />
       <recent name="D:\webproject\ThereAreFishes\src\routes" />
       <recent name="D:\webproject\ThereAreFishes\public\images" />
       <recent name="D:\webproject\ThereAreFishes\public\images\photoImgs" />
-      <recent name="D:\webproject\ThereAreFishes\node_modules" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\webproject\ThereAreFishes\src\routes\lib" />
+      <recent name="D:\webproject\ThereAreFishes\src\dao\lib" />
+      <recent name="D:\webproject\ThereAreFishes\src\common\lib" />
       <recent name="D:\webproject\ThereAreFishes\src" />
       <recent name="D:\webproject\thereAreFish\public\javascripts\lib\jquery" />
-      <recent name="D:\webproject\thereAreFish\public\javascripts\lib" />
-      <recent name="D:\webproject\thereAreFish\public\javascripts" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.app.js">
@@ -400,6 +332,14 @@
       <RunnerSettings RunnerId="NodeJS.run" />
       <ConfigurationWrapper RunnerId="NodeJS.debug" />
       <ConfigurationWrapper RunnerId="NodeJS.run" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -412,12 +352,8 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
@@ -425,10 +361,6 @@
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -533,7 +465,11 @@
       <created>1390121482785</created>
       <updated>1390121482785</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="2014/01/20&#10;项目模块整理 完成注册写入数据库&#10;">
+      <created>1390210722635</created>
+      <updated>1390210722635</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -558,26 +494,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37010676" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5480427" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22438163" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20743494" sideWeight="0.9982206" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3886926" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37809187" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="top" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8380783" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8374558" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24377224" sideWeight="0.99878937" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4217082" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46875" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -595,9 +531,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20790629" sideWeight="0.9982206" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24377224" sideWeight="0.99878937" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -624,21 +560,15 @@
     <MESSAGE value="mongoose 基本调通 2014/1/10&#10;" />
     <MESSAGE value="时间：2014/01/16&#10;完成：登陆面板HTML&#10;" />
     <MESSAGE value="2014/01/19  &#10;完成注册pannel&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="2014/01/19  &#10;完成注册pannel&#10;" />
+    <MESSAGE value="2014/01/20&#10;项目模块整理 完成注册写入数据库&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="2014/01/20&#10;项目模块整理 完成注册写入数据库&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/routes/user.js</url>
-          <line>5</line>
-          <option name="timeStamp" value="65" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="68" />
+      <option name="time" value="78" />
     </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
@@ -654,26 +584,9 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/index.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="76" selection-start="2884" selection-end="2884" vertical-scroll-proportion="0.0" vertical-offset="806" max-vertical-offset="1387">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/fishingDao.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="324" selection-end="324" vertical-scroll-proportion="0.0" vertical-offset="63" max-vertical-offset="418" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/userDao.js">
+    <entry file="file://$PROJECT_DIR$/src/dao/lib/userDao.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="30" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0" vertical-offset="63" max-vertical-offset="418" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/dbUtils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="24" selection-start="702" selection-end="702" vertical-scroll-proportion="0.0" vertical-offset="101" max-vertical-offset="570" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/index.js">
@@ -688,19 +601,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/fishingDao.js">
+    <entry file="file://$PROJECT_DIR$/src/dao/lib/fishingDao.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="0" selection-start="324" selection-end="324" vertical-scroll-proportion="0.0" vertical-offset="63" max-vertical-offset="418" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/userDao.js">
+    <entry file="file://$PROJECT_DIR$/src/dao/lib/userDao.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="30" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0" vertical-offset="63" max-vertical-offset="418" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/dbUtils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="24" selection-start="702" selection-end="702" vertical-scroll-proportion="0.0" vertical-offset="101" max-vertical-offset="570" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/index.js">
@@ -715,7 +623,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/fishingDao.js">
+    <entry file="file://$PROJECT_DIR$/src/dao/lib/fishingDao.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="0" selection-start="324" selection-end="324" vertical-scroll-proportion="0.0" vertical-offset="247" max-vertical-offset="418" />
       </provider>
@@ -732,7 +640,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/fishingDao.js">
+    <entry file="file://$PROJECT_DIR$/src/dao/lib/fishingDao.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="0" selection-start="324" selection-end="324" vertical-scroll-proportion="0.0" vertical-offset="247" max-vertical-offset="418" />
       </provider>
@@ -784,16 +692,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/layout.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="62" selection-start="405" selection-end="405" vertical-scroll-proportion="0.36714977" vertical-offset="0" max-vertical-offset="418">
-          <folding />
-        </state>
+        <state line="8" column="62" selection-start="405" selection-end="405" vertical-scroll-proportion="0.36714977" vertical-offset="0" max-vertical-offset="418" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/indexlayout.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="7" selection-start="374" selection-end="374" vertical-scroll-proportion="0.36714977" vertical-offset="0" max-vertical-offset="418">
-          <folding />
-        </state>
+        <state line="8" column="7" selection-start="374" selection-end="374" vertical-scroll-proportion="0.36714977" vertical-offset="0" max-vertical-offset="418" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/func/index.js">
@@ -803,23 +707,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="416" selection-end="416" vertical-scroll-proportion="0.83433133" vertical-offset="0" max-vertical-offset="1862">
-          <folding />
-        </state>
+        <state line="22" column="0" selection-start="416" selection-end="416" vertical-scroll-proportion="0.83433133" vertical-offset="0" max-vertical-offset="1862" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/common.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="9" selection-start="1369" selection-end="1369" vertical-scroll-proportion="0.0" vertical-offset="1634" max-vertical-offset="2166">
-          <folding />
-        </state>
+        <state line="68" column="9" selection-start="1369" selection-end="1369" vertical-scroll-proportion="0.0" vertical-offset="1634" max-vertical-offset="2166" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/func/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="0" selection-start="717" selection-end="717" vertical-scroll-proportion="0.0" vertical-offset="335" max-vertical-offset="1292">
-          <folding />
-        </state>
+        <state line="37" column="0" selection-start="717" selection-end="717" vertical-scroll-proportion="0.0" vertical-offset="335" max-vertical-offset="1292" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -834,18 +732,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/AsyncProxyImpl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="4" selection-start="638" selection-end="638" vertical-scroll-proportion="0.8107607" vertical-offset="0" max-vertical-offset="950">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/express/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="517">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="517" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Schema/mySchema.js">
@@ -855,25 +744,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="285" column="12" selection-start="6269" selection-end="6269" vertical-scroll-proportion="9.940631" vertical-offset="57" max-vertical-offset="6194">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/express/lib/express.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.83302414" vertical-offset="449" max-vertical-offset="1672">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.83302414" vertical-offset="449" max-vertical-offset="1672" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/express/lib/middleware.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="722">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="722" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/express/lib/request.js">
@@ -892,16 +770,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="539">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/logUtils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="320" selection-end="320" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="399">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="539" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/express/lib/application.js">
@@ -911,58 +780,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/dbUtils.js">
+    <entry file="file://$PROJECT_DIR$/src/common/lib/logUtils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="15" selection-start="288" selection-end="288" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="361">
+        <state line="8" column="8" selection-start="149" selection-end="149" vertical-scroll-proportion="0.40923077" vertical-offset="19" max-vertical-offset="399">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/index.js">
+    <entry file="file://$PROJECT_DIR$/src/common/lib/msgUtils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="40" selection-start="186" selection-end="186" vertical-scroll-proportion="0.4453125" vertical-offset="0" max-vertical-offset="384">
+        <state line="23" column="7" selection-start="404" selection-end="404" vertical-scroll-proportion="1.1323076" vertical-offset="69" max-vertical-offset="836">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="14" selection-start="170" selection-end="170" vertical-scroll-proportion="0.4453125" vertical-offset="0" max-vertical-offset="384">
+        <state line="9" column="14" selection-start="174" selection-end="174" vertical-scroll-proportion="0.52615386" vertical-offset="0" max-vertical-offset="325">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/fishingDao.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="20" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0" vertical-offset="183" max-vertical-offset="551">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="21" selection-start="505" selection-end="505" vertical-scroll-proportion="0.0" vertical-offset="164" max-vertical-offset="703">
+        <state line="173" column="0" selection-start="3774" selection-end="3774" vertical-scroll-proportion="0.0" vertical-offset="2590" max-vertical-offset="6194">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="2" selection-start="947" selection-end="947" vertical-scroll-proportion="0.0" vertical-offset="359" max-vertical-offset="798">
+        <state line="31" column="0" selection-start="735" selection-end="735" vertical-scroll-proportion="0.0" vertical-offset="359" max-vertical-offset="798">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/userDao.js">
+    <entry file="file://$PROJECT_DIR$/src/common/lib/dbUtils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="1" selection-start="568" selection-end="568" vertical-scroll-proportion="0.0" vertical-offset="297" max-vertical-offset="703">
+        <state line="13" column="14" selection-start="349" selection-end="349" vertical-scroll-proportion="0.76" vertical-offset="0" max-vertical-offset="399">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/user.js">
+    <entry file="file://$PROJECT_DIR$/src/common/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="35" selection-start="286" selection-end="286" vertical-scroll-proportion="0.4169279" vertical-offset="0" max-vertical-offset="323">
+        <state line="8" column="42" selection-start="148" selection-end="148" vertical-scroll-proportion="0.46769232" vertical-offset="0" max-vertical-offset="325">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/lib/fishingDao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="39" selection-start="448" selection-end="448" vertical-scroll-proportion="0.0" vertical-offset="152" max-vertical-offset="532">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/lib/userDao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="569" selection-end="569" vertical-scroll-proportion="0.3323077" vertical-offset="253" max-vertical-offset="950">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="39" selection-start="792" selection-end="792" vertical-scroll-proportion="1.2676923" vertical-offset="120" max-vertical-offset="703">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/lib/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="33" selection-start="333" selection-end="333" vertical-scroll-proportion="0.5846154" vertical-offset="0" max-vertical-offset="399">
           <folding />
         </state>
       </provider>

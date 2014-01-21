@@ -1,0 +1,15 @@
+var dao = require("../../dao")
+    ,events = require('events')
+    ,common = require("../../common")
+    ,util = require('util');
+
+var UserRoute = exports = module.exports = {};
+
+UserRoute.doRegister = function(req, res){
+    console.log(req.body);
+    dao.userDao.addUser(req.body,function(result){
+        common.logUtils.log(result);
+        res.end(JSON.stringify(result));
+    });
+};
+

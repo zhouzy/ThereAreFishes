@@ -1,8 +1,7 @@
-var dao = require("../dao")
-    ,events = require('events')
-    ,util = require('util');
+var dao = require("../dao");
 
-exports.userRoute = require("./user");
+exports.userRoute = require("./lib/user");
+
 exports.index = function(req, res){
     var userCount = 0;
     var model = {
@@ -16,6 +15,7 @@ exports.index = function(req, res){
             getFishingByUserId(i);
         }
     }
+
     function getFishingByUserId(i){
         dao.fishingDao.getFishingByUserId(model.itemList[i].userId,function(fishings){
             userCount--;

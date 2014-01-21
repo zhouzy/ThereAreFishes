@@ -6,6 +6,6 @@
  * dao层模块接口集合
  */
 
-exports.userDao = require("./userDao");
-exports.fishingDao = require("./fishingDao");
+exports.userDao = require("./lib/userDao");
+exports.fishingDao = require("./lib/fishingDao");
 
