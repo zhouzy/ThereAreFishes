@@ -24,17 +24,17 @@ userDao.addUser = function(user,callback){
     User.findOne({email:user.email},function(err,doc){
         if(err){
             common.logUtils.log(common.msgUtils.MsgJSON.ERR_DB_ERROR);
-            callback(common.msgUtils.warp(true,common.msgUtils.MsgJSON.ERR_DB_ERROR));
+            callback(common.msgUtils.warp(false,common.msgUtils.MsgJSON.ERR_DB_ERROR));
         }else if(doc){
             //用户已存在
             common.logUtils.log(common.msgUtils.MsgJSON.ERR_USER_EXIST);
-            callback(common.msgUtils.warp(true,common.msgUtils.MsgJSON.ERR_USER_EXIST));
+            callback(common.msgUtils.warp(false,common.msgUtils.MsgJSON.ERR_USER_EXIST));
         }else{
             var newUser = new User({email:user.email,password:user.password,username:user.username});
             newUser.save(function(err){
                 if(err){
                     common.logUtils.log(common.msgUtils.MsgJSON.ERR_DB_ERROR);
-                    callback(common.msgUtils.warp(true,common.msgUtils.MsgJSON.ERR_DB_ERROR));
+                    callback(common.msgUtils.warp(false,common.msgUtils.MsgJSON.ERR_DB_ERROR));
                 }else{
                     callback(common.msgUtils.warp());
                 }

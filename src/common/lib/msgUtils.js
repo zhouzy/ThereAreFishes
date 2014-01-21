@@ -21,18 +21,15 @@ MsgUtils.MsgJSON = {
     }
 };
 
-MsgUtils.warp = function(isFailure,msgJSON){
-    var _msg = {
-        isSuccess:true,
-        msg:null
-    };
-    if(isFailure){
-        return _msg;
-    }else{
-        return {
-            isSuccess:isFailure,
-            msg:msgJSON
-        };
+MsgUtils.warp = function(isSuccess,msgJSON,data){
+    if(arguments.length === 0){
+        return {isSuccess:true}
     }
+    var _msg = {
+        isSuccess:isSuccess,
+        msg:msgJSON,
+        data:data
+    };
+    return _msg;
 };
 

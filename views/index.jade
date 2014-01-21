@@ -59,19 +59,16 @@ block statusBar
                     h5 使用合作网站账号注册
                 div.loginForm
                     h5 使用邮箱注册
-                    form.form-horizontal(role="form",action="/doRegister",onsubmit="return validateForm(this,'register');",method="post")
-                        div.form-group
-                            div.col-sm-10
-                                input.email.form-control(type="email",name="email",placeholder="Email")
-                        div.form-group
-                            div.col-sm-10
-                                input.password.form-control(type="password",name="password",placeholder="输入密码")
-                        div.form-group
-                            div.col-sm-10
-                                input.password2.form-control(type="password",name="password2",placeholder="确认密码")
-                        div.form-group
-                            div.col-sm-10
-                                button.btn.btn-default(type="submit") 注册
+                    div.form-group
+                        input.email.form-control(name="username",placeholder="取个名字")
+                    div.form-group
+                        input.email.form-control(type="email",name="email",placeholder="注册邮箱")
+                    div.form-group
+                        input.password.form-control(type="password",name="password",placeholder="选择密码")
+                    div.form-group
+                        input.password2.form-control(type="password",name="password2",placeholder="确认密码")
+                    div.form-group
+                        button#doRegister.btn.btn-default(type="submit") 注册
                 div.clearfix
             a.closeBtn
 block itemContent
