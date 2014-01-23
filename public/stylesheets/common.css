@@ -83,7 +83,14 @@ div{
     width: 389px;
     height: 200px;
     float: left;
-    padding: 10px 80px;
+    padding: 10px 20px;
+}
+.loginPanel .error-msg{
+    display:none;
+    padding-top: 7px;
+}
+.clearLeftPadding{
+    padding-left: 0;
 }
 #registerPanel .loginConnect,#registerPanel .loginForm{
     height: 260px;

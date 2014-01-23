@@ -33,37 +33,50 @@ function getValueFromInputArr($content){
     });
     return _data;
 }
+function showErrorMsg($parent,msg){
+    $parent.empty().append("<em class=\"text-danger\">" + msg + "</em>").show();
+}
+function validataEmail(email){
+    var emailReg = /^[a-z]([a-z0-9]*[-_]?[a-z0-9]+)*@([a-z0-9]*[-_]?[a-z0-9]+)+[\.][a-z]{2,3}([\.][a-z]{2})?$/i;
+    return emailReg.test(email);
+}
 function validateForm(data,loginOrRegister){
+    $(".loginPanel .error-msg").each(function(){
+        $(this).hide();
+    });
     data = data || {};
     if("register" === loginOrRegister){
         if(!data.username){
-            //TODO:用户名不能为空
+            showErrorMsg($("#error-username"),"请输入称号");
             return false;
         }
         if(!data.email){
-            //TODO:注册邮箱不能为空
+            showErrorMsg($("#error-email"),"请输入邮箱");
+            return false;
+        }
+        if(!validataEmail(data.email)){
+            showErrorMsg($("#error-email"),"邮箱不合法");
             return false;
         }
         if(!data.password){
-            //TODO:密码不能为空
+            showErrorMsg($("#error-password"),"请设置密码");
             return false;
         }
         if(!data.password2){
-            //TODO:请确认密码
+            showErrorMsg($("#error-password2"),"请确认密码");
             return false;
         }
         if(data.password !== data.password2){
-            //TODO:密码不一致
+            showErrorMsg($("#error-password2"),"密码不一致");
             return false
         }
-        //TODO:验证用户名是否已经存在
-        //TODO:验证邮箱是否已经注册
         return true;
     }
     else if("login" === loginOrRegister){
         return true;
     }
 }
+
 function submitFrom(url,param,onSuccess,onFailure){
     $.post(url,param,function(data){
         if(data.isSuccess){
@@ -97,11 +110,10 @@ $(function(){
     $("#registerPanel #doRegister").on("click",function(){
         var data = getValueFromInputArr($("#registerPanel"));
         validateForm(data,"register") && submitFrom("/doRegister",data,function(){
-            //TODO:提示用户注册成功，关闭注册面板，刷新首页
-            alert("注册成功");
+            //TODO:关闭注册面板，隐藏登陆注册按钮，显示用户头像
+            //alert("注册成功");
             $("#registerPanel").slideUp("slow");
             $(".bodyMask").hide();
-
         },function(){
             //TODO:提示用户注册失败，提示详细信息
         });
