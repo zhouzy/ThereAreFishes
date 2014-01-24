@@ -18,6 +18,11 @@ MsgUtils.MsgJSON = {
         errCode:-1001,
         errMsgCn:"用户已存在",
         errMsgEn:"user has existed"
+    },
+    ERR_EMAIL_EXIST:{
+        errCode:-1002,
+        errMsgCn:"邮箱已注册",
+        errMsgEn:"email has registered"
     }
 };
 

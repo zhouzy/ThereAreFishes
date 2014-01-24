@@ -111,11 +111,15 @@ $(function(){
         var data = getValueFromInputArr($("#registerPanel"));
         validateForm(data,"register") && submitFrom("/doRegister",data,function(){
             //TODO:关闭注册面板，隐藏登陆注册按钮，显示用户头像
-            //alert("注册成功");
             $("#registerPanel").slideUp("slow");
             $(".bodyMask").hide();
-        },function(){
-            //TODO:提示用户注册失败，提示详细信息
+        },function(msg){
+            if(msg.errCode === -1001){
+                showErrorMsg($("#error-username"),msg.errMsgCn);
+            }
+            if(msg.errCode === -1002){
+                showErrorMsg($("#error-email"),msg.errMsgCn);
+            }
         });
     });
 
