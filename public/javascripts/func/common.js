@@ -5,6 +5,58 @@
  * Time: 上午11:32
  * 顶部栏 选项 搜索 用户功能
  */
+
+$(function(){
+    initTopBar();
+    initRegisterPanel();
+    initLoginPanel();
+});
+
+function initTopBar(){
+    $("#topStatus #searchBtn").on("click",function(){});
+    $("#topStatus #doLoginBtn").on("click",function(){
+        $(".bodyMask").show();
+        $("#loginPanel").slideDown("slow");
+    });
+    $("#loginPanel .closeBtn").on("click",function(){
+        $(".bodyMask").hide();
+        $("#loginPanel").slideUp("slow");
+    });
+    $("#topStatus #registerBtn").on("click",function(){
+        $(".bodyMask").show();
+        $("#registerPanel").slideDown("slow");
+    });
+    $("#topStatus #topBarOptions").on("click",function(){
+
+    });
+}
+
+function initRegisterPanel(){
+    $("#registerPanel .closeBtn").on("click",function(){
+        $("#registerPanel").slideUp("slow");
+        $(".bodyMask").hide();
+    });
+
+    $("#registerPanel #doRegister").on("click",function(){
+        var data = getValueFromInputArr($("#registerPanel"));
+        validateForm(data,"register") && submitFrom("/doRegister",data,onRegisterSuccess,onRegisterFailure);
+        function onRegisterSuccess(msg){
+            $("#registerPanel").slideUp("slow");
+            $(".bodyMask").hide();
+        }
+        function onRegisterFailure(msg){
+            if(msg.errCode === -1001){
+                showErrorMsg($("#error-username"),msg.errMsgCn);
+            }
+            if(msg.errCode === -1002){
+                showErrorMsg($("#error-email"),msg.errMsgCn);
+            }
+        }
+    });
+}
+function initLoginPanel(){
+
+}
 function log(msg){
     console && console.log(msg);
 }
@@ -86,44 +138,3 @@ function submitFrom(url,param,onSuccess,onFailure){
         }
     },"json");
 }
-$(function(){
-    $("#topStatus #searchBtn").on("click",function(){
-
-    });
-    $("#topStatus #doLoginBtn").on("click",function(){
-        $(".bodyMask").show();
-        $("#loginPanel").slideDown("slow");
-    });
-    $("#loginPanel .closeBtn").on("click",function(){
-        $(".bodyMask").hide();
-        $("#loginPanel").slideUp("slow");
-    });
-    $("#topStatus #registerBtn").on("click",function(){
-        $(".bodyMask").show();
-        $("#registerPanel").slideDown("slow");
-    });
-    $("#registerPanel .closeBtn").on("click",function(){
-        $("#registerPanel").slideUp("slow");
-        $(".bodyMask").hide();
-    });
-
-    $("#registerPanel #doRegister").on("click",function(){
-        var data = getValueFromInputArr($("#registerPanel"));
-        validateForm(data,"register") && submitFrom("/doRegister",data,function(){
-            //TODO:关闭注册面板，隐藏登陆注册按钮，显示用户头像
-            $("#registerPanel").slideUp("slow");
-            $(".bodyMask").hide();
-        },function(msg){
-            if(msg.errCode === -1001){
-                showErrorMsg($("#error-username"),msg.errMsgCn);
-            }
-            if(msg.errCode === -1002){
-                showErrorMsg($("#error-email"),msg.errMsgCn);
-            }
-        });
-    });
-
-    $("#topStatus #topBarOptions").on("click",function(){
-
-    });
-});

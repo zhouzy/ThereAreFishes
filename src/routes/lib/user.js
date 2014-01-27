@@ -12,4 +12,11 @@ UserRoute.doRegister = function(req, res){
         res.end(JSON.stringify(result));
     });
 };
+UserRoute.doLogin = function (req, res){
+    console.log(req.body);
+    dao.userDao.login(req.body,function(result){
+        common.logUtils.log(result);
+        res.end(JSON.stringify(result));
+    });
+};
 

@@ -10,18 +10,25 @@ var events = require('events')
     ,common = require('../../common')
     ,dbUtils = common.dbUtils
     ,mongoose = require("mongoose")
-    ,events = require("events")
     ,mySchema = require('../../Schema/mySchema');
 
 var userDao = exports = module.exports = {};
 var User = dbUtils.getDB().model("User",mySchema.User);
 
+/**
+ * 查询用户列表
+ * @param callback
+ */
 userDao.query = function(callback){
     User.find().limit(10).exec(function(err,data){
         callback(data);
     });
 };
-
+/**
+ * 注册新用户
+ * @param user
+ * @param callback
+ */
 userDao.addUser = function(user,callback){
     var emitter = new events.EventEmitter();
     emitter.on("DB_ERROR",callback);
@@ -33,9 +40,25 @@ userDao.addUser = function(user,callback){
     emitter.on("USERNAME_NOT_EXIST",function(){
         _addUser2DB(user,emitter);
     });
+    emitter.on("ADD_USER_SUCCESS",callback);
     _checkEmail(user.email,emitter);
 };
-
+/**
+ * 用户登陆
+ * @param email
+ * @param password
+ */
+userDao.login = function(email, password){
+    User.find({email:email,password:password}).exec(function(err,data){
+        callback(common.msgUtils.warp(true,null,data));
+    });
+};
+/**
+ * 检查用户名是否已经存在
+ * @param username
+ * @param emitter
+ * @private
+ */
 function _checkUsername(username,emitter){
     User.findOne({username:username},function(err,doc){
         if(err){
@@ -48,6 +71,12 @@ function _checkUsername(username,emitter){
         }
     });
 }
+/**
+ * 检查邮箱是否已经注册
+ * @param email
+ * @param emitter
+ * @private
+ */
 function _checkEmail(email,emitter){
     User.findOne({email:email},function(err,doc){
         if(err){
@@ -61,6 +90,12 @@ function _checkEmail(email,emitter){
         }
     });
 }
+/**
+ * 向数据库增加用户
+ * @param user
+ * @param emitter
+ * @private
+ */
 function _addUser2DB(user,emitter){
     var newUser = new User({email:user.email,password:user.password,username:user.username});
     newUser.save(function(err){
@@ -68,7 +103,7 @@ function _addUser2DB(user,emitter){
             common.logUtils.log(common.msgUtils.MsgJSON.ERR_DB_ERROR);
             emitter.emit("DB_ERROR");
         }else{
-            emitter.emit(common.msgUtils.warp());
+            emitter.emit("ADD_USER_SUCCESS",common.msgUtils.warp());
         }
     });
 }

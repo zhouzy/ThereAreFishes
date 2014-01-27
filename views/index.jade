@@ -35,18 +35,21 @@ block statusBar
             div.body
                 div.loginConnect
                     h5 使用合作网站账号登陆
-                div.loginForm
+                div.loginForm.form-horizontal
                     h5 使用注册邮箱登陆
-                    form.form-horizontal(role="form")
-                        div.form-group
-                            div.col-sm-10
-                                input.form-control(type="email",name="email",placeholder="Email")
-                        div.form-group
-                            div.col-sm-10
-                                input.form-control(type="password",name="password",placeholder="Password")
-                        div.form-group
-                            div.col-sm-10
-                                button.btn.btn-default(type="submit") 登陆
+                    div.form-group
+                        label.col-sm-3.control-label 邮箱
+                        div.col-sm-6.clearLeftPadding
+                            input.email.form-control(type="email",name="email",placeholder="请输入邮箱")
+                        div.error-email.col-sm-3.clearLeftPadding.error-msg
+                    div.form-group
+                        label.col-sm-3.control-label 密码
+                        div.col-sm-6.clearLeftPadding
+                            input.password.form-control(type="password",name="password",placeholder="请输入密码")
+                        div.error-password.col-sm-3.clearLeftPadding.error-msg
+                    div.form-group
+                        div.col-sm-6.col-sm-offset-3.clearLeftPadding
+                            button#doLogin.btn.btn-default(type="submit") 登陆
                 div.clearfix
             a.closeBtn
 
