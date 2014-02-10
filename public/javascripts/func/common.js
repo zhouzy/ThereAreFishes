@@ -13,21 +13,17 @@ $(function(){
 });
 
 function initTopBar(){
-    $("#topStatus #searchBtn").on("click",function(){});
-    $("#topStatus #doLoginBtn").on("click",function(){
+    $("#topBarOptions").on("click",function(){});
+    $("#searchBtn").on("click",function(){});
+
+    $("#doLoginBtn").on("click",function(){
         $(".bodyMask").show();
         $("#loginPanel").slideDown("slow");
     });
-    $("#loginPanel .closeBtn").on("click",function(){
-        $(".bodyMask").hide();
-        $("#loginPanel").slideUp("slow");
-    });
-    $("#topStatus #registerBtn").on("click",function(){
+
+    $("#registerBtn").on("click",function(){
         $(".bodyMask").show();
         $("#registerPanel").slideDown("slow");
-    });
-    $("#topStatus #topBarOptions").on("click",function(){
-
     });
 }
 
@@ -37,7 +33,7 @@ function initRegisterPanel(){
         $(".bodyMask").hide();
     });
 
-    $("#registerPanel #doRegister").on("click",function(){
+    $("#doRegister").on("click",function(){
         var data = getValueFromInputArr($("#registerPanel"));
         validateForm(data,"register") && submitFrom("/doRegister",data,onRegisterSuccess,onRegisterFailure);
         function onRegisterSuccess(msg){
@@ -55,26 +51,33 @@ function initRegisterPanel(){
     });
 }
 function initLoginPanel(){
+    $("#loginPanel .closeBtn").on("click",function(){
+        $(".bodyMask").hide();
+        $("#loginPanel").slideUp("slow");
+    });
 
+    $("#doLogin").on("click",function(){
+        var data = getValueFromInputArr($("#loginPanel"));
+        validateForm(data,"register") && submitFrom("/doLogin",data, onLoginSuccess, onLoginFailure);
+        function onLoginSuccess(msg){
+            $("#registerPanel").slideUp("slow");
+            $(".bodyMask").hide();
+        }
+        function onLoginFailure(msg){
+            if(msg.errCode === -1001){
+                showErrorMsg($("#error-username"),msg.errMsgCn);
+            }
+            if(msg.errCode === -1002){
+                showErrorMsg($("#error-email"),msg.errMsgCn);
+            }
+        }
+    });
 }
+
 function log(msg){
     console && console.log(msg);
 }
-function search(keyword,callback){
 
-}
-function goLogin(){
-}
-function doLogin(email,password){
-
-}
-function newUser(){
-
-}
-
-function dropDownList(){
-
-}
 function getValueFromInputArr($content){
     var _data = {};
     $("input[name]",$content).each(function(){
@@ -88,7 +91,7 @@ function getValueFromInputArr($content){
 function showErrorMsg($parent,msg){
     $parent.empty().append("<em class=\"text-danger\">" + msg + "</em>").show();
 }
-function validataEmail(email){
+function validateEmail(email){
     var emailReg = /^[a-z]([a-z0-9]*[-_]?[a-z0-9]+)*@([a-z0-9]*[-_]?[a-z0-9]+)+[\.][a-z]{2,3}([\.][a-z]{2})?$/i;
     return emailReg.test(email);
 }
@@ -106,7 +109,7 @@ function validateForm(data,loginOrRegister){
             showErrorMsg($("#error-email"),"请输入邮箱");
             return false;
         }
-        if(!validataEmail(data.email)){
+        if(!validateEmail(data.email)){
             showErrorMsg($("#error-email"),"邮箱不合法");
             return false;
         }
