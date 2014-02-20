@@ -8,17 +8,85 @@ body{
 div{
     display:block;
 }
-#topStatus{
+
+#topbar{
+    box-shadow: 0 0 4px rgba(0,0,0,.2);
     min-height: 45px;
     background:#ffffff;
     z-index: 99999;
 }
-#logo{
+
+#logo,#topBarOptions{
     height:45px;
 }
-#topBarSearch,#topBarUser{
+
+#topBarOptions{
+    border-left:1px solid #F2F2F2;
+    border-right:1px solid #F2F2F2;
+    width:50px;
+    cursor:pointer;
+}
+
+#topBarOptions .nav-icon{
+    width: 16px;
+    height: 16px;
+    display: block;
+    background: url(../images/menu_sprite.png) 0 0 no-repeat;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -8px 0 0 -8px;
+}
+
+#topBarOptions .arrow{
+    background: url(../images/menu_sprite.png) 0 -50px no-repeat;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+#topBarOptions .menu{
+    background: #fff;
+    box-shadow: 0 1px 6px rgba(0,0,0,.2);
+    position: absolute;
+    left: -1px;
+    top: 56px;
+    width: 721px;
+    text-align: left;
+    border-radius: 3px;
+    cursor: default;
+}
+#topBarOptions .menu-uparrow{
+    width: 18px;
+    height: 10px;
+    position: absolute;
+    left: 19px;
+    top: -9px;
+    background: url(../images/menu_arrow.png) 0 0 no-repeat;
+}
+#topBarSearch,#topBarUser .login-reg{
     padding-top: 5px;
 }
+
+#topBarUser .topbar-userinfo{
+    display: none;
+}
+
+#topBarUser .topbar-userinfo-avatar{
+    width:40px;
+    height:40px;
+    margin:0px 5px;
+}
+
+#topBarUser .topbar-userinfo-name{
+    display:inline-block;
+    line-height:45px;
+    border-left:1px solid #F2F2F2;
+    font-size:0.625em;
+}
+
 #content{
     min-height:70%;
     _height:70%;

@@ -24,6 +24,7 @@ userDao.query = function(callback){
         callback(data);
     });
 };
+
 /**
  * 注册新用户
  * @param user
@@ -43,16 +44,19 @@ userDao.addUser = function(user,callback){
     emitter.on("ADD_USER_SUCCESS",callback);
     _checkEmail(user.email,emitter);
 };
+
 /**
  * 用户登陆
  * @param email
  * @param password
  */
-userDao.login = function(email, password){
+userDao.login = function(email, password, callback){
     User.find({email:email,password:password}).exec(function(err,data){
+        console.log(data);
         callback(common.msgUtils.warp(true,null,data));
     });
 };
+
 /**
  * 检查用户名是否已经存在
  * @param username

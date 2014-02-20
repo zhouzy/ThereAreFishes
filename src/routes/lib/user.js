@@ -14,7 +14,7 @@ UserRoute.doRegister = function(req, res){
 };
 UserRoute.doLogin = function (req, res){
     console.log(req.body);
-    dao.userDao.login(req.body,function(result){
+    dao.userDao.login(req.body.email,req.body.password,function(result){
         common.logUtils.log(result);
         res.end(JSON.stringify(result));
     });
