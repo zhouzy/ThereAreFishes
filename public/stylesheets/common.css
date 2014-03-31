@@ -66,7 +66,7 @@ div{
     top: -9px;
     background: url(../images/menu_arrow.png) 0 0 no-repeat;
 }
-#topBarSearch,#topBarUser .login-reg{
+#topBarSearch,#topBarUser .signIn-reg{
     padding-top: 5px;
 }
 
@@ -101,7 +101,7 @@ div{
     z-index: 99990;
     display:none;
 }
-.loginPanel{
+.signInPanel{
     position: fixed;
     top: 45px;
     left: 50%;
@@ -110,7 +110,7 @@ div{
     display: none;
 }
 
-.loginPanel .sheet{
+.signInPanel .sheet{
     position: relative;
     width:800px;
     margin: auto;
@@ -126,50 +126,50 @@ div{
     -webkit-border-bottom-left-radius: 5px;
     -webkit-border-bottom-right-radius: 5px;
 }
-.loginPanel .head{
+.signInPanel .head{
     padding:15px;
     border-bottom: 1px solid #f6f4ee;
 }
-.loginPanel .body{
+.signInPanel .body{
     padding:15px 10px;
 }
-.loginPanel h2,.loginPanel h5{
+.signInPanel h2,.signInPanel h5{
     padding:0px;
     margin:0px;
 }
-.loginPanel h2{
+.signInPanel h2{
     font-size: 1.4em;
     text-align:center;
 }
-.loginPanel h5{
+.signInPanel h5{
     margin-bottom: 14px;
     font-size: 14px;
     font-weight: 700;
     color: #444;
 }
-.loginPanel .loginConnect, .loginPanel .loginForm{
+.signInPanel .signInConnect, .signInPanel .signInForm{
     width: 389px;
     height: 200px;
     float: left;
     padding: 10px 20px;
 }
-.loginPanel .error-msg{
+.signInPanel .error-msg{
     display:none;
     padding-top: 7px;
 }
 .clearLeftPadding{
     padding-left: 0;
 }
-#registerPanel .loginConnect,#registerPanel .loginForm{
+#registerPanel .signInConnect,#registerPanel .signInForm{
     height: 260px;
 }
-.loginPanel .loginConnect{
+.signInPanel .signInConnect{
     border-right: 1px solid #f6f4ee;
 }
-.loginPanel .loginForm{
+.signInPanel .signInForm{
     border-left: 1px solid #fff;
 }
-.loginPanel a.closeBtn{
+.signInPanel a.closeBtn{
     display: block;
     position: absolute;
     width: 20px;
@@ -179,6 +179,30 @@ div{
     cursor:pointer;
     background: url(../images/sheet_close.gif) no-repeat 0 0;
 }
-.loginPanel a.closeBtn:hover{
+.signInPanel a.closeBtn:hover{
     background: url(../images/sheet_close.gif) no-repeat 0 -60px;
+}
+.menu{
+    display: none;
+}
+.menu-body{
+    padding:5px;
+}
+.menu-body>div{
+    width:100%;
+    padding-bottom:5px;
+    border-bottom:1px solid #ebebeb;
+}
+.menu-body>div>span{
+    background-color: #FFF;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 12px;
+    padding:5px;
+    border-radius: 5px;
+    border:1px solid #adadad;
+}
+.menu-body>div>span:hover{
+    background-color: #ebebeb;
 }

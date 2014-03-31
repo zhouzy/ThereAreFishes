@@ -7,88 +7,204 @@
  */
 
 $(function(){
-    initTopBar();
-    initRegisterPanel();
-    initLoginPanel();
+    menuOptionBar.init();
+    signInPanel.init();
+    signUpPanel.init();
 });
 
-function initTopBar(){
-    $("#topBarOptions").on("click",function(){});
-    $("#searchBtn").on("click",function(){});
+var menuOptionBar = (function(){
+    var o = new Component();
+    o.init = function(){
+        var timeoutHandler = null;
+        $("#topBarOptions").on("mouseenter",function(){
+            timeoutHandler && clearTimeout(timeoutHandler);
+            _show();
+        }).on("mouseleave",function(){
+            timeoutHandler = setTimeout(_hide,1000);
+        });
+    };
 
-    $("#doLoginBtn").on("click",function(){
-        $(".bodyMask").show();
-        $("#loginPanel").slideDown("slow");
+    function _show(){
+        $("#topBarOptions .menu").show();
+        o.emit("menuOptionBar_open");
+    }
+
+    function _hide(){
+        $("#topBarOptions .menu").hide();
+        o.emit("menuOptionBar_close");
+    }
+
+    o.on("signInBar_open",function(){
+        _hide();
     });
+    return o;
+}());
 
-    $("#registerBtn").on("click",function(){
-        $(".bodyMask").show();
-        $("#registerPanel").slideDown("slow");
-    });
-}
+var signUpPanel = (function(){
+    var o = new Component();
 
-/**
- * 初始化注册面板
- */
-function initRegisterPanel(){
-    $("#registerPanel .closeBtn").on("click",function(){
-        $("#registerPanel").slideUp("slow");
+    o.init = function(){
+
+        $("#signUpBtn").on("click",_open);
+
+        $("#signUpPanel .closeBtn").on("click",_close);
+
+        $("#doRegister").on("click",function(){
+            var data = getValueFromInputArr($("#signUpPanel"));
+            validateRegister(data) && submitFrom("/doRegister",data,onRegisterSuccess,onRegisterFailure);
+        });
+    };
+
+    function _close(){
+        $("#signUpPanel").slideUp("slow");
         $(".bodyMask").hide();
-    });
+        o.emit("signUpPanel_close");
+    }
 
-    $("#doRegister").on("click",function(){
-        var data = getValueFromInputArr($("#registerPanel"));
-        validateRegister(data)
-            && submitFrom("/doRegister",data,onRegisterSuccess,onRegisterFailure);
-        function onRegisterSuccess(msg){
-            $("#registerPanel").slideUp("slow");
-            $(".bodyMask").hide();
-        }
-        function onRegisterFailure(msg){
-            if(msg.errCode === -1001){
-                showErrorMsg($("#registerPanel .error-username"),msg.errMsgCn);
-            }
-            if(msg.errCode === -1002){
-                showErrorMsg($("#registerPanel .error-email"),msg.errMsgCn);
-            }
-        }
-    });
-}
+    function _open(){
+        $(".bodyMask").show();
+        $("#signUpPanel").slideDown("slow");
+        o.emit("signUpPanel_open");
+    }
 
-/**
- * 初始化登陆面板
- */
-function initLoginPanel(){
-    $("#loginPanel .closeBtn").on("click",function(){
+    function onRegisterSuccess(msg){
+        $("#signUpPanel").slideUp("slow");
         $(".bodyMask").hide();
-        $("#loginPanel").slideUp("slow");
+        o.emit("signUpPanel_signUp_success");
+    }
+
+    function onRegisterFailure(msg){
+        if(msg.errCode === -1001){
+            showErrorMsg($("#signUpPanel .error-username"),msg.errMsgCn);
+        }
+        if(msg.errCode === -1002){
+            showErrorMsg($("#signUpPanel .error-email"),msg.errMsgCn);
+        }
+    }
+
+    function validateRegister(data){
+        $(".signInPanel .error-msg").each(function(){
+            $(this).hide();
+        });
+        data = data || {};
+        if(!data.username){
+            showErrorMsg($("#signUpPanel .error-username"),"请输入称号");
+            return false;
+        }
+        if(!data.email){
+            showErrorMsg($("#signUpPanel .error-email"),"请输入邮箱");
+            return false;
+        }
+        if(!validateEmail(data.email)){
+            showErrorMsg($("#signUpPanel .error-email"),"邮箱不合法");
+            return false;
+        }
+        if(!data.password){
+            showErrorMsg($("#signUpPanel .error-password"),"请设置密码");
+            return false;
+        }
+        if(!data.password2){
+            showErrorMsg($("#signUpPanel .error-password2"),"请确认密码");
+            return false;
+        }
+        if(data.password !== data.password2){
+            showErrorMsg($("#signUpPanel .error-password2"),"密码不一致");
+            return false
+        }
+        return true;
+    }
+
+    o.on("menuOptionBar_open",_close);
+
+    o.on("signInPanel_open",_close);
+
+    return o;
+}());
+
+var signInPanel = (function(){
+    var o = new Component();
+
+    o.init = function(){
+        $("#doLoginBtn").on("click",_open);
+
+        $("#signInPanel .closeBtn").on("click",_close);
+
+        $("#doLogin").on("click",function(){
+            var data = getValueFromInputArr($("#signInPanel"));
+            _validate(data) && submitFrom("/doLogin",data, _onSuccess, _onFailure);
+        });
+    };
+
+    function _open(){
+        $(".bodyMask").show();
+        $("#signInPanel").slideDown("slow");
+        o.emit("signInPanel_open");
+    }
+
+    function _close(){
+        $(".bodyMask").hide();
+        $("#signInPanel").slideUp("slow");
+        o.emit("signInPanel_close");
+    }
+
+    function _validate(data){
+        $(".signInPanel .error-msg").each(function(){
+            $(this).hide();
+        });
+        data = data || {};
+        if(!data.email){
+            showErrorMsg($("#signInPanel .error-email"),"请输入邮箱");
+            return false;
+        }
+        if(!validateEmail(data.email)){
+            showErrorMsg($("#signInPanel .error-email"),"邮箱不合法");
+            return false;
+        }
+        if(!data.password){
+            showErrorMsg($("#signInPanel .error-password"),"请输入密码");
+            return false;
+        }
+        return true;
+    }
+
+    function _onSuccess(msg){
+        $("#topBarUser .topbar-userinfo-name").html(msg.username);
+        msg.avertarUrl && $("#topBarUser .topbar-userinfo-avatar").attr("src",msg.avertarUrl);
+
+        $("#topBarUser .signIn-reg").hide();
+        $("#topBarUser .topbar-userinfo").show();
+        _close();
+        o.emit("signInPanel_signIn_success");
+    }
+
+    function _onFailure(msg){
+        if(msg.errCode === -1001){
+            showErrorMsg($("#signInPanel .error-username"),msg.errMsgCn);
+        }
+        if(msg.errCode === -1002){
+            showErrorMsg($("#signInPanel .error-email"),msg.errMsgCn);
+        }
+    }
+
+    o.on("menuOptionBar_open",_close);
+
+    o.on("signUpPanel_open",_close);
+
+    return o;
+}());
+
+var topBar = (function(){
+    var o = new Component();
+
+    o.on("signUpPanel_signUp_success",function(){
+        //TODO:响应注册成功
     });
 
-    $("#doLogin").on("click",function(){
-        var data = getValueFromInputArr($("#loginPanel"));
-        validateLogin(data)
-            && submitFrom("/doLogin",data, onLoginSuccess, onLoginFailure);
-        function onLoginSuccess(msg){
-            $("#topBarUser .topbar-userinfo-name").html(msg.username);
-            msg.avertarUrl && $("#topBarUser .topbar-userinfo-avatar").attr("src",msg.avertarUrl);
-
-            $("#topBarUser .login-reg").hide();
-            $("#topBarUser .topbar-userinfo").show();
-
-            $("#loginPanel").slideUp("slow");
-            $(".bodyMask").hide();
-        }
-        function onLoginFailure(msg){
-            if(msg.errCode === -1001){
-                showErrorMsg($("#loginPanel .error-username"),msg.errMsgCn);
-            }
-            if(msg.errCode === -1002){
-                showErrorMsg($("#loginPanel .error-email"),msg.errMsgCn);
-            }
-        }
+    o.on("signInPanel_signIn_success",function(){
+        //TODO:响应登陆成功
     });
-}
 
+}());
 
 function getValueFromInputArr($content){
     var _data = {};
@@ -99,68 +215,6 @@ function getValueFromInputArr($content){
         val && name && (_data[name] = val);
     });
     return _data;
-}
-
-/**
- * 效验注册信息
- * @param data
- * @returns {boolean}
- */
-function validateRegister(data){
-    $(".loginPanel .error-msg").each(function(){
-        $(this).hide();
-    });
-    data = data || {};
-    if(!data.username){
-        showErrorMsg($("#registerPanel .error-username"),"请输入称号");
-        return false;
-    }
-    if(!data.email){
-        showErrorMsg($("#registerPanel .error-email"),"请输入邮箱");
-        return false;
-    }
-    if(!validateEmail(data.email)){
-        showErrorMsg($("#registerPanel .error-email"),"邮箱不合法");
-        return false;
-    }
-    if(!data.password){
-        showErrorMsg($("#registerPanel .error-password"),"请设置密码");
-        return false;
-    }
-    if(!data.password2){
-        showErrorMsg($("#registerPanel .error-password2"),"请确认密码");
-        return false;
-    }
-    if(data.password !== data.password2){
-        showErrorMsg($("#registerPanel .error-password2"),"密码不一致");
-        return false
-    }
-    return true;
-}
-
-/**
- * 效验登陆信息
- * @param data
- * @returns {boolean}
- */
-function validateLogin(data){
-    $(".loginPanel .error-msg").each(function(){
-        $(this).hide();
-    });
-    data = data || {};
-    if(!data.email){
-        showErrorMsg($("#loginPanel .error-email"),"请输入邮箱");
-        return false;
-    }
-    if(!validateEmail(data.email)){
-        showErrorMsg($("#loginPanel .error-email"),"邮箱不合法");
-        return false;
-    }
-    if(!data.password){
-        showErrorMsg($("#loginPanel .error-password"),"请输入密码");
-        return false;
-    }
-    return true;
 }
 
 /**

@@ -17,14 +17,14 @@ block statusBar
                         div.menu-body
                             div
                                 h4 我的垂钓
-                                div 分享渔获
-                                div 垂钓历史
+                                span 分享渔获
+                                span 垂钓历史
                             div
                                 h4 我的好友
-                                div 好友列表
+                                span 好友列表
                             div
                                 h4 用户信息
-                                div 关于我
+                                span 关于我
                         div.menu-foot
                             span.btn
                                 span.glyphicon.glyphicon-pushpin 固定到左侧
@@ -37,11 +37,11 @@ block statusBar
                             button.btn.btn-default
                                 span.glyphicon.glyphicon-search
                 div#topBarUser.col-md-2
-                    div.login-reg
+                    div.signIn-reg
                         button#doLoginBtn.btn.btn-default
                             span.glyphicon.glyphicon-user
                                 |登陆
-                        button#registerBtn.btn.btn-default
+                        button#signUpBtn.btn.btn-default
                             span.glyphicon.glyphicon-user
                                 |注册
                     div.topbar-userinfo
@@ -49,14 +49,14 @@ block statusBar
                             img.topbar-userinfo-avatar(src="/images/header.jpg")
                         div.topbar-userinfo-name 周中余
     div.bodyMask
-    div#loginPanel.loginPanel
+    div#signInPanel.signInPanel
         div.sheet
             div.head
                 h2 登陆
             div.body
-                div.loginConnect
+                div.signInConnect
                     h5 使用合作网站账号登陆
-                div.loginForm.form-horizontal
+                div.signInForm.form-horizontal
                     h5 使用注册邮箱登陆
                     div.form-group
                         label.col-sm-3.control-label 邮箱
@@ -74,14 +74,14 @@ block statusBar
                 div.clearfix
             a.closeBtn
 
-    div#registerPanel.loginPanel
+    div#signUpPanel.signInPanel
         div.sheet
             div.head
                 h2 注册
             div.body
-                div.loginConnect
+                div.signInConnect
                     h5 使用合作网站账号注册
-                div.loginForm.form-horizontal
+                div.signInForm.form-horizontal
                     h5 使用邮箱注册
                     div.form-group
                         label.col-sm-3.control-label 称号
