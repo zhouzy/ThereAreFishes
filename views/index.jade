@@ -5,7 +5,7 @@ block selfJSfile
     script(type="text/javascript",src="/javascripts/func/index.js")
     //-script(type="text/javascript",src="http://api.map.baidu.com/api?v=2.0&ak=KN8ipINyWjl55TErrURM3gRu")
 block statusBar
-    nav#topbar.navbar.navbar-default.navbar-fixed-top(role=navigation)
+    nav#topBar.navbar.navbar-default.navbar-fixed-top(role=navigation)
         div.container
             div.row
                 div#topBarLogo.col-md-1
@@ -26,7 +26,7 @@ block statusBar
                                 h4 用户信息
                                 span 关于我
                         div.menu-foot
-                            span.btn
+                            span.btn#pin
                                 span.glyphicon.glyphicon-pushpin 固定到左侧
                         div.menu-uparrow
                 div#topBarSearch.col-md-8
@@ -48,6 +48,22 @@ block statusBar
                         a(href="javascript:void(0)")
                             img.topbar-userinfo-avatar(src="/images/header.jpg")
                         div.topbar-userinfo-name 周中余
+    div#leftOptions.left-sidebar
+        div.nav
+            a(onclick="javascript:void(0)")
+                i.icon-user
+        div.nav
+            a(onclick="javascript:void(0)")
+                i.icon-list
+        div.nav
+            a(onclick="javascript:void(0)")
+                i.icon-users
+        div.nav
+            a(onclick="javascript:void(0)")
+                i.icon-users
+        div.nav-des
+            span.narrow-left
+            span.nav-des-right 垂钓历史
     div.bodyMask
     div#signInPanel.signInPanel
         div.sheet
@@ -133,13 +149,10 @@ block itemContent
                                         h4 鱼钩
                                         p #{itemList[i].fishings[0].fishTools.fishhook}
                         div.itemInfo
-                            div.userInfo
-                                a(href="javascript:void(0)")
-                                    img.avatar(src="/images/header.jpg")
-                                div.userName #{itemList[i].username}
-                            div.mapBtn
-                               button.btn.btn-default
-                                    span.glyphicon.glyphicon-globe 查看地图
+                            a.avatar
+                                img(src="/images/header.jpg")
+                            span.userName #{itemList[i].username}
+                            span.mapBtn 查看地图
 //-
     script(type="text/javascript")
         var map = new BMap.Map("bdMap");            // 创建Map实例

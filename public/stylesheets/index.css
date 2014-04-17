@@ -56,32 +56,52 @@
 	-webkit-transform:rotateY(180deg);
 	-moz-transform:rotateY(180deg);
 }
+
 .itemInfo{
     background-color:#FAFAFA;
     border-top:1px solid #F2F2F2;
-    padding:0 5px;
+    padding-left:5px;
     height:50px;
 }
-.itemInfo .userInfo,.itemInfo .mapBtn{
-    display:inline-block;
+
+.itemInfo>*{
+    display: inline-block;
+    line-height: 49px;
+    height:49px;
+    vertical-align:top;
 }
-.userInfo{
-    width:65%;
-}
-.mapBtn{
-    width:35%;
-}
+
 .userName{
-    display:inline-block;
-    line-height:49px;
+    width:63%;
     border-left:1px solid #F2F2F2;
     font-size:0.625em;
+    word-break:keep-all;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
 }
+
 .avatar{
+    width:17%;
+}
+.avatar>img{
     width:40px;
     height:40px;
-    margin:5px 5px 5px 0;
+    margin: 5px;
+    margin-left: 0;
+    vertical-align: baseline;
 }
+.mapBtn{
+    background-color: #F2F2F2;
+    width:20%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.mapBtn:hover{
+    background-color: #EBEBEB;
+}
+
 .fishtool{
     margin:5px;
     height:60px;

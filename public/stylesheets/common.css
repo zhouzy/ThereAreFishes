@@ -9,7 +9,7 @@ div{
     display:block;
 }
 
-#topbar{
+#topBar{
     box-shadow: 0 0 4px rgba(0,0,0,.2);
     min-height: 45px;
     background:#ffffff;
@@ -160,7 +160,7 @@ div{
 .clearLeftPadding{
     padding-left: 0;
 }
-#registerPanel .signInConnect,#registerPanel .signInForm{
+#signUpPanel .signInConnect,#signUpPanel .signInForm{
     height: 260px;
 }
 .signInPanel .signInConnect{
@@ -203,6 +203,64 @@ div{
     border-radius: 5px;
     border:1px solid #adadad;
 }
+
 .menu-body>div>span:hover{
-    background-color: #ebebeb;
+    background-color: #EBEBEB;
+}
+
+.left-sidebar{
+    position: absolute;
+    top:0px;
+    bottom:0px;
+    width:50px;
+    background-color: #666;
+    z-index: 999999;
+}
+.left-sidebar .nav{
+    border-bottom: 1px solid #555;
+    height:50px;
+    width:100%;
+    position: relative;
+}
+.left-sidebar .nav>a{
+    display: block;
+    width:50px;
+    height:50px;
+    font-size: 20px;
+    color:#E1E1E1;
+    cursor: pointer;
+}
+.left-sidebar .nav>a:hover{
+    color:#FFFFFF;
+}
+.left-sidebar i{
+    position: absolute;
+    left:50%;
+    top:50%;
+    margin:-10px 0 0 -12px;
+}
+.left-sidebar .nav-des{
+    position: absolute;
+    left:50px;
+    top:13px;
+    width:150px;
+}
+.narrow-left{
+    width:10px;
+    height:10px;
+    border:5px solid transparent;
+    border-right:5px solid #555;
+}
+
+.left-sidebar .nav-des>span{
+    display: inline-block;
+    line-height: 40px;
+}
+.nav-des-right{
+    width:100px;
+    text-align: center;
+    height:40px;
+    border-radius: 5px;
+    background-color: #555;
+    color:#FFF;
 }

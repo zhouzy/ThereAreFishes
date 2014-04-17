@@ -34,9 +34,17 @@ var menuOptionBar = (function(){
         o.emit("menuOptionBar_close");
     }
 
+    function _showLeft(){
+        $("#topBarOptions").hide();
+        $("#leftOptions").show();
+    }
+
     o.on("signInBar_open",function(){
         _hide();
     });
+
+
+
     return o;
 }());
 
