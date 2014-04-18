@@ -16,15 +16,13 @@ block statusBar
                     div.menu
                         div.menu-body
                             div
-                                h4 我的垂钓
+                                h4 去钓鱼
+                                span 召集朋友
                                 span 分享渔获
-                                span 垂钓历史
+                                span 足迹
                             div
-                                h4 我的好友
-                                span 好友列表
-                            div
-                                h4 用户信息
-                                span 关于我
+                                h4 关于我
+                                span 个人信息
                         div.menu-foot
                             span.btn#pin
                                 span.glyphicon.glyphicon-pushpin 固定到左侧
@@ -50,17 +48,20 @@ block statusBar
                         div.topbar-userinfo-name 周中余
     div#leftOptions.left-sidebar
         div.nav
-            a(onclick="javascript:void(0)")
+            a(onclick="javascript:void(0)" )
+                i.icon-pin
+        div.nav
+            a(onclick="javascript:void(0)" data-title="召集朋友")
+                i.icon-flag
+        div.nav
+            a(onclick="javascript:void(0)" data-title="分享渔获")
+                i.icon-heart
+        div.nav
+            a(onclick="javascript:void(0)" data-title="足迹")
+                i.icon-picture
+        div.nav
+            a(onclick="javascript:void(0)" data-title="个人信息")
                 i.icon-user
-        div.nav
-            a(onclick="javascript:void(0)")
-                i.icon-list
-        div.nav
-            a(onclick="javascript:void(0)")
-                i.icon-users
-        div.nav
-            a(onclick="javascript:void(0)")
-                i.icon-users
         div.nav-des
             span.narrow-left
             span.nav-des-right 垂钓历史

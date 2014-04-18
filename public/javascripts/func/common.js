@@ -10,6 +10,7 @@ $(function(){
     menuOptionBar.init();
     signInPanel.init();
     signUpPanel.init();
+    leftMenuBar.init();
 });
 
 var menuOptionBar = (function(){
@@ -42,9 +43,37 @@ var menuOptionBar = (function(){
     o.on("signInBar_open",function(){
         _hide();
     });
+    return o;
+}());
 
+var leftMenuBar = (function(){
+    var o = new Component();
+    o.init = function(){
+        $("#leftOptions a[data-title]").each(function(index,value){
+           $(value).on("mouseover",_getAddNavNameF(index + 1))
+                  .on("mouseout",_delNavName);
+        });
+    };
 
+    function _getAddNavNameF(i){
+        return function(e){
+            var des = $(e.target).data("title"),
+                top = i*51;
+                $leftOptions = $("#leftOptions");
+            if(des){
+                $leftOptions.append(
+                    '<div class="nav-des" style="top:' + top + 'px">' +
+                        '<span class="narrow-left"></span>' +
+                        '<span class="nav-des-right">' + des + '</span>' +
+                    '</div>'
+                );
+            }
+        }
+    }
 
+    function _delNavName(){
+        $("#leftOptions .nav-des").remove();
+    }
     return o;
 }());
 
