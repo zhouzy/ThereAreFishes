@@ -13,7 +13,7 @@
         },
         emit:function(event,data){
             if(eventsQueue[event] && eventsQueue[event].push){
-                for(var i=2; i<eventsQueue[event].length; i++){
+                for(var i=0; i<eventsQueue[event].length; i++){
                     eventsQueue[event][i].call(data);
                 }
             }
