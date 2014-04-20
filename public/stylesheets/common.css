@@ -215,6 +215,7 @@ div{
     width:50px;
     background-color: #666;
     z-index: 999999;
+    display: none;
 }
 .left-sidebar .nav{
     border-bottom: 1px solid #555;

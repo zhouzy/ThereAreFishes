@@ -8,9 +8,9 @@
 
 $(function(){
     menuOptionBar.init();
+    leftMenuBar.init();
     signInPanel.init();
     signUpPanel.init();
-    leftMenuBar.init();
 });
 
 var menuOptionBar = (function(){
@@ -22,6 +22,12 @@ var menuOptionBar = (function(){
             _show();
         }).on("mouseleave",function(){
             timeoutHandler = setTimeout(_hide,1000);
+        });
+
+        $("#pin").on("click",function(){
+            $("#topBarOptions").css("visibility","hidden");
+            _hide();
+            o.emit("menuOptionBar:pin_click");
         });
     };
 
@@ -35,14 +41,14 @@ var menuOptionBar = (function(){
         o.emit("menuOptionBar_close");
     }
 
-    function _showLeft(){
-        $("#topBarOptions").hide();
-        $("#leftOptions").show();
-    }
+    o.on("leftMenuBar:pin_click",function(){
+        $("#topBarOptions").css("visibility","visible");
+    });
 
     o.on("signInBar_open",function(){
         _hide();
     });
+
     return o;
 }());
 
@@ -50,8 +56,12 @@ var leftMenuBar = (function(){
     var o = new Component();
     o.init = function(){
         $("#leftOptions a[data-title]").each(function(index,value){
-           $(value).on("mouseover",_getAddNavNameF(index + 1))
-                  .on("mouseout",_delNavName);
+           $(value).on("mouseenter",_getAddNavNameF(index + 1))
+                  .on("mouseleave",_delNavName);
+        });
+        $("#leftOptions a:eq(0)").on("click",function(){
+            _hide();
+            o.emit("leftMenuBar:pin_click");
         });
     };
 
@@ -71,9 +81,20 @@ var leftMenuBar = (function(){
         }
     }
 
+    function _show(){
+        $("#leftOptions").show();
+    }
+    function _hide(){
+        $("#leftOptions").hide();
+    }
+
     function _delNavName(){
         $("#leftOptions .nav-des").remove();
     }
+
+    o.on("menuOptionBar:pin_click",function(){
+        _show();
+    });
     return o;
 }());
 

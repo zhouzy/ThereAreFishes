@@ -20,9 +20,6 @@ block statusBar
                                 span 召集朋友
                                 span 分享渔获
                                 span 足迹
-                            div
-                                h4 关于我
-                                span 个人信息
                         div.menu-foot
                             span.btn#pin
                                 span.glyphicon.glyphicon-pushpin 固定到左侧
@@ -40,7 +37,7 @@ block statusBar
                             span.glyphicon.glyphicon-user
                                 |登陆
                         button#signUpBtn.btn.btn-default
-                            span.glyphicon.glyphicon-user
+                            span.glyphicon.glyphicon-pencil
                                 |注册
                     div.topbar-userinfo
                         a(href="javascript:void(0)")
@@ -48,7 +45,7 @@ block statusBar
                         div.topbar-userinfo-name 周中余
     div#leftOptions.left-sidebar
         div.nav
-            a(onclick="javascript:void(0)" )
+            a(onclick="javascript:void(0)" title="解除锁定")
                 i.icon-pin
         div.nav
             a(onclick="javascript:void(0)" data-title="召集朋友")
@@ -59,9 +56,6 @@ block statusBar
         div.nav
             a(onclick="javascript:void(0)" data-title="足迹")
                 i.icon-picture
-        div.nav
-            a(onclick="javascript:void(0)" data-title="个人信息")
-                i.icon-user
     div.bodyMask
     div#signInPanel.signInPanel
         div.sheet
