@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c29543b7-baaf-4310-93e0-38936d0715f6" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/common.css" afterPath="$PROJECT_DIR$/public/stylesheets/common.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/func/common.js" afterPath="$PROJECT_DIR$/public/javascripts/func/common.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.jade" afterPath="$PROJECT_DIR$/views/index.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="thereAreFish.iws" />
@@ -25,37 +28,48 @@
     <favorites_list name="thereAreFish" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="index.jade" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/index.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="0" selection-start="2700" selection-end="2700" vertical-scroll-proportion="0.59006214" vertical-offset="995" max-vertical-offset="3320">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="common.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/stylesheets/common.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="217" column="0" selection-start="4195" selection-end="4195" vertical-scroll-proportion="0.0" vertical-offset="4177" max-vertical-offset="5440">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="common.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/func/common.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="28" selection-start="1524" selection-end="1524" vertical-scroll-proportion="0.0" vertical-offset="1180" max-vertical-offset="5800">
-              <folding>
-                <marker date="1397804222849" expanded="true" signature="1582:1586" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.529517">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="common.css" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/public/stylesheets/common.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="71" column="0" selection-start="1289" selection-end="1289" vertical-scroll-proportion="0.038022812" vertical-offset="1400" max-vertical-offset="5860">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="common.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/javascripts/func/common.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="251" column="45" selection-start="6986" selection-end="6986" vertical-scroll-proportion="0.0" vertical-offset="4740" max-vertical-offset="6000">
+                  <folding>
+                    <marker date="1398572693032" expanded="false" signature="1911:1915" placeholder="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="index.jade" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/views/index.jade">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="33" column="29" selection-start="1464" selection-end="1464" vertical-scroll-proportion="0.038022812" vertical-offset="360" max-vertical-offset="2960">
+                  <folding>
+                    <element signature="tag#div#0;tag#div#0;tag#div#0;tag#nav#0;tag#block#2" expanded="false" />
+                    <element signature="tag#div#1;tag#div#0;tag#div#0;tag#nav#0;tag#block#2" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -112,9 +126,9 @@
         <option value="$PROJECT_DIR$/public/javascripts/func/component.js" />
         <option value="$PROJECT_DIR$/public/stylesheets/index.css" />
         <option value="$PROJECT_DIR$/views/indexlayout.jade" />
-        <option value="$PROJECT_DIR$/public/stylesheets/common.css" />
         <option value="$PROJECT_DIR$/public/javascripts/func/common.js" />
         <option value="$PROJECT_DIR$/views/index.jade" />
+        <option value="$PROJECT_DIR$/public/stylesheets/common.css" />
       </list>
     </option>
   </component>
@@ -166,6 +180,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -194,13 +209,26 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thereAreFish" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThereAreFishes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -216,7 +244,7 @@
     <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="last_opened_file_path" value="C:/Program Files/Git/cmd/git.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../througthworks" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="137" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="925" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="930" />
@@ -443,7 +471,11 @@
       <created>1397804719160</created>
       <updated>1397804719160</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="2014/04/18&#10;1.左边栏菜单 悬浮时title&#10;">
+      <created>1397805178270</created>
+      <updated>1397805178270</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -470,21 +502,21 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37010676" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5480427" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36925796" sideWeight="0.49962825" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286219" sideWeight="0.49962825" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5477032" sideWeight="0.49962825" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28327137" sideWeight="0.9982206" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09893993" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" x="410" y="68" width="464" height="635" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16877323" sideWeight="0.9982206" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27915195" sideWeight="0.50037175" order="6" side_tool="true" content_ui="tabs" x="410" y="68" width="464" height="635" />
       <window_info id="Favorites" active="false" anchor="top" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8374558" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8374558" sideWeight="0.49962825" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24377224" sideWeight="0.99878937" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4217082" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4204947" sideWeight="0.49962825" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22438163" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -785,9 +817,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="29" selection-start="1830" selection-end="1830" vertical-scroll-proportion="3.760181" vertical-offset="358" max-vertical-offset="2360">
-          <folding />
-        </state>
+        <state line="101" column="29" selection-start="1830" selection-end="1830" vertical-scroll-proportion="3.760181" vertical-offset="358" max-vertical-offset="2360" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/layout.jade">
@@ -802,37 +832,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/lib/fontello/css/fontello.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="276" column="10" selection-start="13898" selection-end="13898" vertical-scroll-proportion="2.1118011" vertical-offset="4500" max-vertical-offset="14620">
-          <folding />
-        </state>
+        <state line="276" column="10" selection-start="13898" selection-end="13898" vertical-scroll-proportion="2.1118011" vertical-offset="4500" max-vertical-offset="14620" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/func/component.js">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/func/Component.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="16" selection-start="619" selection-end="619" vertical-scroll-proportion="0.7039338" vertical-offset="0" max-vertical-offset="600">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="217" column="0" selection-start="4195" selection-end="4195" vertical-scroll-proportion="0.0" vertical-offset="4177" max-vertical-offset="5440">
-          <folding />
-        </state>
+        <state line="17" column="16" selection-start="619" selection-end="619" vertical-scroll-proportion="0.7039338" vertical-offset="0" max-vertical-offset="600" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/func/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="28" selection-start="1524" selection-end="1524" vertical-scroll-proportion="0.0" vertical-offset="1180" max-vertical-offset="5800">
+        <state line="251" column="45" selection-start="6986" selection-end="6986" vertical-scroll-proportion="0.0" vertical-offset="4740" max-vertical-offset="6000">
           <folding>
-            <marker date="1397804222849" expanded="true" signature="1582:1586" placeholder="..." />
+            <marker date="1398572693032" expanded="false" signature="1911:1915" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/index.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="0" selection-start="2700" selection-end="2700" vertical-scroll-proportion="0.59006214" vertical-offset="995" max-vertical-offset="3320">
+        <state line="33" column="29" selection-start="1464" selection-end="1464" vertical-scroll-proportion="0.038022812" vertical-offset="360" max-vertical-offset="2960">
+          <folding>
+            <element signature="tag#div#0;tag#div#0;tag#div#0;tag#nav#0;tag#block#2" expanded="false" />
+            <element signature="tag#div#1;tag#div#0;tag#div#0;tag#nav#0;tag#block#2" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="0" selection-start="1289" selection-end="1289" vertical-scroll-proportion="0.038022812" vertical-offset="1400" max-vertical-offset="5860">
           <folding />
         </state>
       </provider>

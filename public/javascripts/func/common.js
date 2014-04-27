@@ -100,13 +100,9 @@ var leftMenuBar = (function(){
 
 var signUpPanel = (function(){
     var o = new Component();
-
     o.init = function(){
-
         $("#signUpBtn").on("click",_open);
-
         $("#signUpPanel .closeBtn").on("click",_close);
-
         $("#doRegister").on("click",function(){
             var data = getValueFromInputArr($("#signUpPanel"));
             validateRegister(data) && submitFrom("/doRegister",data,onRegisterSuccess,onRegisterFailure);
@@ -181,12 +177,9 @@ var signUpPanel = (function(){
 
 var signInPanel = (function(){
     var o = new Component();
-
     o.init = function(){
         $("#doLoginBtn").on("click",_open);
-
         $("#signInPanel .closeBtn").on("click",_close);
-
         $("#doLogin").on("click",function(){
             var data = getValueFromInputArr($("#signInPanel"));
             _validate(data) && submitFrom("/doLogin",data, _onSuccess, _onFailure);
@@ -228,11 +221,10 @@ var signInPanel = (function(){
     function _onSuccess(msg){
         $("#topBarUser .topbar-userinfo-name").html(msg.username);
         msg.avertarUrl && $("#topBarUser .topbar-userinfo-avatar").attr("src",msg.avertarUrl);
-
         $("#topBarUser .signIn-reg").hide();
         $("#topBarUser .topbar-userinfo").show();
         _close();
-        o.emit("signInPanel_signIn_success");
+        o.emit("signInPanel_signIn_success",msg);
     }
 
     function _onFailure(msg){
@@ -253,15 +245,12 @@ var signInPanel = (function(){
 
 var topBar = (function(){
     var o = new Component();
-
-    o.on("signUpPanel_signUp_success",function(){
-        //TODO:响应注册成功
-    });
-
-    o.on("signInPanel_signIn_success",function(){
-        //TODO:响应登陆成功
-    });
-
+    o.on("signUpPanel_signUp_success",_initUserInfo);
+    o.on("signInPanel_signIn_success",_initUserInfo);
+    function _initUserInfo(userInfo){
+        $("#topBarUser .signIn-reg").hide();
+        $("#topBarUser .topbar-userinfo").show();
+    }
 }());
 
 function getValueFromInputArr($content){

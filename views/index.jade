@@ -32,17 +32,19 @@ block statusBar
                             button.btn.btn-default
                                 span.glyphicon.glyphicon-search
                 div#topBarUser.col-md-2
-                    div.signIn-reg
-                        button#doLoginBtn.btn.btn-default
-                            span.glyphicon.glyphicon-user
-                                |登陆
-                        button#signUpBtn.btn.btn-default
-                            span.glyphicon.glyphicon-pencil
-                                |注册
-                    div.topbar-userinfo
-                        a(href="javascript:void(0)")
-                            img.topbar-userinfo-avatar(src="/images/header.jpg")
-                        div.topbar-userinfo-name 周中余
+                    //-
+                        div.signIn-reg
+                            button#doLoginBtn.btn.btn-default
+                                span.glyphicon.glyphicon-user
+                                    |登陆
+                            button#signUpBtn.btn.btn-default
+                                span.glyphicon.glyphicon-pencil
+                                    |注册
+                    div#topbar-userinfo-upload
+                        i.icon-plus
+                    div#topbar-userinfo-avatar
+                        img(src="/images/header.jpg")
+
     div#leftOptions.left-sidebar
         div.nav
             a(onclick="javascript:void(0)" title="解除锁定")

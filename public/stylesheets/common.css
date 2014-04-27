@@ -16,7 +16,7 @@ div{
     z-index: 99999;
 }
 
-#logo,#topBarOptions{
+#logo,#topBarOptions,#topBarUser{
     height:45px;
 }
 
@@ -70,8 +70,12 @@ div{
     padding-top: 5px;
 }
 
-#topBarUser .topbar-userinfo{
+#topBarUser .signIn-reg{
+    padding-top: 5px;
     display: none;
+}
+#topBarUser .topbar-userinfo{
+    /*display: none;*/
 }
 
 #topBarUser .topbar-userinfo-avatar{
@@ -79,14 +83,30 @@ div{
     height:40px;
     margin:0px 5px;
 }
-
-#topBarUser .topbar-userinfo-name{
-    display:inline-block;
-    line-height:45px;
-    border-left:1px solid #F2F2F2;
-    font-size:0.625em;
+#topbar-userinfo-upload,#topbar-userinfo-avatar{
+    display: inline-block;
+    width:50px;
+    height:45px;
+    position: relative;
+    border-left: 1px solid #F2F2F2;
+}
+#topbar-userinfo-upload>i,#topbar-userinfo-avatar>img{
+    width:16px;
+    height:16px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin: -8px 0 0 -8px;
+}
+#topbar-userinfo-avatar>img{
+    width:24px;
+    height:24px;
+    margin: -12px 0 0 -12px;
 }
 
+#topbar-userinfo-avatar{
+    border-right: 1px solid #F2F2F2;
+}
 #content{
     min-height:70%;
     _height:70%;
