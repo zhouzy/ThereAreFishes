@@ -38,7 +38,7 @@ div{
     margin: -8px 0 0 -8px;
 }
 
-#topBarOptions .arrow{
+.arrow{
     background: url(../images/menu_sprite.png) 0 -50px no-repeat;
     width: 8px;
     height: 8px;
@@ -72,10 +72,6 @@ div{
 
 #topBarUser .signIn-reg{
     padding-top: 5px;
-    display: none;
-}
-#topBarUser .topbar-userinfo{
-    /*display: none;*/
 }
 
 #topBarUser .topbar-userinfo-avatar{
@@ -83,14 +79,28 @@ div{
     height:40px;
     margin:0px 5px;
 }
-#topbar-userinfo-upload,#topbar-userinfo-avatar{
+
+.topbar-btn{
+    text-align: center;
     display: inline-block;
     width:50px;
     height:45px;
+    line-height:45px;
     position: relative;
     border-left: 1px solid #F2F2F2;
+    cursor:pointer;
+    vertical-align: top;
 }
-#topbar-userinfo-upload>i,#topbar-userinfo-avatar>img{
+
+#topbar-userinfo-avatar,#topbar-userinfo-upload{
+    display:none;
+}
+
+#topbar-userinfo-upload:hover{
+    color:RED;
+}
+
+#topbar-userinfo-avatar>img{
     width:16px;
     height:16px;
     position: absolute;
@@ -104,9 +114,38 @@ div{
     margin: -12px 0 0 -12px;
 }
 
-#topbar-userinfo-avatar{
+#topbar-userinfo-avatar,#signup-btn{
     border-right: 1px solid #F2F2F2;
 }
+
+#topbar-userinfo-menu{
+    list-style: none;
+    border:1px solid #F2F2F2;
+    width:140px;
+    position: absolute;
+    top:45px;
+    left:1px;
+    background-color: #FFF;
+    padding:0px;
+    display:none;
+}
+
+#topbar-userinfo-menu>li{
+    height:40px;
+    line-height:40px;
+    border-bottom: 1px solid #F2F2F2;
+    padding-left: 40px;
+}
+
+#topbar-userinfo-menu>li:hover{
+    background-color: #F2F2F2;
+}
+
+#topbar-userinfo-menu>li>a>i{
+    position: absolute;
+    left:20px;
+}
+
 #content{
     min-height:70%;
     _height:70%;

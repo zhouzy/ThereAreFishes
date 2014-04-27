@@ -101,7 +101,7 @@ var leftMenuBar = (function(){
 var signUpPanel = (function(){
     var o = new Component();
     o.init = function(){
-        $("#signUpBtn").on("click",_open);
+        $("#signup-btn").on("click",_open);
         $("#signUpPanel .closeBtn").on("click",_close);
         $("#doRegister").on("click",function(){
             var data = getValueFromInputArr($("#signUpPanel"));
@@ -178,7 +178,7 @@ var signUpPanel = (function(){
 var signInPanel = (function(){
     var o = new Component();
     o.init = function(){
-        $("#doLoginBtn").on("click",_open);
+        $("#signin-btn").on("click",_open);
         $("#signInPanel .closeBtn").on("click",_close);
         $("#doLogin").on("click",function(){
             var data = getValueFromInputArr($("#signInPanel"));
@@ -248,8 +248,13 @@ var topBar = (function(){
     o.on("signUpPanel_signUp_success",_initUserInfo);
     o.on("signInPanel_signIn_success",_initUserInfo);
     function _initUserInfo(userInfo){
-        $("#topBarUser .signIn-reg").hide();
-        $("#topBarUser .topbar-userinfo").show();
+        $("#signin-btn,#signup-btn").css("display","none");
+        $("#topbar-userinfo-upload,#topbar-userinfo-avatar").css("display","inline-block");
+        $("#topbar-userinfo-avatar").on("mouseenter",function(){
+            $("#topbar-userinfo-menu").css("display","inline-block");
+        }).on("mouseleave",function(){
+            $("#topbar-userinfo-menu").css("display","none");
+        });
     }
 }());
 

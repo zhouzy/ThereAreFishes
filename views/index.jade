@@ -6,45 +6,52 @@ block selfJSfile
     //-script(type="text/javascript",src="http://api.map.baidu.com/api?v=2.0&ak=KN8ipINyWjl55TErrURM3gRu")
 block statusBar
     nav#topBar.navbar.navbar-default.navbar-fixed-top(role=navigation)
-        div.container
-            div.row
-                div#topBarLogo.col-md-1
-                    img#logo(src="/images/logo.png")
-                div#topBarOptions.col-md-1
-                    div.nav-icon
+        div.row
+            div#topBarLogo.col-md-1
+                img#logo(src="/images/logo.png")
+            div#topBarOptions.col-md-1
+                div.nav-icon
+                div.arrow
+                div.menu
+                    div.menu-body
+                        div
+                            h4 去钓鱼
+                            span 召集朋友
+                            span 分享渔获
+                            span 足迹
+                    div.menu-foot
+                        span.btn#pin
+                            span.glyphicon.glyphicon-pushpin 固定到左侧
+                    div.menu-uparrow
+            div#topBarSearch.col-md-8
+                div.input-group
+                    span.input-group-addon 搜索
+                    input.form-control(type="text")
+                    span#searchBtn.input-group.input-group-btn
+                        button.btn.btn-default
+                            span.glyphicon.glyphicon-search
+            div#topBarUser.col-md-2
+                div#signin-btn.topbar-btn
+                    i.icon-login
+                    |登陆
+                div#signup-btn.topbar-btn
+                    i.icon-pencil
+                    |注册
+                div#topbar-userinfo-upload.topbar-btn
+                    i.icon-plus(title="分享渔获")
+                div#topbar-userinfo-avatar.topbar-btn
+                    img(src="/images/header.jpg")
                     div.arrow
-                    div.menu
-                        div.menu-body
-                            div
-                                h4 去钓鱼
-                                span 召集朋友
-                                span 分享渔获
-                                span 足迹
-                        div.menu-foot
-                            span.btn#pin
-                                span.glyphicon.glyphicon-pushpin 固定到左侧
-                        div.menu-uparrow
-                div#topBarSearch.col-md-8
-                    div.input-group
-                        span.input-group-addon 搜索
-                        input.form-control(type="text")
-                        span#searchBtn.input-group.input-group-btn
-                            button.btn.btn-default
-                                span.glyphicon.glyphicon-search
-                div#topBarUser.col-md-2
-                    //-
-                        div.signIn-reg
-                            button#doLoginBtn.btn.btn-default
-                                span.glyphicon.glyphicon-user
-                                    |登陆
-                            button#signUpBtn.btn.btn-default
-                                span.glyphicon.glyphicon-pencil
-                                    |注册
-                    div#topbar-userinfo-upload
-                        i.icon-plus
-                    div#topbar-userinfo-avatar
-                        img(src="/images/header.jpg")
-
+                    ul#topbar-userinfo-menu
+                        li
+                            a 我的足迹
+                                i.icon-camera
+                        li
+                            a 帐号设置
+                                i.icon-cog
+                        li
+                            a 退出登录
+                                i.icon-logout
     div#leftOptions.left-sidebar
         div.nav
             a(onclick="javascript:void(0)" title="解除锁定")
