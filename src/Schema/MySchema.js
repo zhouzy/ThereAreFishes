@@ -7,11 +7,11 @@
  */
 var mongoose = require("mongoose");
 exports.User = new mongoose.Schema({
-    userId: String,
-    email: String,
+    userId:String,
+    email:String,
     password:String,
-    phoneNo: String,
-    username: String,
+    phoneNo:String,
+    username:String,
     avertarUrl:String,
     fishings:[]
 });

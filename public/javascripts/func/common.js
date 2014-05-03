@@ -7,17 +7,17 @@
  */
 
 $(function(){
-    menuOptionBar.init();
-    leftMenuBar.init();
-    signInPanel.init();
-    signUpPanel.init();
+    topBarOptions.init();
+    sidebar.init();
+    signinPanel.init();
+    signupPanel.init();
 });
 
-var menuOptionBar = (function(){
+var topBarOptions = (function(){
     var o = new Component();
     o.init = function(){
         var timeoutHandler = null;
-        $("#topBarOptions").on("mouseenter",function(){
+        $("#topbar-options").on("mouseenter",function(){
             timeoutHandler && clearTimeout(timeoutHandler);
             _show();
         }).on("mouseleave",function(){
@@ -25,24 +25,24 @@ var menuOptionBar = (function(){
         });
 
         $("#pin").on("click",function(){
-            $("#topBarOptions").css("visibility","hidden");
+            $("#topbar-options").css("visibility","hidden");
             _hide();
-            o.emit("menuOptionBar:pin_click");
+            o.emit("topbar-options:pin_click");
         });
     };
 
     function _show(){
-        $("#topBarOptions .menu").show();
-        o.emit("menuOptionBar_open");
+        $("#topbar-options .menu").show();
+        o.emit("topbar-options:open");
     }
 
     function _hide(){
-        $("#topBarOptions .menu").hide();
-        o.emit("menuOptionBar_close");
+        $("#topbar-options .menu").hide();
+        o.emit("topbar-options:close");
     }
 
-    o.on("leftMenuBar:pin_click",function(){
-        $("#topBarOptions").css("visibility","visible");
+    o.on("sidebar:pin_click",function(){
+        $("#topbar-options").css("visibility","visible");
     });
 
     o.on("signInBar_open",function(){
@@ -52,16 +52,16 @@ var menuOptionBar = (function(){
     return o;
 }());
 
-var leftMenuBar = (function(){
+var sidebar = (function(){
     var o = new Component();
     o.init = function(){
-        $("#leftOptions a[data-title]").each(function(index,value){
+        $("#sidebar a[data-title]").each(function(index,value){
            $(value).on("mouseenter",_getAddNavNameF(index + 1))
                   .on("mouseleave",_delNavName);
         });
-        $("#leftOptions a:eq(0)").on("click",function(){
+        $("#sidebar a:eq(0)").on("click",function(){
             _hide();
-            o.emit("leftMenuBar:pin_click");
+            o.emit("sidebar:pin_click");
         });
     };
 
@@ -69,9 +69,9 @@ var leftMenuBar = (function(){
         return function(e){
             var des = $(e.target).data("title"),
                 top = i*51;
-                $leftOptions = $("#leftOptions");
+                $sidebar = $("#sidebar");
             if(des){
-                $leftOptions.append(
+                $sidebar.append(
                     '<div class="nav-des" style="top:' + top + 'px">' +
                         '<span class="narrow-left"></span>' +
                         '<span class="nav-des-right">' + des + '</span>' +
@@ -82,173 +82,170 @@ var leftMenuBar = (function(){
     }
 
     function _show(){
-        $("#leftOptions").show();
+        $("#sidebar").show();
     }
     function _hide(){
-        $("#leftOptions").hide();
+        $("#sidebar").hide();
     }
 
     function _delNavName(){
-        $("#leftOptions .nav-des").remove();
+        $("#sidebar .nav-des").remove();
     }
 
-    o.on("menuOptionBar:pin_click",function(){
+    o.on("topbar-options:pin_click",function(){
         _show();
     });
     return o;
 }());
 
-var signUpPanel = (function(){
+var signupPanel = (function(){
     var o = new Component();
     o.init = function(){
         $("#signup-btn").on("click",_open);
-        $("#signUpPanel .closeBtn").on("click",_close);
+        $("#signup-panel .closeBtn").on("click",_close);
         $("#doRegister").on("click",function(){
-            var data = getValueFromInputArr($("#signUpPanel"));
+            var data = getValueFromInputArr($("#signup-panel"));
             validateRegister(data) && submitFrom("/doRegister",data,onRegisterSuccess,onRegisterFailure);
         });
     };
 
     function _close(){
-        $("#signUpPanel").slideUp("slow");
+        $("#signup-panel").slideUp("slow");
         $(".bodyMask").hide();
-        o.emit("signUpPanel_close");
+        o.emit("signup-panel:close");
     }
 
     function _open(){
         $(".bodyMask").show();
-        $("#signUpPanel").slideDown("slow");
-        o.emit("signUpPanel_open");
+        $("#signup-panel").slideDown("slow");
+        o.emit("signup-panel:open");
     }
 
     function onRegisterSuccess(msg){
-        $("#signUpPanel").slideUp("slow");
+        $("#signup-panel").slideUp("slow");
         $(".bodyMask").hide();
-        o.emit("signUpPanel_signUp_success");
+        o.emit("signup-panel:signup-success");
     }
 
     function onRegisterFailure(msg){
         if(msg.errCode === -1001){
-            showErrorMsg($("#signUpPanel .error-username"),msg.errMsgCn);
+            showErrorMsg($("#signup-panel .error-username"),msg.errMsgCn);
         }
         if(msg.errCode === -1002){
-            showErrorMsg($("#signUpPanel .error-email"),msg.errMsgCn);
+            showErrorMsg($("#signup-panel .error-email"),msg.errMsgCn);
         }
     }
 
     function validateRegister(data){
-        $(".signInPanel .error-msg").each(function(){
+        $(".signin-panel .error-msg").each(function(){
             $(this).hide();
         });
         data = data || {};
         if(!data.username){
-            showErrorMsg($("#signUpPanel .error-username"),"请输入称号");
+            showErrorMsg($("#signup-panel .error-username"),"请输入称号");
             return false;
         }
         if(!data.email){
-            showErrorMsg($("#signUpPanel .error-email"),"请输入邮箱");
+            showErrorMsg($("#signup-panel .error-email"),"请输入邮箱");
             return false;
         }
         if(!validateEmail(data.email)){
-            showErrorMsg($("#signUpPanel .error-email"),"邮箱不合法");
+            showErrorMsg($("#signup-panel .error-email"),"邮箱不合法");
             return false;
         }
         if(!data.password){
-            showErrorMsg($("#signUpPanel .error-password"),"请设置密码");
+            showErrorMsg($("#signup-panel .error-password"),"请设置密码");
             return false;
         }
         if(!data.password2){
-            showErrorMsg($("#signUpPanel .error-password2"),"请确认密码");
+            showErrorMsg($("#signup-panel .error-password2"),"请确认密码");
             return false;
         }
         if(data.password !== data.password2){
-            showErrorMsg($("#signUpPanel .error-password2"),"密码不一致");
+            showErrorMsg($("#signup-panel .error-password2"),"密码不一致");
             return false
         }
         return true;
     }
 
-    o.on("menuOptionBar_open",_close);
+    o.on("topbar-options:open",_close);
 
-    o.on("signInPanel_open",_close);
+    o.on("signin-panel:open",_close);
 
     return o;
 }());
 
-var signInPanel = (function(){
+var signinPanel = (function(){
     var o = new Component();
     o.init = function(){
         $("#signin-btn").on("click",_open);
-        $("#signInPanel .closeBtn").on("click",_close);
+        $("#signin-panel .closeBtn").on("click",_close);
         $("#doLogin").on("click",function(){
-            var data = getValueFromInputArr($("#signInPanel"));
+            var data = getValueFromInputArr($("#signin-panel"));
             _validate(data) && submitFrom("/doLogin",data, _onSuccess, _onFailure);
         });
     };
 
     function _open(){
         $(".bodyMask").show();
-        $("#signInPanel").slideDown("slow");
-        o.emit("signInPanel_open");
+        $("#signin-panel").slideDown("slow");
+        o.emit("signin-panel:open");
     }
 
     function _close(){
         $(".bodyMask").hide();
-        $("#signInPanel").slideUp("slow");
-        o.emit("signInPanel_close");
+        $("#signin-panel").slideUp("slow");
+        o.emit("signin-panel:close");
     }
 
     function _validate(data){
-        $(".signInPanel .error-msg").each(function(){
+        $(".signin-panel .error-msg").each(function(){
             $(this).hide();
         });
         data = data || {};
         if(!data.email){
-            showErrorMsg($("#signInPanel .error-email"),"请输入邮箱");
+            showErrorMsg($("#signin-panel .error-email"),"请输入邮箱");
             return false;
         }
         if(!validateEmail(data.email)){
-            showErrorMsg($("#signInPanel .error-email"),"邮箱不合法");
+            showErrorMsg($("#signin-panel .error-email"),"邮箱不合法");
             return false;
         }
         if(!data.password){
-            showErrorMsg($("#signInPanel .error-password"),"请输入密码");
+            showErrorMsg($("#signin-panel .error-password"),"请输入密码");
             return false;
         }
         return true;
     }
 
-    function _onSuccess(msg){
-        $("#topBarUser .topbar-userinfo-name").html(msg.username);
-        msg.avertarUrl && $("#topBarUser .topbar-userinfo-avatar").attr("src",msg.avertarUrl);
-        $("#topBarUser .signIn-reg").hide();
-        $("#topBarUser .topbar-userinfo").show();
+    function _onSuccess(data){
         _close();
-        o.emit("signInPanel_signIn_success",msg);
+        o.emit("signin-panel:signin-success",data);
     }
 
     function _onFailure(msg){
         if(msg.errCode === -1001){
-            showErrorMsg($("#signInPanel .error-username"),msg.errMsgCn);
+            showErrorMsg($("#signin-panel .error-username"),msg.errMsgCn);
         }
         if(msg.errCode === -1002){
-            showErrorMsg($("#signInPanel .error-email"),msg.errMsgCn);
+            showErrorMsg($("#signin-panel .error-email"),msg.errMsgCn);
         }
     }
 
-    o.on("menuOptionBar_open",_close);
+    o.on("topbar-options:open",_close);
 
-    o.on("signUpPanel_open",_close);
+    o.on("signup-panel:open",_close);
 
     return o;
 }());
 
 var topBar = (function(){
     var o = new Component();
-    o.on("signUpPanel_signUp_success",_initUserInfo);
-    o.on("signInPanel_signIn_success",_initUserInfo);
+    o.on("signup-panel:signup-success",_initUserInfo);
+    o.on("signin-panel:signin-success",_initUserInfo);
     function _initUserInfo(userInfo){
         $("#signin-btn,#signup-btn").css("display","none");
+        $("#topbar-userinfo-avatar>img").attr("url",userInfo.avertarUrl);
         $("#topbar-userinfo-upload,#topbar-userinfo-avatar").css("display","inline-block");
         $("#topbar-userinfo-avatar").on("mouseenter",function(){
             $("#topbar-userinfo-menu").css("display","inline-block");
@@ -269,13 +266,6 @@ function getValueFromInputArr($content){
     return _data;
 }
 
-/**
- * 提交from表单
- * @param url
- * @param param
- * @param onSuccess
- * @param onFailure
- */
 function submitFrom(url,param,onSuccess,onFailure){
     $.post(url,param,function(data){
         if(data.isSuccess){

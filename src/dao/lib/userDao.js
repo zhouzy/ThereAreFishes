@@ -51,9 +51,13 @@ userDao.addUser = function(user,callback){
  * @param password
  */
 userDao.login = function(email, password, callback){
-    User.find({email:email,password:password}).exec(function(err,data){
-        console.log(data);
-        callback(common.msgUtils.warp(true,null,data));
+    User.findOne({email:email,password:password}).exec(function(err,data){
+        if(data){
+            callback(common.msgUtils.warp(true,"查询成功",data));
+        }
+        else{
+            callback(common.msgUtils.warp(false,"用户不存在",null));
+        }
     });
 };
 

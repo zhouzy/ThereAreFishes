@@ -9,25 +9,40 @@ div{
     display:block;
 }
 
-#topBar{
+#topbar{
     box-shadow: 0 0 4px rgba(0,0,0,.2);
     min-height: 45px;
-    background:#ffffff;
-    z-index: 99999;
-}
-
-#logo,#topBarOptions,#topBarUser{
     height:45px;
+    background:#ffffff;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 99999;
+    padding: 0 100px;
 }
 
-#topBarOptions{
+#topbar>div{
+    display:inline-block;
+    height:45px;
+    vertical-align: top;
+}
+
+#topbar-logo{
+    width:50px;
+    background: url('../images/logo.png');
+    position: absolute;
+    left:50%;
+    margin-left: -25px;
+}
+#topbar-options{
     border-left:1px solid #F2F2F2;
     border-right:1px solid #F2F2F2;
     width:50px;
+    position: relative;
     cursor:pointer;
 }
 
-#topBarOptions .nav-icon{
+#topbar-options .nav-icon{
     width: 16px;
     height: 16px;
     display: block;
@@ -47,7 +62,7 @@ div{
     bottom: 0;
 }
 
-#topBarOptions .menu{
+#topbar-options .menu{
     background: #fff;
     box-shadow: 0 1px 6px rgba(0,0,0,.2);
     position: absolute;
@@ -58,7 +73,7 @@ div{
     border-radius: 3px;
     cursor: default;
 }
-#topBarOptions .menu-uparrow{
+#topbar-options .menu-uparrow{
     width: 18px;
     height: 10px;
     position: absolute;
@@ -66,15 +81,20 @@ div{
     top: -9px;
     background: url(../images/menu_arrow.png) 0 0 no-repeat;
 }
-#topBarSearch,#topBarUser .signIn-reg{
+#topbar-search{
+    padding-top: 5px;
+    margin-left: 10px;
+    width:200px;
+}
+#topbar-user{
+    position:absolute;
+    right:150px;
+}
+#topbar-user .signIn-reg{
     padding-top: 5px;
 }
 
-#topBarUser .signIn-reg{
-    padding-top: 5px;
-}
-
-#topBarUser .topbar-userinfo-avatar{
+#topbar-user .topbar-userinfo-avatar{
     width:40px;
     height:40px;
     margin:0px 5px;
@@ -108,6 +128,7 @@ div{
     left:50%;
     margin: -8px 0 0 -8px;
 }
+
 #topbar-userinfo-avatar>img{
     width:24px;
     height:24px;
@@ -160,7 +181,7 @@ div{
     z-index: 99990;
     display:none;
 }
-.signInPanel{
+.panel{
     position: fixed;
     top: 45px;
     left: 50%;
@@ -169,7 +190,7 @@ div{
     display: none;
 }
 
-.signInPanel .sheet{
+.panel-sheet{
     position: relative;
     width:800px;
     margin: auto;
@@ -185,50 +206,46 @@ div{
     -webkit-border-bottom-left-radius: 5px;
     -webkit-border-bottom-right-radius: 5px;
 }
-.signInPanel .head{
+.panel-head{
     padding:15px;
     border-bottom: 1px solid #f6f4ee;
 }
-.signInPanel .body{
+.panel-body{
     padding:15px 10px;
 }
-.signInPanel h2,.signInPanel h5{
+.panel h2,.panel h5{
     padding:0px;
     margin:0px;
 }
-.signInPanel h2{
+.panel h2{
     font-size: 1.4em;
     text-align:center;
 }
-.signInPanel h5{
+.panel h5{
     margin-bottom: 14px;
     font-size: 14px;
     font-weight: 700;
     color: #444;
 }
-.signInPanel .signInConnect, .signInPanel .signInForm{
+.panel-body-left,.panel-body-right{
     width: 389px;
-    height: 200px;
+    height: 260px;
     float: left;
     padding: 10px 20px;
 }
-.signInPanel .error-msg{
+.panel .error-msg{
     display:none;
     padding-top: 7px;
 }
 .clearLeftPadding{
     padding-left: 0;
 }
-#signUpPanel .signInConnect,#signUpPanel .signInForm{
-    height: 260px;
+
+.panel-body-left{
+    border-right: 1px solid #FFF;
 }
-.signInPanel .signInConnect{
-    border-right: 1px solid #f6f4ee;
-}
-.signInPanel .signInForm{
-    border-left: 1px solid #fff;
-}
-.signInPanel a.closeBtn{
+
+.panel a.closeBtn{
     display: block;
     position: absolute;
     width: 20px;
@@ -238,9 +255,10 @@ div{
     cursor:pointer;
     background: url(../images/sheet_close.gif) no-repeat 0 0;
 }
-.signInPanel a.closeBtn:hover{
+.panel a.closeBtn:hover{
     background: url(../images/sheet_close.gif) no-repeat 0 -60px;
 }
+
 .menu{
     display: none;
 }
