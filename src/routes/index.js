@@ -1,6 +1,7 @@
 var dao = require("../dao");
 
 exports.userRoute = require("./lib/user");
+exports.activity = require("./lib/activity");
 
 exports.index = function(req, res){
     var userCount = 0;
