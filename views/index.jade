@@ -6,7 +6,7 @@ block selfJSfile
     //-script(type="text/javascript",src="http://api.map.baidu.com/api?v=2.0&ak=KN8ipINyWjl55TErrURM3gRu")
 block statusBar
     nav#topbar.navbar.navbar-default.navbar-fixed-top(role=navigation)
-        div#topbar-logo
+        div.logo
         div#topbar-options
             div.nav-icon
             div.arrow
@@ -14,9 +14,9 @@ block statusBar
                 div.menu-body
                     div
                         h4 去钓鱼
-                        span 召集朋友
-                        span 分享渔获
-                        span 足迹
+                        a(href="/activity") 召集朋友
+                        a(href="") 分享渔获
+                        a(href="") 足迹
                 div.menu-foot
                     span.btn#pin
                         span.glyphicon.glyphicon-pushpin 固定到左侧
@@ -37,7 +37,7 @@ block statusBar
             div#topbar-userinfo-upload.topbar-btn
                 i.icon-plus(title="分享渔获")
             div#topbar-userinfo-avatar.topbar-btn
-                img(src="/images/default.jpg")
+                img(src="/images/header.jpg")
                 div.arrow
                 ul#topbar-userinfo-menu
                     li
@@ -52,7 +52,7 @@ block statusBar
     div#sidebar.left-sidebar
         div.nav
             a(onclick="javascript:void(0)" title="解除锁定")
-                i.icon-pin
+                i.icon-pinterest
         div.nav
             a(onclick="javascript:void(0)" data-title="召集朋友")
                 i.icon-flag
