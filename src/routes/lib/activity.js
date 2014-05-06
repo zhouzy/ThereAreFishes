@@ -13,7 +13,7 @@ var Activity = exports = module.exports = {};
 
 Activity.main = function(req, res){
     console.log("活动->创建活动页面");
-    res.render("/activity/main");
+    res.render("activity/main.jade");
 };
 Activity.add = function(req, res){
 };
