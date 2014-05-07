@@ -42,7 +42,7 @@ module.exports = function (grunt) {
                     'public/javascripts/func/Component.js',
                     'public/javascripts/func/index.js'
                 ],
-                dest: 'public/javascripts/func/app.js'
+                dest: 'public/javascripts/func/main.js'
             }
         },
         // 压缩 js 文件
@@ -51,7 +51,7 @@ module.exports = function (grunt) {
             build: {
                 files: {
                     // concat 任务合并后的文件路径 可同名
-                    'public/javascripts/func/app.min.js': ['public/javascripts/func/app.js']
+                    'public/javascripts/func/main.min.js': ['public/javascripts/func/main.js']
                 }
             }
         },
