@@ -1,9 +1,8 @@
 link(rel="stylesheet" href="/javascripts/lib/fontello/css/fontello.css")
 link(rel="stylesheet" href="/javascripts/lib/fontello/css/animation.css")
-<!--[if IE 7]>
-link(rel="stylesheet" href="/javascripts/lib/fontello/css/fontello-ie7.css")
-<![endif]-->
-script(type="text/javascript")
+//if IE 7
+    link(rel="stylesheet" href="/javascripts/lib/fontello/css/fontello-ie7.css")
+script(type="text/javascript").
     function toggleCodes(on) {
         var obj = document.getElementById('icons');
         if(on) {obj.className += ' codesOn';}else {obj.className = obj.className.replace(' codesOn', '');}
