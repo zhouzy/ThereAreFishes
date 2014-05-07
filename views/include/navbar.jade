@@ -1,4 +1,4 @@
-nav#topbar.navbar.navbar-default.navbar-fixed-top(role=navigation)
+nav#topbar(role=navigation)
     div.logo
     div#topbar-options
         div.nav-icon
@@ -15,11 +15,8 @@ nav#topbar.navbar.navbar-default.navbar-fixed-top(role=navigation)
                     span.glyphicon.glyphicon-pushpin 固定到左侧
             div.menu-uparrow
     div#topbar-search
-        div.input-group
-            input.form-control(type="text")
-            span#searchBtn.input-group.input-group-btn
-                button.btn.btn-default
-                    span.glyphicon.glyphicon-search
+        input(type="text").input
+        span#searchBtn.topbar-btn 搜索
     div#topbar-user
         div#signin-btn.topbar-btn
             i.icon-login
@@ -64,19 +61,19 @@ div#signin-panel.panel
                 h5 使用合作网站账号登陆
             div.panel-body-right.form-horizontal
                 h5 使用注册邮箱登陆
-                div.form-group
-                    label.col-sm-3.control-label 邮箱
-                    div.col-sm-6.clearLeftPadding
-                        input.email.form-control(type="email",name="email",placeholder="请输入邮箱")
-                    div.error-email.col-sm-3.clearLeftPadding.error-msg
-                div.form-group
-                    label.col-sm-3.control-label 密码
-                    div.col-sm-6.clearLeftPadding
-                        input.password.form-control(type="password",name="password",placeholder="请输入密码")
-                    div.error-password.col-sm-3.clearLeftPadding.error-msg
-                div.form-group
-                    div.col-sm-6.col-sm-offset-3.clearLeftPadding
-                        button#doLogin.btn.btn-default(type="submit") 登陆
+                div
+                    label 邮箱
+                    div.clearLeftPadding
+                        input(type="email",name="email",placeholder="请输入邮箱")
+                    div.error-email.clearLeftPadding.error-msg
+                div
+                    label.control-label 密码
+                    div.clearLeftPadding
+                        input.password(type="password",name="password",placeholder="请输入密码")
+                    div.error-password.clearLeftPadding.error-msg
+                div
+                    div.clearLeftPadding
+                        button#doLogin(type="submit") 登陆
             div.clearfix
         a.closeBtn
 
@@ -89,29 +86,29 @@ div#signup-panel.panel
                 h5 使用合作网站账号注册
             div.panel-body-right.form-horizontal
                 h5 使用邮箱注册
-                div.form-group
-                    label.col-sm-3.control-label 称号
-                    div.col-sm-6.clearLeftPadding
+                div
+                    label 昵称
+                    div.clearLeftPadding
                         input.form-control(name="username",placeholder="取个名字")
-                    div.error-username.col-sm-3.clearLeftPadding.error-msg
-                div.form-group
-                    label.col-sm-3.control-label 邮箱
-                    div.col-sm-6.clearLeftPadding
+                    div.error-username.clearLeftPadding.error-msg
+                div
+                    label 邮箱
+                    div.clearLeftPadding
                         input.email.form-control(type="email",name="email",placeholder="注册邮箱")
-                    div.error-email.col-sm-3.clearLeftPadding.error-msg
-                div.form-group
-                    label.col-sm-3.control-label 密码
-                    div.col-sm-6.clearLeftPadding
+                    div.error-email.clearLeftPadding.error-msg
+                div
+                    label 密码
+                    div.clearLeftPadding
                         input.password.form-control(type="password",name="password",placeholder="选择密码")
-                    div.error-password.col-sm-3.clearLeftPadding.error-msg
-                div.form-group
-                    label.col-sm-3.control-label 确认密码
-                    div.col-sm-6.clearLeftPadding
+                    div.error-password.clearLeftPadding.error-msg
+                div
+                    label 确认密码
+                    div.clearLeftPadding
                         input.password2.form-control(type="password",name="password2",placeholder="确认密码")
-                    div.error-password2.col-sm-3.clearLeftPadding.error-msg
-                div.form-group
-                    div.col-sm-6.col-sm-offset-3.clearLeftPadding
-                        button#doRegister.btn.btn-default(type="submit") 注册
+                    div.error-password2.clearLeftPadding.error-msg
+                div
+                    div.clearLeftPadding
+                        button#doRegister(type="submit") 注册
             div.clearfix
         a.closeBtn
 div.bodyMask

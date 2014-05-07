@@ -1,23 +1,29 @@
 html {
-  height: 100%;
+  background-color: #EDECE9;
 }
-body {
-  padding-top: 60px;
-  background: #EDECE9;
-}
-div {
-  display: block;
+.input {
+  padding: 5px 8px;
+  background: #FAFAFA;
+  border: 1px solid #DDD;
+  font-size: 14px;
+  color: #BBB;
+  width: 120px;
+  line-height: 16px;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.06);
 }
 #topbar {
+  background-color: #FFF;
+  width: 100%;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
   min-height: 45px;
   height: 45px;
-  background: #ffffff;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 99999;
   padding: 0 100px;
+  font-size: 0.8em;
 }
 #topbar > div {
   display: inline-block;
@@ -115,7 +121,7 @@ div {
 }
 #topbar-user {
   position: absolute;
-  right: 150px;
+  right: 350px;
 }
 #topbar-user .signIn-reg {
   padding-top: 5px;
@@ -167,10 +173,6 @@ div {
 #topbar-userinfo-menu a i {
   position: absolute;
   left: 20px;
-}
-#content {
-  min-height: 70%;
-  _height: 70%;
 }
 .bodyMask {
   position: fixed;
@@ -317,4 +319,8 @@ div {
   border-radius: 5px;
   background-color: #555;
   color: #FFF;
+}
+.contentwarp {
+  position: relative;
+  top: 65px;
 }

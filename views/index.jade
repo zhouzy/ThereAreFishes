@@ -3,31 +3,30 @@ append resources
     link(rel='stylesheet', href='/stylesheets/index.css')
     script(type="text/javascript",src="/javascripts/func/index.js")
 block content
-    div.row
-        div#itemContentList.col-md-12
-            each item, i in itemList
-                if i%4==0
-                    div.row
-                if i<8
-                    div.col-md-3.itemContent
-                        div.item
-                            div.card
-                                div.photo
-                                    img(src="#{itemList[i].fishings[0].photoUrl}")
-                                    p.abstract
-                                        |#{itemList[i].fishings[0].abstract}
-                                div.des
-                                    div.fishtool
-                                        h4 鱼竿
-                                        p #{itemList[i].fishings[0].fishTools.fishingRod}
-                                    div.fishtool
-                                        h4 鱼饵
-                                        p #{itemList[i].fishings[0].fishTools.bait}
-                                    div.fishtool
-                                        h4 鱼钩
-                                        p #{itemList[i].fishings[0].fishTools.fishhook}
-                        div.itemInfo
-                            a.avatar
-                                img(src="/images/header.jpg")
-                            span.userName #{itemList[i].username}
-                            span.mapBtn 查看地图
+    div#item-list
+        each item, i in itemList
+            if i%4==0
+                div.itemgrounp
+            if i<8
+                div.item-content
+                    div.item
+                        div.card
+                            div.photo
+                                img(src="#{itemList[i].fishings[0].photoUrl}")
+                                p.abstract
+                                    |#{itemList[i].fishings[0].abstract}
+                            div.des
+                                div.fishtool
+                                    h4 鱼竿
+                                    p #{itemList[i].fishings[0].fishTools.fishingRod}
+                                div.fishtool
+                                    h4 鱼饵
+                                    p #{itemList[i].fishings[0].fishTools.bait}
+                                div.fishtool
+                                    h4 鱼钩
+                                    p #{itemList[i].fishings[0].fishTools.fishhook}
+                    div.itemInfo
+                        a.avatar
+                            img(src="/images/header.jpg")
+                        span.userName #{itemList[i].username}
+                        span.mapBtn 查看地图
