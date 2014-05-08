@@ -1,0 +1,48 @@
+.rounded-corners(@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    -ms-border-radius: @radius;
+    -o-border-radius: @radius;
+    border-radius: @radius;
+}
+.border(@border-size:1px;@border-color:#000){
+    border:solid @border-size @border-color;
+}
+#act-form{
+    width:900px;
+    margin:auto auto;
+    background-color:#5890AD;
+    padding:10px 0;
+}
+.form{
+    .rounded-corners;
+    font-size:0.8em;
+    background-color:#FFF;
+    position:relative;
+    .title{
+        position:relative;
+        left:50%;
+        width:800px;
+        margin-left:-400px;
+        height:40px;
+        span{
+            position:relative;
+            right:0px;
+            top:0px;
+            font-size:1.5em;
+            line-height:40px;
+            height:40px;
+        }
+    }
+    .rows{
+        .rounded-corners;
+        .border(1px;#f9f9f9);
+        position:relative;
+        left:50%;
+        width:800px;
+        margin-left:-400px;
+        margin-top:10px;
+        height:80px;
+        background-color: #f7ffc8;
+    }
+}

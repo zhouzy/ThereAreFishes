@@ -323,4 +323,5 @@ html {
 .contentwarp {
   position: relative;
   top: 65px;
+  padding: 0 50px;
 }

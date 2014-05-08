@@ -1,114 +1,117 @@
-#item-list{
-    font-size: 0.625em;
+#item-list {
+  font-size: 0.625em;
 }
-.item-content{
-    margin:5px;
-    padding:0px;
-    width:24%;
-    box-shadow: 0 1px 3px rgba(0,0,0,.3);
-    -moz-box-shadow: 0 1px 3px rgba(0,0,0,.3);
-    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.3);
+#item-list .rows {
+  padding-bottom: 10px;
 }
-.item,.itemInfo{
-    width:100%;
-    height:220px;
+#item-list .item-content {
+  display: inline-block;
+  margin: 5px;
+  padding: 0px;
+  width: 24%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
-.item{
-	position:relative;
-	-webkit-perspective:500px;
-	-moz-perspective:500px;
+#item-list .itemInfo {
+  width: 100%;
+  height: 220px;
 }
-.card{
-	position:absolute;
-	width:100%;
-	height:100%;
-	-webkit-transform-style:preserve-3d;
-	-webkit-transition-duration:1s;
-	-moz-backface-visibility:hidden;
-	-moz-transform-style:preserve-3d;
-	-moz-transition-duration:1s;
+#item-list .item {
+  width: 100%;
+  height: 220px;
+  background-color: #FAFAFA;
+  border-top: 1px solid #F2F2F2;
+  height: 50px;
+  display: inline-block;
+  line-height: 49px;
+  height: 49px;
+  position: relative;
+  -webkit-perspective: 500px;
+  -moz-perspective: 500px;
 }
-.photo,.des{
-	position: absolute;
-    width: 100%;
-    height: 100%;
-	-webkit-transform-style:preserve-3d;
-    -webkit-backface-visibility: hidden;
-	-moz-transform-style:preserve-3d;
-    -moz-backface-visibility: hidden;
+#item-list .card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition-duration: 1s;
+  -moz-backface-visibility: hidden;
+  -moz-transform-style: preserve-3d;
+  -moz-transition-duration: 1s;
 }
-
-.photo img{
-    width:100%;
-    height:80%;
+#item-list .photo,
+#item-list .des {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  -moz-transform-style: preserve-3d;
+  -moz-backface-visibility: hidden;
 }
-.abstract{
-    background-color:#FFF;
-    width:100%;
-    height:20%;
+#item-list .photo img {
+  width: 100%;
+  height: 80%;
 }
-
-.item .des{
-    background-color:#FFF;
-	-webkit-transform:rotateY(180deg);
-	-moz-transform:rotateY(180deg);
+#item-list .abstract {
+  background-color: #FFF;
+  width: 100%;
+  height: 20%;
 }
-
-.item:hover .card{
-	-webkit-transform:rotateY(180deg);
-	-moz-transform:rotateY(180deg);
+#item-list .item .des {
+  background-color: #FFF;
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
 }
-
-.itemInfo{
-    background-color:#FAFAFA;
-    border-top:1px solid #F2F2F2;
-    padding-left:5px;
-    height:50px;
+#item-list .item:hover .card {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
 }
-
-.itemInfo>*{
-    display: inline-block;
-    line-height: 49px;
-    height:49px;
-    vertical-align:top;
+#item-list .itemInfo {
+  background-color: #FAFAFA;
+  border-top: 1px solid #F2F2F2;
+  height: 50px;
+  position: relative;
 }
-
-.userName{
-    width:63%;
-    border-left:1px solid #F2F2F2;
-    font-size:0.625em;
-    word-break:keep-all;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
+#item-list .itemInfo > * {
+  display: inline-block;
+  line-height: 49px;
+  height: 49px;
 }
-
-.avatar{
-    width:17%;
+#item-list .userName {
+  width: 63%;
+  border-left: 1px solid #F2F2F2;
+  font-size: 0.625em;
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.avatar>img{
-    width:40px;
-    height:40px;
-    margin: 5px;
-    margin-left: 0;
-    vertical-align: baseline;
+#item-list .avatar {
+  width: 50px;
 }
-.mapBtn{
-    background-color: #F2F2F2;
-    width:20%;
-    text-align: center;
-    cursor: pointer;
+#item-list .avatar > img {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
 }
-
-.mapBtn:hover{
-    background-color: #EBEBEB;
+#item-list .mapBtn {
+  background-color: #F2F2F2;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 20%;
+  text-align: center;
+  cursor: pointer;
 }
-
-.fishtool{
-    margin:5px;
-    height:60px;
-    background-color: #FAFAFA;
-    -moz-box-shadow: 0 1px 3px rgba(0,0,0,.3);
-    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.3);
+#item-list .mapBtn:hover {
+  background-color: #EBEBEB;
 }
-
+#item-list .fishtool {
+  margin: 5px;
+  height: 60px;
+  background-color: #FAFAFA;
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}

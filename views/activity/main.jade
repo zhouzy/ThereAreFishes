@@ -6,6 +6,25 @@
    To change this template use File | Settings | File Templates.
 extends ../layout/layout
 append resources
-    link(rel='stylesheet', href='/stylesheets/index.css')
-    script(type="text/javascript",src="/javascripts/func/index.js")
+    link(rel='stylesheet', href='/stylesheets/activity.css')
+    script(type="text/javascript",src="/javascripts/func/activity.js")
 block content
+    div#act-form.form
+        div.title
+            span 我们去钓鱼吧
+            span#create-people 发起人:XXX
+        div.rows
+            label(for="slogan") 宣言
+            input#slogan(name='slogan')
+        div.rows
+            label(for="time") 时间
+            input#time(name='time')
+        div.rows
+            label(for="address") 地点
+            input#address(name='address')
+        div.rows
+            label(for="remark") 备注
+            input#remark(name='remark')
+        div.rows.btns
+            input(type="button",value="确定")
+            input(type="button",value="重置")

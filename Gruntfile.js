@@ -17,7 +17,9 @@ module.exports = function (grunt) {
                     yuicompress: false
                 },
                 files: {
-                    "public/stylesheets/common.css": "public/stylesheets/common.less"
+                    "public/stylesheets/common.css": "public/stylesheets/common.less",
+                    "public/stylesheets/index.css": "public/stylesheets/index.less",
+                    "public/stylesheets/activity.css": "public/stylesheets/activity.less"
                 }
             },
             production: {
@@ -25,7 +27,9 @@ module.exports = function (grunt) {
                     yuicompress: true
                 },
                 files: {
-                    "public/stylesheets/common.css": "public/stylesheets/common.less"
+                    "public/stylesheets/common.css": "public/stylesheets/common.less",
+                    "public/stylesheets/index.css": "public/stylesheets/index.less",
+                    "public/stylesheets/activity.css": "public/stylesheets/activity.less"
                 }
             }
         },
