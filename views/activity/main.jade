@@ -10,21 +10,22 @@ append resources
     script(type="text/javascript",src="/javascripts/func/activity.js")
 block content
     div#act-form.form
-        div.title
+        div.form-header
             span.left 我们去钓鱼吧
             span.right#create-people 发起人:XXX
-        div.rows
-            label(for="slogan") 宣言
-            input#slogan(name='slogan')
-        div.rows
-            label(for="time") 时间
-            input#time(name='time')
-        div.rows
-            label(for="address") 地点
-            input#address(name='address')
-        div.rows
-            label(for="remark") 备注
-            input#remark(name='remark')
-        div.rows.btns
+        div.form-body
+            div.group
+                label(for="slogan") 宣言
+                input#slogan(name='slogan').input
+            div.group
+                label(for="time") 时间
+                input#time(name='time').input
+            div.group
+                label(for="address") 地点
+                input#address(name='address').input
+            div.group
+                label(for="remark") 备注
+                input#remark(name='remark').input
+        div.form-footer
             input(type="button",value="确定")
             input(type="button",value="重置")

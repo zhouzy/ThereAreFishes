@@ -11,18 +11,18 @@ block content
             div.item-content
                 div.item
                     div.card
-                        div.photo
+                        div.front
                             img(src="#{itemList[i].fishings[0].photoUrl}")
                             p.abstract
                                 |#{itemList[i].fishings[0].abstract}
-                        div.des
-                            div.fishtool
+                        div.back
+                            div
                                 h4 鱼竿
                                 p #{itemList[i].fishings[0].fishTools.fishingRod}
-                            div.fishtool
+                            div
                                 h4 鱼饵
                                 p #{itemList[i].fishings[0].fishTools.bait}
-                            div.fishtool
+                            div
                                 h4 鱼钩
                                 p #{itemList[i].fishings[0].fishTools.fishhook}
                 div.itemInfo

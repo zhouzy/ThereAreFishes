@@ -19,30 +19,38 @@
     font-size:0.8em;
     background-color:#FFF;
     position:relative;
-    .title{
+    .rows(@rows-width:800px){
         position:relative;
         left:50%;
-        width:800px;
-        margin-left:-400px;
+        width:@rows-width;
+        margin-left:-@rows-width/2;
+    }
+
+    .form-header{
+        .rows;
         height:40px;
-        span{
-            position:relative;
-            right:0px;
-            top:0px;
-            font-size:1.5em;
+        font-size:1.5em;
+        .left-right{
+            position:absolute;
             line-height:40px;
             height:40px;
         }
+        .left{
+            .left-right;
+            top:0px;
+        }
+        .right{
+            .left-right;
+            right:10px;
+        }
     }
-    .rows{
-        .rounded-corners;
-        .border(1px;#f9f9f9);
-        position:relative;
-        left:50%;
-        width:800px;
-        margin-left:-400px;
-        margin-top:10px;
-        height:80px;
+    .group{
         background-color: #f7ffc8;
+    }
+    .form-body{
+
+    }
+    .form-footer{
+        .rows;
     }
 }
