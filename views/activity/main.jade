@@ -11,21 +11,22 @@ append resources
 block content
     div#act-form.form
         div.form-header
-            span.left 我们去钓鱼吧
+            span.left 创建活动
             span.right#create-people 发起人:XXX
         div.form-body
-            div.group
+            div.group.bottom-border
                 label(for="slogan") 宣言
                 input#slogan(name='slogan').input
-            div.group
+            div.group.bottom-border
                 label(for="time") 时间
                 input#time(name='time').input
-            div.group
+            div.group.bottom-border
                 label(for="address") 地点
                 input#address(name='address').input
             div.group
                 label(for="remark") 备注
-                textarea#remark(name='remark').input
+                input#remark(name='remark').input
         div.form-footer
-            span.btn 确定
-            span.btn 重置
+            div.btns
+                span.btn#submit 确定
+                span.btn#goback 返回

@@ -42,8 +42,8 @@ module.exports = function (grunt) {
             dist: {
                 // 这里放需要合并的文件
                 src: [
-                    'public/javascripts/func/common.js',
-                    'public/javascripts/func/Component.js',
+                    'public/javascripts/func/nav.js',
+                    'public/javascripts/func/utils.js',
                     'public/javascripts/func/index.js'
                 ],
                 dest: 'public/javascripts/func/main.js'
