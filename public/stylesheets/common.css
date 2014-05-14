@@ -5,10 +5,28 @@ html {
   padding: 5px 8px;
   font-size: 14px;
   color: #BBB;
-  width: 120px;
+  width: 140px;
   line-height: 16px;
   border: 1px solid #A0A0A0;
   border-radius: 3px;
+}
+.btn {
+  text-align: center;
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  width: 100px;
+  position: relative;
+  border: 1px solid #a0a0a0;
+  cursor: pointer;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+.btn:hover {
+  background-color: #F2F2F2;
 }
 #topbar {
   background-color: #FFF;
@@ -23,15 +41,11 @@ html {
   padding: 0 100px;
   font-size: 0.8em;
 }
-#topbar > div {
-  display: inline-block;
-  height: 45px;
-  line-height: 45px;
-  vertical-align: top;
-}
 #topbar .logo {
+  display: inline-block;
   background-image: url('../images/logo.png');
   width: 45px;
+  height: 45px;
   position: absolute;
   left: 50px;
 }
@@ -47,9 +61,12 @@ html {
   vertical-align: top;
 }
 #topbar-options {
+  display: inline-block;
+  width: 50px;
+  height: 45px;
+  line-height: 45px;
   border-left: 1px solid #f2f2f2;
   border-right: 1px solid #f2f2f2;
-  width: 50px;
   position: relative;
   cursor: pointer;
 }
@@ -113,10 +130,16 @@ html {
 #topbar-options .menu-body > div > a:hover {
   background-color: #EBEBEB;
 }
+#topbar-options .menu-foot {
+  padding-left: 5px;
+}
 #topbar-search {
-  vertical-align: baseline !important;
-  margin-left: 10px;
+  display: inline-block;
   width: 200px;
+  height: 45px;
+  line-height: 45px;
+  margin-left: 10px;
+  vertical-align: top;
 }
 #topbar-search .input {
   padding: 5px 8px;
@@ -125,8 +148,7 @@ html {
   width: 120px;
   line-height: 16px;
   border: 1px solid #A0A0A0;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
+  border-radius: 3px 0 0 3px;
 }
 #topbar-search .input-btn {
   text-align: center;
@@ -145,6 +167,9 @@ html {
 #topbar-user {
   position: absolute;
   right: 350px;
+  display: inline-block;
+  height: 45px;
+  line-height: 45px;
 }
 #topbar-user .signIn-reg {
   padding-top: 5px;
@@ -208,40 +233,18 @@ html {
   display: none;
 }
 .panel {
+  display: none;
   position: fixed;
   top: 45px;
   left: 50%;
   margin-left: -400px;
   z-index: 99991;
-  display: none;
-}
-.panel-sheet {
-  position: relative;
-  width: 800px;
-  margin: auto;
   box-shadow: inset 0 -1px 0 #ffffff, 0 1px 6px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: inset 0 -1px 0 #ffffff, 0 1px 6px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: inset 0 -1px 0 #ffffff, 0 1px 6px rgba(0, 0, 0, 0.3);
   background-color: #fff9e2;
   border-bottom: 2px solid #efebda;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  -moz-border-bottom-left-radius: 5px;
-  -moz-border-bottom-right-radius: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-}
-.panel-head {
-  padding: 15px;
-  border-bottom: 1px solid #f6f4ee;
-}
-.panel-body {
-  padding: 15px 10px;
-}
-.panel h2,
-.panel h5 {
-  padding: 0px;
-  margin: 0px;
+  border-radius: 0 0 5px 5px;
 }
 .panel h2 {
   font-size: 1.4em;
@@ -253,16 +256,25 @@ html {
   font-weight: 700;
   color: #444;
 }
-.panel-body-left,
-.panel-body-right {
+.panel-head {
+  padding: 15px;
+  border-bottom: 1px solid #f6f4ee;
+}
+.panel-body {
+  height: 260px;
+}
+.panel-body-left-right {
+  float: left;
   width: 389px;
   height: 260px;
-  float: left;
   padding: 10px 20px;
 }
-#signin-panel .panel-body-left,
-#signin-panel .panel-body-right {
-  height: 200px;
+.panel-body-left,
+.panel-body-right {
+  float: left;
+  width: 389px;
+  height: 260px;
+  padding: 10px 20px;
 }
 .panel .error-msg {
   display: none;
@@ -288,7 +300,7 @@ html {
   background: url(../images/sheet_close.gif) no-repeat 0 -60px;
 }
 .left-sidebar {
-  position: absolute;
+  position: fixed;
   top: 0px;
   bottom: 0px;
   width: 50px;

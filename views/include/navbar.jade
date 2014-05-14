@@ -12,7 +12,7 @@ nav#topbar(role=navigation)
                     a(href="") 足迹
             div.menu-foot
                 span.btn#pin
-                    span.glyphicon.glyphicon-pushpin 固定到左侧
+                    i.icon-pinterest 固定到左侧
             div.menu-uparrow
     div#topbar-search
         input(type="text").input
@@ -39,75 +39,74 @@ nav#topbar(role=navigation)
                 li
                     a 退出登录
                         i.icon-logout
-        div#signup-panel.panel
-            div.panel-sheet
-                div.panel-head
-                    h2 注册
-                div.panel-body
-                    div.panel-body-left
-                        h5 使用合作网站账号注册
-                    div.panel-body-right.form-horizontal
-                        h5 使用邮箱注册
-                        div
-                            label 昵称
-                            div.clearLeftPadding
-                                input.form-control(name="username",placeholder="取个名字")
-                            div.error-username.clearLeftPadding.error-msg
-                        div
-                            label 邮箱
-                            div.clearLeftPadding
-                                input.email.form-control(type="email",name="email",placeholder="注册邮箱")
-                            div.error-email.clearLeftPadding.error-msg
-                        div
-                            label 密码
-                            div.clearLeftPadding
-                                input.password.form-control(type="password",name="password",placeholder="选择密码")
-                            div.error-password.clearLeftPadding.error-msg
-                        div
-                            label 确认密码
-                            div.clearLeftPadding
-                                input.password2.form-control(type="password",name="password2",placeholder="确认密码")
-                            div.error-password2.clearLeftPadding.error-msg
-                        div
-                            div.clearLeftPadding
-                                button#doRegister(type="submit") 注册
-                    div.clearfix
-                a.closeBtn
-        div#signin-panel.panel
-            div.panel-sheet
-                div.panel-head
-                    h2 登陆
-                div.panel-body
-                    div.panel-body-left
-                        h5 使用合作网站账号登陆
-                    div.panel-body-right.form-horizontal
-                        h5 使用注册邮箱登陆
-                        div
-                            label 邮箱
-                            div.clearLeftPadding
-                                input(type="email",name="email",placeholder="请输入邮箱")
-                            div.error-email.clearLeftPadding.error-msg
-                        div
-                            label.control-label 密码
-                            div.clearLeftPadding
-                                input.password(type="password",name="password",placeholder="请输入密码")
-                            div.error-password.clearLeftPadding.error-msg
-                        div
-                            div.clearLeftPadding
-                                button#doLogin(type="submit") 登陆
-                    div.clearfix
-                a.closeBtn
-    div#sidebar.left-sidebar
-        div.nav
-            a(onclick="javascript:void(0)" title="解除锁定")
-                i.icon-pinterest
-        div.nav
-            a(onclick="javascript:void(0)" data-title="召集朋友")
-                i.icon-flag
-        div.nav
-            a(onclick="javascript:void(0)" data-title="分享渔获")
-                i.icon-heart
-        div.nav
-            a(onclick="javascript:void(0)" data-title="足迹")
-                i.icon-picture
+div#signup-panel.panel
+    div.panel-sheet
+        div.panel-head
+            h2 注册
+        div.panel-body
+            div.panel-body-left
+                h5 使用合作网站账号注册
+            div.panel-body-right.form-horizontal
+                h5 使用邮箱注册
+                div
+                    label 昵称
+                    div.clearLeftPadding
+                        input.form-control(name="username",placeholder="取个名字")
+                    div.error-username.clearLeftPadding.error-msg
+                div
+                    label 邮箱
+                    div.clearLeftPadding
+                        input.email.form-control(type="email",name="email",placeholder="注册邮箱")
+                    div.error-email.clearLeftPadding.error-msg
+                div
+                    label 密码
+                    div.clearLeftPadding
+                        input.password.form-control(type="password",name="password",placeholder="选择密码")
+                    div.error-password.clearLeftPadding.error-msg
+                div
+                    label 确认密码
+                    div.clearLeftPadding
+                        input.password2.form-control(type="password",name="password2",placeholder="确认密码")
+                    div.error-password2.clearLeftPadding.error-msg
+                div
+                    div.clearLeftPadding
+                        button#doRegister(type="submit") 注册
+            div.clearfix
+        a.closeBtn
+div#signin-panel.panel
+    div.panel-head
+        h2 登陆
+    div.panel-body
+        div.panel-body-left
+            h5 使用合作网站账号登陆
+        div.panel-body-right
+            h5 使用注册邮箱登陆
+            div
+                label 邮箱
+                div.clearLeftPadding
+                    input(type="email",name="email",placeholder="请输入邮箱")
+                div.error-email.clearLeftPadding.error-msg
+            div
+                label.control-label 密码
+                div.clearLeftPadding
+                    input.password(type="password",name="password",placeholder="请输入密码")
+                div.error-password.clearLeftPadding.error-msg
+            div
+                div.clearLeftPadding
+                    button#doLogin(type="submit") 登陆
+        div.clearfix
+    a.closeBtn
+div#sidebar.left-sidebar
+    div.nav
+        a(onclick="javascript:void(0)" title="解除锁定")
+            i.icon-pinterest
+    div.nav
+        a(onclick="javascript:void(0)" data-title="召集朋友")
+            i.icon-flag
+    div.nav
+        a(onclick="javascript:void(0)" data-title="分享渔获")
+            i.icon-heart
+    div.nav
+        a(onclick="javascript:void(0)" data-title="足迹")
+            i.icon-picture
 div.bodyMask

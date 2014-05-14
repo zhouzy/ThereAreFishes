@@ -2,16 +2,36 @@ html{
     background-color: #EDECE9;
 }
 @divide-border-color:#F2F2F2;
+.rounded-corners(@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    -ms-border-radius: @radius;
+    -o-border-radius: @radius;
+    border-radius: @radius;
+}
 .input{
     padding:5px 8px;
     font-size: 14px;
     color: #BBB;
-    width: 120px;
+    width: 140px;
     line-height: 16px;
     border: 1px solid #A0A0A0;
     border-radius: 3px;
 }
-
+.btn{
+    text-align: center;
+    display: inline-block;
+    height:30px;
+    line-height:30px;
+    width:100px;
+    position: relative;
+    border: 1px solid #a0a0a0;
+    cursor:pointer;
+    .rounded-corners(3px);
+    &:hover{
+        background-color:#F2F2F2;
+    }
+}
 #topbar{
     background-color: #FFF;
     width:100%;
@@ -24,15 +44,11 @@ html{
     z-index: 99999;
     padding: 0 100px;
     font-size:0.8em;
-    &>div{
-        display:inline-block;
-        height:45px;
-        line-height:45px;
-        vertical-align: top;
-    }
     .logo{
+        display:inline-block;
         background-image: url('../images/logo.png');
         width:45px;
+        height:45px;
         position: absolute;
         left:50px;
     }
@@ -50,9 +66,12 @@ html{
 }
 
 #topbar-options{
+    display:inline-block;
+    width:50px;
+    height:45px;
+    line-height:45px;
     border-left:1px solid @divide-border-color;
     border-right:1px solid @divide-border-color;
-    width:50px;
     position: relative;
     cursor:pointer;
 
@@ -64,6 +83,7 @@ html{
         right: 0;
         bottom: 0;
     }
+
     .nav-icon{
         background: url(../images/menu_sprite.png) 0 0 no-repeat;
         width: 16px;
@@ -119,12 +139,18 @@ html{
             }
         }
     }
+    .menu-foot{
+        padding-left:5px;
+    }
 }
 
 #topbar-search{
-    vertical-align: baseline !important;
-    margin-left: 10px;
+    display:inline-block;
     width:200px;
+    height:45px;
+    line-height:45px;
+    margin-left: 10px;
+    vertical-align: top;
     .input{
         padding:5px 8px;
         font-size: 14px;
@@ -132,8 +158,7 @@ html{
         width: 120px;
         line-height: 16px;
         border: 1px solid #A0A0A0;
-        border-top-left-radius: 3px;
-        border-bottom-left-radius: 3px;
+        border-radius: 3px 0 0 3px;
     }
     .input-btn{
         text-align: center;
@@ -154,6 +179,9 @@ html{
 #topbar-user{
     position:absolute;
     right:350px;
+    display:inline-block;
+    height:45px;
+    line-height:45px;
 
     .signIn-reg{
         padding-top: 5px;
@@ -216,7 +244,6 @@ html{
     }
 }
 
-
 .bodyMask{
     position: fixed;
     top: 0;
@@ -228,60 +255,48 @@ html{
     display:none;
 }
 .panel{
+    display: none;
     position: fixed;
     top: 45px;
     left: 50%;
     margin-left: -400px;
     z-index: 99991;
-    display: none;
-}
-
-.panel-sheet{
-    position: relative;
-    width:800px;
-    margin: auto;
     box-shadow: inset 0 -1px 0 #FFF,0 1px 6px rgba(0,0,0,.3);
     -moz-box-shadow: inset 0 -1px 0 #FFF,0 1px 6px rgba(0,0,0,.3);
     -webkit-box-shadow: inset 0 -1px 0 #FFF,0 1px 6px rgba(0,0,0,.3);
     background-color: #fff9e2;
     border-bottom: 2px solid #efebda;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    -moz-border-bottom-left-radius: 5px;
-    -moz-border-bottom-right-radius: 5px;
-    -webkit-border-bottom-left-radius: 5px;
-    -webkit-border-bottom-right-radius: 5px;
+    border-radius: 0 0 5px 5px;
+    h2{
+        font-size: 1.4em;
+        text-align:center;
+    }
+    h5{
+        margin-bottom: 14px;
+        font-size: 14px;
+        font-weight: 700;
+        color: #444;
+    }
 }
+
 .panel-head{
     padding:15px;
     border-bottom: 1px solid #f6f4ee;
 }
 .panel-body{
-    padding:15px 10px;
+    height:260px;
 }
-.panel h2,.panel h5{
-    padding:0px;
-    margin:0px;
-}
-.panel h2{
-    font-size: 1.4em;
-    text-align:center;
-}
-.panel h5{
-    margin-bottom: 14px;
-    font-size: 14px;
-    font-weight: 700;
-    color: #444;
-}
-.panel-body-left,.panel-body-right{
+.panel-body-left-right{
+    float:left;
     width: 389px;
     height: 260px;
-    float: left;
     padding: 10px 20px;
+}
+.panel-body-left,.panel-body-right{
+    .panel-body-left-right;
 }
 
 #signin-panel .panel-body-left,#signin-panel .panel-body-right{
-    height:200px;
 }
 .panel .error-msg{
     display:none;
@@ -310,7 +325,7 @@ html{
 }
 
 .left-sidebar{
-    position: absolute;
+    position:fixed;
     top:0px;
     bottom:0px;
     width:50px;
@@ -353,7 +368,6 @@ html{
     border:5px solid transparent;
     border-right:5px solid #555;
 }
-
 .left-sidebar .nav-des>span{
     display: inline-block;
     line-height: 40px;
