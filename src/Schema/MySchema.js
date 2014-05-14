@@ -21,4 +21,11 @@ exports.Fishing = new mongoose.Schema({
     abstract: String,
     fishTools:{fishhook: String, fishingRod:String, bait:String}
 });
+exports.Activity = new mongoose.Schema({
+    userId:String,
+    name:String,
+    time:Date,
+    address:String,
+    telNo:String
+});
 
