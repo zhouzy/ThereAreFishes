@@ -27,7 +27,7 @@ app.get('/', routes.index);
 app.post('/doRegister',routes.userRoute.doRegister);
 app.post("/doLogin",routes.userRoute.doLogin);
 app.get('/activity',routes.activity.main);
-app.get('/activity/add',routes.activity.add);
+app.post('/activity/add',routes.activity.add);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

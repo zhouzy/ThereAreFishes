@@ -16,4 +16,5 @@ Activity.main = function(req, res){
     res.render("activity/main.jade");
 };
 Activity.add = function(req, res){
+    console.log("活动->创建活动:" + JSON.stringify(req.body));
 };
