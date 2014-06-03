@@ -1,49 +1,3 @@
-html{
-    background-color: #EDECE9;
-}
-body{
-    font-size:0.8em;
-}
-@divide-border-color:#F2F2F2;
-.rounded-corners(@radius: 5px) {
-    -webkit-border-radius: @radius;
-    -moz-border-radius: @radius;
-    -ms-border-radius: @radius;
-    -o-border-radius: @radius;
-    border-radius: @radius;
-}
-.input{
-    padding:5px 8px;
-    font-size: 14px;
-    color: #BBB;
-    width: 140px;
-    line-height: 16px;
-    border: 1px solid #A0A0A0;
-    border-radius: 3px;
-    &:focus{
-        border:1px solid #A0A0A0;
-        box-shadow: 0 0 8px #A0A0A0;
-    }
-}
-.required-warm{
-    border:1px solid #DD0000;
-    box-shadow: 0 0 8px #DD0000;
-}
-
-.btn{
-    text-align: center;
-    display: inline-block;
-    height:30px;
-    line-height:30px;
-    width:100px;
-    position: relative;
-    border: 1px solid #a0a0a0;
-    cursor:pointer;
-    .rounded-corners(3px);
-    &:hover{
-        background-color:#F2F2F2;
-    }
-}
 #topbar{
     background-color: #FFF;
     width:100%;
@@ -256,16 +210,6 @@ body{
     }
 }
 
-.bodyMask{
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(255,255,255,.93);
-    z-index: 99990;
-    display:none;
-}
 .panel{
     display: none;
     position: fixed;
@@ -308,8 +252,6 @@ body{
     .panel-body-left-right;
 }
 
-#signin-panel .panel-body-left,#signin-panel .panel-body-right{
-}
 .panel .error-msg{
     display:none;
     padding-top: 7px;

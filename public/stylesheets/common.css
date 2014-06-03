@@ -1,6 +1,9 @@
 html {
   background-color: #EDECE9;
 }
+body {
+  font-size: 0.8em;
+}
 .input {
   padding: 5px 8px;
   font-size: 14px;
@@ -9,6 +12,14 @@ html {
   line-height: 16px;
   border: 1px solid #A0A0A0;
   border-radius: 3px;
+}
+.input:focus {
+  border: 1px solid #A0A0A0;
+  box-shadow: 0 0 8px #A0A0A0;
+}
+.required-warm {
+  border: 1px solid #DD0000;
+  box-shadow: 0 0 8px #DD0000;
 }
 .btn {
   text-align: center;

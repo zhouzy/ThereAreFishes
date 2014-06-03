@@ -98,6 +98,9 @@ var sidebar = (function(){
     return o;
 }());
 
+/**
+ * 新用户注册模块
+ */
 var signupPanel = (function(){
     var o = new Component();
     o.init = function(){
@@ -175,6 +178,9 @@ var signupPanel = (function(){
     return o;
 }());
 
+/**
+ * 用户登陆模块
+ */
 var signinPanel = (function(){
     var o = new Component();
     o.init = function(){

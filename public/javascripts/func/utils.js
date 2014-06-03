@@ -44,6 +44,33 @@ function submitFrom(url,param,onSuccess,onFailure){
     },"json");
 }
 
+function requiredInput(){
+    $(".input.required").on("blur",function(e){
+        var $this = $(e.target);
+        if($this.val() === ""){
+            $this.addClass("required-warm");
+            $this.attr("placeholder","该项为必填项，请输入");
+        }
+        else{
+            $this.removeClass("required-warm");
+            $this.attr("placeHolder","");
+        }
+    });
+}
+
+function ifFillInInput($parent){
+    var re = true;
+    $parent = $parent || $(document);
+    $(".input.required",$parent).each(function(){
+        if($(this).val() === ""){
+            $(this).addClass("required-warm");
+            $this.attr("placeholder","该项为必填项，请输入");
+            re = false;
+        }
+    });
+    return re;
+}
+
 function showErrorMsg($parent,msg){
     $parent.empty().append("<em class=\"text-danger\">" + msg + "</em>").show();
 }
@@ -56,3 +83,4 @@ function validateEmail(email){
 function log(msg){
     console && console.log(msg);
 }
+

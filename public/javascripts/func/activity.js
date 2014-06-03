@@ -13,21 +13,25 @@ var form = (function(){
     var o = new Component();
     o.init = function(){
         $("#submit").on("click",function(){
-            var formVal = getValueFromInputArr($("#act-form"));
-            submitFrom("/activity/add",formVal,onSubmitSuccess,onSubmitFailure);
+            if(ifFillInInput()){
+                var formVal = getValueFromInputArr($("#act-form"));
+                submitFrom("/activity/add",formVal,_onSubmitSuccess,_onSubmitFailure);
+            }
         });
 
         $("#goback").on("click",function(){
             window.history.back();
         });
+
+        requiredInput();
     };
 
     //TODO:提交成功，回调处理
-    function onSubmitFailure(msg){
+    function _onSubmitFailure(msg){
     }
 
     //TODO:提交失败，回调处理
-    function onSubmitSuccess(msg){
+    function _onSubmitSuccess(msg){
     }
     return o;
 }());
