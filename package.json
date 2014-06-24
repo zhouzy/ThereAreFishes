@@ -10,6 +10,7 @@
     "jade": "*",
     "grunt": "*",
     "mongoose":"*",
+    "q":"*",
     "grunt-contrib-jshint": "~0.6.0",
     "grunt-contrib-less": "~0.11.0",
     "grunt-contrib-concat": "~0.4.0",

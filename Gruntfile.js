@@ -1,5 +1,4 @@
 module.exports = function (grunt) {
-
     // grunt 组件
     grunt.loadNpmTasks('grunt-contrib-less'); // 合并压缩 less 文件
     grunt.loadNpmTasks('grunt-contrib-concat'); // 合并 js 文件
