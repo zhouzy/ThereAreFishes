@@ -5,10 +5,11 @@
  * Time: 上午11:39
  * 消息驱动数据库查询工具类
  */
-var mongoose= require('mongoose')
-    ,db = mongoose.createConnection("localhost","ThereAreFishes");
+var mongoose = require('mongoose'),
+    db       = mongoose.createConnection("localhost","ThereAreFishes"),
+    DB       = module.exports = exports = {};
+
 db.on('error',console.error.bind(console,'连接错误:'));
-var DB = module.exports = exports = {};
 
 DB.getDB = function(){
     return db;

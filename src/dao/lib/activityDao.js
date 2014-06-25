@@ -10,16 +10,37 @@ var common   = require("../../common"),
     mySchema = require('../../Schema/mySchema'),
     model    = common.dbUtils.getDB().model("activities",mySchema.Activity);
 
-var ActivityDao = exports = module.exports;
+var ActivityDao  = exports = module.exports,
+    QFind        = Q.nfbind(model.find.bind(model)),
+    QCreate      = Q.nfbind(model.create.bind(model));
 
+/**
+ * 添加活动
+ * @param activity 活动ID
+ * @param userId   用户ID
+ * @returns Promise
+ */
 ActivityDao.addActivity = function(activity,userId){
-    var ActivityCreate = Q.nfbind(model.create.bind(model));
     activity.userId = userId;
-    return ActivityCreate(activity);
+    return QCreate(activity);
 }
 
+/**
+ * 查询用户所创建的活动
+ * @param userId   用户ID
+ * @returns Promise
+ */
 ActivityDao.getActivityList = function(userId){
-    var ActivityFind = Q.nfbind(model.find.bind(model));
-    return ActivityFind({userId:userId},{skip:0,limit:10});
+    return QFind({userId:userId},{skip:0,limit:10});
 }
+
+/**
+ * 查询所有用户创建的活动
+ * @returns {*}
+ */
+ActivityDao.getAllActivitys = function(pageInfo){
+    return QFind({skip:0,limit:10});
+}
+
+
 

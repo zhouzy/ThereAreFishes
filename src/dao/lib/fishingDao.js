@@ -6,16 +6,25 @@
  * 查询user对应的fishing信息
  */
 
-var events = require('events')
-    ,common = require('../../common')
-    ,mySchema = require('../../Schema/mySchema');
+var Q        = require("q"),
+    events   = require('events'),
+    common   = require('../../common'),
+    mySchema = require('../../Schema/mySchema');
 
-var Fishing = exports = module.exports = {};
+var Fishing  = exports = module.exports = {},
+    model    = common.dbUtils.getDB().model("Fishing",mySchema.Fishing);
+    QFind    = Q.nfbind(model.find.bind(model));
 
-Fishing.getFishingByUserId = function(userId,callback){
-    var Fishing = common.dbUtils.getDB().model("Fishing",mySchema.Fishing);
-    Fishing.find({userId:userId}).exec(function(err,data){
-        callback(data);
-    });
+/**
+ * 返回用户渔获列表
+ * @param userId
+ * @returns {*}
+ */
+Fishing.getFishingByUserId = function(userId){
+    return QFind({userId:userId});
 };
+
+Fishing.getFishings = function(pageInfo){
+    return QFind({skip:0,limit:10});
+}
 

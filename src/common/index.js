@@ -7,5 +7,5 @@
  */
 
 exports.dbUtils = require("./lib/dbUtils");
-exports.logUtils = require("./lib/logUtils");
-exports.msgUtils = require("./lib/msgUtils");
+exports.utils = require("./lib/utils");
+exports.page = require("./lib/page");
