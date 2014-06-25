@@ -10,31 +10,31 @@ var MsgUtils = module.exports = exports = {};
 
 MsgUtils.MsgJSON = {
     ERR_DB_ERROR:{
-        errCode:-0001,
-        errMsgCn:"数据库错误",
-        errMsgEn:"dataBase error"
+        code:"error",
+        message:"dataBase error",
+        data:null
     },
     ERR_USER_EXIST:{
-        errCode:-1001,
-        errMsgCn:"用户已存在",
-        errMsgEn:"user has existed"
+        code:"error",
+        message:"user has existed",
+        data:null
     },
     ERR_EMAIL_EXIST:{
-        errCode:-1002,
-        errMsgCn:"邮箱已注册",
-        errMsgEn:"email has registered"
+        code:"error",
+        message:"email has registered",
+        data:null
     }
 };
 
-MsgUtils.warp = function(isSuccess,msgJSON,data){
-    if(arguments.length === 0){
-        return {isSuccess:true}
+MsgUtils.warp = function(code,message,data){
+    var msg = {code:"success",message:"success",data:null};
+    if(arguments.length != 0){
+        msg = {
+            isSuccess:isSuccess,
+            msg:msgJSON,
+            data:data
+        };
     }
-    var _msg = {
-        isSuccess:isSuccess,
-        msg:msgJSON,
-        data:data
-    };
-    return _msg;
+    return msg;
 };
 

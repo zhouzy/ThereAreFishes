@@ -8,4 +8,5 @@
 
 exports.userDao = require("./lib/userDao");
 exports.fishingDao = require("./lib/fishingDao");
+exports.activityDao = require("./lib/activityDao");
 

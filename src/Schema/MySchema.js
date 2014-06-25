@@ -26,6 +26,7 @@ exports.Activity = new mongoose.Schema({
     name:String,
     time:Date,
     address:String,
-    telNo:String
+    telNo:String,
+    remark:String
 });
 
