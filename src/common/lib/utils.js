@@ -35,7 +35,7 @@ Utils.getFailFn = function(isAjax,res,jadeFile,model){
             res.end(JSON.stringify(Utils.getMessageJSON("error",reson,null)));
         }
         else{
-            res.render('index',model);
+            res.render(jadeFile,model);
         }
     }
 }

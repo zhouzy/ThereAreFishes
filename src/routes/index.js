@@ -13,16 +13,18 @@ exports.index = function(req, res){
         title:"这儿有鱼"
     };
     fishingDao.getFishings(page.getPageInfo(1,10)).then(function(fishings){
-        var promisesfn = [];
-        for(var fishing in fishings){
-            promisesfn.push(userDao.getUser(fishing.userId));
-        }
-        return Q.all(promisesfn).then(function(user){
-
+        var i = 0;
+        fishings.forEach(function(fishing){
+            userDao.getUser(fishing.userId).then(function(user){
+                i++;
+                fishing.user = user;
+                if(i == fishings.length-1){
+                    res.render('index',model);
+                }
+            }).fail(utils.getFailFn(false,res,"index",model));
         });
-    }).then(function(fishings){
-        model.itemList = fishings;
-        res.render('index',model);
-    }).fail(utils.getFailFn(false,res,"index",model));
+
+
+    });
 };
 

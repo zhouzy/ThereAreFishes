@@ -24,6 +24,10 @@ userDao.query = function(){
     return QFind();
 };
 
+userDao.getUser = function(userId){
+    return QFindOne({userId:userId});
+}
+
 /**
  * 注册新用户
  * @param user

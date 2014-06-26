@@ -25,6 +25,6 @@ Fishing.getFishingByUserId = function(userId){
 };
 
 Fishing.getFishings = function(pageInfo){
-    return QFind({},{},{skip:pageInfo.getSkip(),limit:pageInfo.getLimit()});
+    return QFind({},{},{lean:true,skip:pageInfo.getSkip(),limit:pageInfo.getLimit()});
 }
 
