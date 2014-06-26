@@ -3,7 +3,8 @@ var dao        = require("../dao"),
     userDao    = dao.userDao,
     common     = require("../common"),
     utils      = common.utils,
-    page       = common.page;
+    page       = common.page,
+    Q          = require("q");
 
 exports.userRoute = require("./lib/user");
 exports.activity = require("./lib/activity");
@@ -13,18 +14,20 @@ exports.index = function(req, res){
         title:"这儿有鱼"
     };
     fishingDao.getFishings(page.getPageInfo(1,10)).then(function(fishings){
-        var i = 0;
+
+        var promises = [];
+
         fishings.forEach(function(fishing){
-            userDao.getUser(fishing.userId).then(function(user){
-                i++;
-                fishing.user = user;
-                if(i == fishings.length-1){
-                    res.render('index',model);
-                }
-            }).fail(utils.getFailFn(false,res,"index",model));
+            promises.push(userDao.getUser(fishing.userId));
         });
 
-
+        Q.all(promises).then(function(users){
+            fishings.forEach(function(fishing,index){
+                fishing.user = users[index];
+            });
+            model.itemList = fishings;
+            res.render('index',model);
+        }).fail(utils.getFailFn(false,res,"index",model));
     });
 };
 
