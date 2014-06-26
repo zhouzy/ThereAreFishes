@@ -8,4 +8,5 @@
 
 exports.dbUtils = require("./lib/dbUtils");
 exports.utils = require("./lib/utils");
-exports.page = require("./lib/page");
+exports.page = require("./lib/pageUtils");
+

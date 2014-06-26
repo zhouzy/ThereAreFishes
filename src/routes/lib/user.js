@@ -1,18 +1,25 @@
 var userDao = require("../../dao").userDao,
-    common  = require("../../common");
-
+    common  = require("../../common"),
+    utils   = common.utils;
 var UserRoute = exports = module.exports = {};
 
 UserRoute.doRegister = function(req, res){
     var user = req.body;
     console.log("新用户注册:" + JSON.stringify(user));
 
-    //TODO:check username
-    userDao.checkUsername(user.username).then(function(){}).fail(function(){});
-    //TODO:check email
-    userDao.checkEmail(user.email).then(function(){}).fail(function(){});
-    //TODO:add user
-    userDao.addUser(user).then(function(){}).fail(function(){});
+    userDao.checkUsername(user.username).then(function(user){
+        if(user){
+            throw new ERROR("用户名存在");
+        }
+        return userDao.checkEmail(user.email);
+    }).then(function(user){
+        if(user){
+            throw new ERROR("邮箱已注册");
+        }
+        return userDao.addUser(user);
+    }).then(function(user){
+        res.end();
+    }).fail(utils.getFailFn(true,res));
 };
 
 UserRoute.doLogin = function (req, res){

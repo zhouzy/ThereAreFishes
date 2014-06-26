@@ -1,32 +1,28 @@
-var dao = require("../dao");
+var dao        = require("../dao"),
+    fishingDao = dao.fishingDao,
+    userDao    = dao.userDao,
+    common     = require("../common"),
+    utils      = common.utils,
+    page       = common.page;
 
 exports.userRoute = require("./lib/user");
 exports.activity = require("./lib/activity");
 
 exports.index = function(req, res){
-    var userCount = 0;
     var model = {
         title:"这儿有鱼"
     };
-
-    function userListCallBack(userList){
-        model.itemList = userList;
-        userCount = userList.length;
-        for(var i= 0,j=userList.length;i<j;i++){
-            getFishingByUserId(i);
+    fishingDao.getFishings(page.getPageInfo(1,10)).then(function(fishings){
+        var promisesfn = [];
+        for(var fishing in fishings){
+            promisesfn.push(userDao.getUser(fishing.userId));
         }
-    }
+        return Q.all(promisesfn).then(function(user){
 
-    function getFishingByUserId(i){
-        dao.fishingDao.getFishingByUserId(model.itemList[i].userId,function(fishings){
-            userCount--;
-            model.itemList[i].fishings = fishings;
-            if(userCount === 0){
-                console.log(JSON.stringify(model));
-                res.render('index',model);
-            }
         });
-    }
-    dao.userDao.query(userListCallBack);
+    }).then(function(fishings){
+        model.itemList = fishings;
+        res.render('index',model);
+    }).fail(utils.getFailFn(false,res,"index",model));
 };
 

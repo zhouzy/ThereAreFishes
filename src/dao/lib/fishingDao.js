@@ -12,7 +12,7 @@ var Q        = require("q"),
     mySchema = require('../../Schema/mySchema');
 
 var Fishing  = exports = module.exports = {},
-    model    = common.dbUtils.getDB().model("Fishing",mySchema.Fishing);
+    model    = common.dbUtils.getDB().model("fishings",mySchema.Fishing),
     QFind    = Q.nfbind(model.find.bind(model));
 
 /**
@@ -25,6 +25,6 @@ Fishing.getFishingByUserId = function(userId){
 };
 
 Fishing.getFishings = function(pageInfo){
-    return QFind({skip:0,limit:10});
+    return QFind({},{},{skip:pageInfo.getSkip(),limit:pageInfo.getLimit()});
 }
 

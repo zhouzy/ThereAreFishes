@@ -30,6 +30,7 @@ Utils.getMessageJSON = function(code,message,data){
  */
 Utils.getFailFn = function(isAjax,res,jadeFile,model){
     return function(reson){
+        console.error(reson);
         if(isAjax){
             res.end(JSON.stringify(Utils.getMessageJSON("error",reson,null)));
         }

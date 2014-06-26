@@ -40,3 +40,6 @@ PageInfo.prototype.getSkip = function(){
     skip<0 && (skip = 0);
     return skip;
 }
+PageInfo.prototype.getLimit = function(){
+    return this._rows;
+}
