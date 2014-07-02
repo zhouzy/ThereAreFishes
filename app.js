@@ -27,6 +27,7 @@ app.get('/', routes.index);
 app.post('/doRegister',routes.userRoute.doRegister);
 app.post("/doLogin",routes.userRoute.doLogin);
 app.get('/activity',routes.activity.main);
+app.get('/activity/list',routes.activity.list);
 app.post('/activity/add',routes.activity.add);
 
 http.createServer(app).listen(app.get('port'), function(){

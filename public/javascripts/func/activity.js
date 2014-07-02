@@ -27,11 +27,13 @@ var form = (function(){
     };
 
     //TODO:提交成功，回调处理
-    function _onSubmitFailure(msg){
+    function _onSubmitSuccess(msg){
+
     }
 
     //TODO:提交失败，回调处理
-    function _onSubmitSuccess(msg){
+    function _onSubmitFailure(msg){
+        window.location.href = "/activity/list";
     }
     return o;
 }());

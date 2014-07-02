@@ -16,14 +16,19 @@ var Fishing  = exports = module.exports = {},
     QFind    = Q.nfbind(model.find.bind(model));
 
 /**
- * 返回用户渔获列表
+ * 返回指定用户渔获列表
  * @param userId
  * @returns {*}
  */
 Fishing.getFishingByUserId = function(userId){
-    return QFind({userId:userId});
+    return QFind({userId:userId},{},{lean:true});
 };
 
+/**
+ * 返回渔获列表
+ * @param pageInfo
+ * @returns {*}
+ */
 Fishing.getFishings = function(pageInfo){
     return QFind({},{},{lean:true,skip:pageInfo.getSkip(),limit:pageInfo.getLimit()});
 }

@@ -24,18 +24,22 @@ UserRoute.doRegister = function(req, res){
 
 UserRoute.doLogin = function (req, res){
     console.log("用户登录:[" + "email:" + req.body.email + "]");
-    dao.userDao.login(req.body.email,req.body.password,function(result){
-        common.logUtils.log(JSON.stringify(result));
 
-        res.end(JSON.stringify(result));
-    });
+    userDao.login(req.body.email,req.body.password).then(function(user){
+        if(user){
+            res.end(JSON.stringify(utils.getMessageJSON(user)));
+        }
+        else{
+            res.end(JSON.stringify("error","error",utils.getMessageJSON(user)));
+        }
+    }).fail(utils.getFailFn(true,res));
 
 };
 
 var _setUserSession = function(user,req){
-
+    req.Session.user = user;
 }
 
 var _getUserSession = function(){
-
+    return req.Session;
 }

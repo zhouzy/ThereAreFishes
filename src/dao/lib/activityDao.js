@@ -30,8 +30,8 @@ ActivityDao.addActivity = function(activity,userId){
  * @param userId   用户ID
  * @returns Promise
  */
-ActivityDao.getActivityList = function(userId){
-    return QFind({userId:userId},{skip:0,limit:10});
+ActivityDao.getActivityList = function(userId,pageInfo){
+    return QFind({userId:userId},{},{skip:pageInfo.getSkip(),limit:pageInfo.getLimit()});
 }
 
 /**
@@ -39,7 +39,7 @@ ActivityDao.getActivityList = function(userId){
  * @returns {*}
  */
 ActivityDao.getAllActivitys = function(pageInfo){
-    return QFind({skip:0,limit:10});
+    return QFind({},{},{skip:pageInfo.getSkip(),limit:pageInfo.getLimit()});
 }
 
 

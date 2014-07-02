@@ -21,11 +21,11 @@ var userDao  = exports = module.exports = {},
  * @param callback
  */
 userDao.query = function(){
-    return QFind();
+    return QFind({},{lean:true});
 };
 
 userDao.getUser = function(userId){
-    return QFindOne({userId:userId});
+    return QFindOne({userId:userId},{},{lean:true});
 }
 
 /**
@@ -42,7 +42,7 @@ userDao.addUser = function(user){
  * @param password
  */
 userDao.login = function(email, password){
-    return QFindOne({email:email,password:password});
+    return QFindOne({email:email,password:password},{},{lean:true});
 };
 
 /**
@@ -52,7 +52,7 @@ userDao.login = function(email, password){
  * @private
  */
 userDao.checkUsername = function(username){
-    return QFindOne({username:username});
+    return QFindOne({username:username},{},{lean:true});
 }
 
 /**
@@ -62,5 +62,5 @@ userDao.checkUsername = function(username){
  * @private
  */
 userDao.checkEmail = function(email){
-    return QFindOne({email:email});
+    return QFindOne({email:email},{},{lean:true});
 }

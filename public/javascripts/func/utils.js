@@ -36,10 +36,10 @@ function getValueFromInputArr($content){
 
 function submitFrom(url,param,onSuccess,onFailure){
     $.post(url,param,function(data){
-        if(data.isSuccess){
+        if(data.code == "success"){
             onSuccess && onSuccess(data.data);
         }else{
-            onFailure && onFailure(data.msg);
+            onFailure && onFailure(data.message);
         }
     },"json");
 }

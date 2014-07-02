@@ -1,0 +1,18 @@
+//
+   Created with WebStorm.
+   Author: ZhouZhongYu
+   Date: 14-5-5
+   Time: 下午5:09
+   To change this template use File | Settings | File Templates.
+extends ../layout/layout
+append resources
+    link(rel='stylesheet', href='/stylesheets/activity.css')
+    script(type="text/javascript",src="/javascripts/func/activity.js")
+block content
+    ul
+    each activity in list
+        li
+            span 活动名称：#{activity.name}
+            span 活动时间：#{activity.time}
+            span 地址：#{activity.address}
+            span 备注：#{activity.remark}

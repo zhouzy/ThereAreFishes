@@ -6,7 +6,9 @@
  */
 var activityDao = require("../../dao").activityDao,
     events      = require('events')
-    msgUtils    = require('../../common').msgUtils;
+    common      = require("../../common"),
+    utils       = common.utils,
+    page        = common.page;
 
 var Activity = exports = module.exports = {};
 var model = {"title":"活动页面"}
@@ -21,17 +23,14 @@ Activity.add = function(req, res){
     var activity = req.body;
     var userId = "1000000000";
     activityDao.addActivity(activity,userId).then(function(){
-        res.end(JSON.stringify(msgUtils.warp()));
-    }).fail(function(reson){
-        console.log(reson);
-        res.end(JSON.stringify(reson));
-    });
+        res.end(JSON.stringify(utils.getMessageJSON()));
+    }).fail(utils.getFailFn(true,res));
 };
 
 Activity.list = function(req, res){
     console.log("活动->活动列表页面" + JSON.stringify(req.body));
     var userId = "1000000000";
-    activityDao.getActivityList(userId).then(function(list){
+    activityDao.getActivityList(userId,page.getPageInfo(1,20)).then(function(list){
         model.list = list;
         res.render("activity/list.jade",model);
     }).fail(function(){

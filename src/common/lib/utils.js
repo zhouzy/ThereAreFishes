@@ -8,12 +8,14 @@
 
 var Utils = module.exports = exports = {};
 
-Utils.getMessageJSON = function(code,message,data){
+Utils.getMessageJSON = function(data,code,message){
     var msg = {code:"success",message:"success",data:null};
+    code = code || "success";
+    message = message || "success";
     if(arguments.length != 0){
         msg = {
-            isSuccess:isSuccess,
-            msg:msgJSON,
+            code:code,
+            message:message,
             data:data
         };
     }

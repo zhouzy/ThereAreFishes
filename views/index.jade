@@ -4,7 +4,6 @@ append resources
     script(type="text/javascript",src="/javascripts/func/index.js")
 block content
     div#item-list
-    //
         -var groups = Math.ceil(itemList.length / 4)
         -for(var j=0; j<groups; j++){
         div.rows
@@ -13,23 +12,23 @@ block content
                 div.item
                     div.card
                         div.front
-                            img(src="#{itemList[i].fishings[0].photoUrl}")
+                            img(src="#{itemList[i].photoUrl}")
                             p.abstract
-                                |#{itemList[i].fishings[0].abstract}
+                                |#{itemList[i].abstract}
                         div.back
                             div
                                 h4 鱼竿
-                                p #{itemList[i].fishings[0].fishTools.fishingRod}
+                                p #{itemList[i].fishTools.fishingRod}
                             div
                                 h4 鱼饵
-                                p #{itemList[i].fishings[0].fishTools.bait}
+                                p #{itemList[i].fishTools.bait}
                             div
                                 h4 鱼钩
-                                p #{itemList[i].fishings[0].fishTools.fishhook}
+                                p #{itemList[i].fishTools.fishhook}
                 div.itemInfo
                     a.avatar
                         img(src="/images/header.jpg")
-                    span.userName #{itemList[i].username}
+                    span.userName #{itemList[i].user.username}
                     span.mapBtn 查看地图
             -}
          -}
