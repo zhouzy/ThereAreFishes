@@ -13,7 +13,8 @@ var Q        = require("q"),
 
 var Fishing  = exports = module.exports = {},
     model    = common.dbUtils.getDB().model("fishings",mySchema.Fishing),
-    QFind    = Q.nfbind(model.find.bind(model));
+    QFind    = Q.nfbind(model.find.bind(model)),
+    QCreate  = Q.nfbind(model.create.bind(model));
 
 /**
  * 返回指定用户渔获列表
@@ -31,5 +32,14 @@ Fishing.getFishingByUserId = function(userId){
  */
 Fishing.getFishings = function(pageInfo){
     return QFind({},{},{lean:true,skip:pageInfo.getSkip(),limit:pageInfo.getLimit()});
+}
+
+/**
+ * 添加渔获
+ * @param fishing
+ * @returns {*}
+ */
+Fishing.addFishings = function(fishing){
+    return QCreate(fishing);
 }
 

@@ -41,3 +41,4 @@ Utils.getFailFn = function(isAjax,res,jadeFile,model){
         }
     }
 }
+

@@ -9,4 +9,4 @@
 exports.dbUtils = require("./lib/dbUtils");
 exports.utils = require("./lib/utils");
 exports.page = require("./lib/pageUtils");
-
+exports.userSeesion = require("./lib/userSession");

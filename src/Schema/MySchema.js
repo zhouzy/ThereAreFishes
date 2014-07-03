@@ -3,7 +3,7 @@
  * Author: ZhouZhongYu
  * Date: 14-1-8
  * Time: 下午2:16
- * 定义User Schema
+ * 定义 Schema
  */
 var mongoose = require("mongoose");
 exports.User = new mongoose.Schema({
@@ -12,16 +12,18 @@ exports.User = new mongoose.Schema({
     password:String,
     phoneNo:String,
     username:String,
-    avertarUrl:String,
-    fishings:[]
+    avertarUrl:String
 });
 exports.Fishing = new mongoose.Schema({
     userId:String,
+    activityId:String,
     photoUrl: String,
     abstract: String,
     fishTools:{fishhook: String, fishingRod:String, bait:String}
 });
 exports.Activity = new mongoose.Schema({
+    activityId:String,
+    status:String,
     userId:String,
     name:String,
     time:Date,

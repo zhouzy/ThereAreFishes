@@ -5,7 +5,7 @@
  * Time: 下午5:00
  */
 var activityDao = require("../../dao").activityDao,
-    events      = require('events')
+    events      = require('events'),
     common      = require("../../common"),
     utils       = common.utils,
     page        = common.page;
