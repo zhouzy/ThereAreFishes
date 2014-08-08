@@ -64,7 +64,7 @@ function ifFillInInput($parent){
     $(".input.required",$parent).each(function(){
         if($(this).val() === ""){
             $(this).addClass("required-warm");
-            $this.attr("placeholder","该项为必填项，请输入");
+            $(this).attr("placeholder","该项为必填项，请输入");
             re = false;
         }
     });

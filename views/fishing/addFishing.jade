@@ -1,0 +1,41 @@
+//
+   Created by zhouzhongyu on 14-7-8.
+//
+   Created with WebStorm.
+   Author: ZhouZhongYu
+   Date: 14-5-5
+   Time: 下午5:09
+   To change this template use File | Settings | File Templates.
+extends ../layout/layout
+append resources
+    link(rel='stylesheet', href='/stylesheets/activity.css')
+    script(type="text/javascript",src="/javascripts/func/activity.js")
+block content
+    div#act-form.form
+        div.form-header
+            span.left 创建活动
+            span.right#create-people 发起人:XXX
+        div.form-body
+            div.group.bottom-border
+                label(for="slogan") :照片
+                input#slogan(name='photoUrl').input.required
+            div.group.bottom-border
+                label(for="time") 简介:
+                input#time(name='time').input.required
+            div.group.bottom-border
+                label(for="address") 线组:
+                input#address(name='address').input.required
+            div.group.bottom-border
+                label(for="telNo") 鱼钩:
+                input#telNo(name='telNo').input.required
+            div.group
+                label(for="remark") 饵料:
+                input#remark(name='remark').input
+            div.group
+                label(for="remark") 窝料:
+                input#remark(name='remark').input
+        div.form-footer
+            div.btns
+                span.btn#submit 确定
+                span.btn#goback 返回
+
