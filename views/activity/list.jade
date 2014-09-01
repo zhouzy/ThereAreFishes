@@ -9,10 +9,10 @@ append resources
     link(rel='stylesheet', href='/stylesheets/activity.css')
     script(type="text/javascript",src="/javascripts/func/activity.js")
 block content
-    ul.container
+    ul.container.activity-list
         each activity in list
             li
-                span 活动名称：#{activity.name}
-                span 活动时间：#{activity.time}
-                span 地址：#{activity.address}
-                span 备注：#{activity.remark}
+                span.activity-name 活动名称：#{activity.name}
+                span.activity-time 活动时间：#{activity.time}
+                span.activity-address 地址：#{activity.address}
+                div.activity-remark 备注：#{activity.remark}

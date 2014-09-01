@@ -7,13 +7,13 @@ UserRoute.doRegister = function(req, res){
     var user = req.body;
     console.log("新用户注册:" + JSON.stringify(user));
 
-    userDao.checkUsername(user.username).then(function(user){
-        if(user){
+    userDao.checkUsername(user.username).then(function(u){
+        if(u){
             throw new ERROR("用户名存在");
         }
         return userDao.checkEmail(user.email);
-    }).then(function(user){
-        if(user){
+    }).then(function(u){
+        if(u){
             throw new ERROR("邮箱已注册");
         }
         return userDao.addUser(user);
