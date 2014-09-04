@@ -30,10 +30,22 @@ Activity.add = function(req, res){
 Activity.list = function(req, res){
     console.log("活动->活动列表页面" + JSON.stringify(req.body));
     var userId = "1000000000";
-    activityDao.getActivityList(userId,page.getPageInfo(1,20)).then(function(list){
-        model.list = list;
-        res.render("activity/list.jade",model);
-    }).fail(function(){
-        res.render("activity/main.jade",model);
-    });
-}
+    if(userId){
+        activityDao.getActivityList(userId,page.getPageInfo(1,20)).then(function(list){
+            model.list = list;
+            //TODO:find out owner
+            res.render("activity/list.jade",model);
+        }).fail(function(){
+            res.render("activity/main.jade",model);
+        });
+    }
+    else{
+        activityDao.getAllActivitys(page.getPageInfo(1,20)).then(function(list){
+            model.list = list;
+            res.render("activity/list.jade",model);
+        }).fail(function(){
+            res.render("activity/main.jade",model);
+        });
+    }
+
+};

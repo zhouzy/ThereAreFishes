@@ -12,8 +12,15 @@ block content
     ul.container.activity-list
         each activity in list
             li
-                div.activity-info-top
-                    span.activity-name 活动名称：#{activity.name}
-                    span.activity-time 活动时间：#{activity.time}
-                    span.activity-address 地址：#{activity.address}
-                div.activity-remark 备注：#{activity.remark}
+                div.activity
+                    div.maozi
+                    div.owner
+                        img(src="/images/header.jpg")
+                    div.inner
+                        div.inner-head
+                            span.activity-name #{activity.name}
+                            span.activity-time #{activity.time}
+                            span.activity-address #{activity.address}
+                        div.inner-body.activity-remark 备注：#{activity.remark}
+                        div.inner-foot
+                            span.input 报名
