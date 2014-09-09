@@ -7,7 +7,7 @@ block content
         -var groups = Math.ceil(itemList.length / 4)
         -for(var j=0; j<groups; j++){
         div.rows
-            -for(var i=j*4; i<j*4+4&&i<itemList.length; i++){
+            -for(var i=j*4; i<j*4+4&&i<8; i++){
             div.item-content
                 div.item
                     div.card
@@ -29,6 +29,6 @@ block content
                     a.avatar
                         img(src="/images/header.jpg")
                     span.userName #{itemList[i].user.username}
-                    span.mapBtn 查看地图
+                    span.mapBtn 更多
             -}
          -}
