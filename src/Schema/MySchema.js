@@ -26,7 +26,7 @@ exports.Activity = new mongoose.Schema({
     status:String,
     userId:String,
     name:String,
-    time:Date,
+    time:{type:Date,get:function(val){return (val.getMonth() + 1) + "/" + val.getDate() + "/" + val.getFullYear();}},
     address:String,
     telNo:String,
     remark:String

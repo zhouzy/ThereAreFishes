@@ -18,7 +18,8 @@ module.exports = function (grunt) {
                 files: {
                     "public/stylesheets/common.css": "public/stylesheets/common.less",
                     "public/stylesheets/index.css": "public/stylesheets/index.less",
-                    "public/stylesheets/activity.css": "public/stylesheets/activity.less"
+                    "public/stylesheets/activity.css": "public/stylesheets/activity.less",
+                    "public/stylesheets/nav.css": "public/stylesheets/nav.less"
                 }
             },
             production: {

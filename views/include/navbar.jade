@@ -7,9 +7,8 @@ nav#topbar(role=navigation)
             div.menu-body
                 div
                     h4 去钓鱼
-                    a(href="/activity") 召集朋友
+                    a(href="/activity") 组团
                     a(href="") 分享渔获
-                    a(href="") 足迹
             div.menu-foot
                 span.btn#pin
                     i.icon-pinterest 固定到左侧
@@ -46,27 +45,26 @@ div#signup-panel.panel
         div.panel-body
             div.panel-body-left
                 h5 使用合作网站账号注册
-            div.panel-body-right.form-horizontal
+            div.panel-body-right
                 h5 使用邮箱注册
-                div
+                div.rows
                     label 昵称
                     input.input(name="username",placeholder="取个名字")
                     div.error-username.clearLeftPadding.error-msg
-                div
+                div.rows
                     label 邮箱
                     input.email.input(type="email",name="email",placeholder="注册邮箱")
                     div.error-email.clearLeftPadding.error-msg
-                div
+                div.rows
                     label 密码
                     input.password.input(type="password",name="password",placeholder="选择密码")
                     div.error-password.clearLeftPadding.error-msg
-                div
+                div.rows
                     label 确认密码
                     input.password2.input(type="password",name="password2",placeholder="确认密码")
                     div.error-password2.clearLeftPadding.error-msg
-                div
-                    div.clearLeftPadding
-                        button#doRegister(type="submit") 注册
+                div.rows
+                    span.btn#doRegister(type="submit") 注册
             div.clearfix
         a.closeBtn
 div#signin-panel.panel
@@ -77,16 +75,16 @@ div#signin-panel.panel
             h5 使用合作网站账号登陆
         div.panel-body-right
             h5 使用注册邮箱登陆
-            div
+            div.rows
                 label 邮箱:
-                    input.input(type="email",name="email",placeholder="请输入邮箱")
+                input.input(type="email",name="email",placeholder="请输入邮箱")
                 div.error-email.clearLeftPadding.error-msg
-            div
+            div.rows
                 label 密码:
-                    input.input.password(type="password",name="password",placeholder="请输入密码")
+                input.input.password(type="password",name="password",placeholder="请输入密码")
                 div.error-password.clearLeftPadding.error-msg
-            div
-                button#doLogin(type="submit") 登陆
+            div.rows
+                span#doLogin.btn(type="submit") 登陆
         div.clearfix
     a.closeBtn
 div#sidebar.left-sidebar

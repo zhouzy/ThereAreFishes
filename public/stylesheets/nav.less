@@ -1,3 +1,4 @@
+@divide-border-color:#F2F2F2;
 #topbar{
     background-color: #FFF;
     width:100%;
@@ -233,49 +234,62 @@
         font-weight: 700;
         color: #444;
     }
-}
 
-.panel-head{
-    padding:15px;
-    border-bottom: 1px solid #f6f4ee;
-}
-.panel-body{
-    height:260px;
-}
-.panel-body-left-right{
-    float:left;
-    width: 389px;
-    height: 260px;
-    padding: 10px 20px;
-}
-.panel-body-left,.panel-body-right{
-    .panel-body-left-right;
-}
+    .panel-head{
+        padding:15px;
+        border-bottom: 1px solid #f6f4ee;
+    }
 
-.panel .error-msg{
-    display:none;
-    padding-top: 7px;
-}
-.clearLeftPadding{
-    padding-left: 0;
-}
+    .panel-body{
+        height:260px;
+        .panel-body-left,.panel-body-right{
+            float:left;
+            width: 389px;
+            height: 260px;
+            padding: 10px 20px;
+        }
+        .panel-body-left{
+            border-right: 1px solid #FFF;
+        }
+        .panel-body-right{
+            .rows{
+                height:40px;
+                margin:10px 0;
+                label{
+                    display:inline-block;
+                    width:55px;
+                    text-align:right;
+                    padding-right:5px;
+                }
+                input{
+                    width:240px;
+                }
+            }
+            .btn{
+                position:relative;
+                left:60px;
+            }
+        }
+    }
 
-.panel-body-left{
-    border-right: 1px solid #FFF;
-}
+    .error-msg{
+        display:none;
+        padding-top: 7px;
+    }
 
-.panel a.closeBtn{
-    display: block;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    right: 5px;
-    top: 5px;
-    cursor:pointer;
-    background: url(../images/sheet_close.gif) no-repeat 0 0;
-}
-.panel a.closeBtn:hover{
-    background: url(../images/sheet_close.gif) no-repeat 0 -60px;
+    a.closeBtn{
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        right: 5px;
+        top: 5px;
+        cursor:pointer;
+        background: url(../images/sheet_close.gif) no-repeat 0 0;
+        &:hover{
+            background: url(../images/sheet_close.gif) no-repeat 0 -60px;
+        }
+    }
 }
 
 .left-sidebar{
@@ -286,54 +300,56 @@
     background-color: #666;
     z-index: 999999;
     display: none;
+    .nav{
+        border-bottom: 1px solid #555;
+        height:50px;
+        width:100%;
+        position: relative;
+        &>a{
+            display: block;
+            width:50px;
+            height:50px;
+            font-size: 16px;
+            color:#E1E1E1;
+            cursor: pointer;
+            &:hover{
+                color:#FFFFFF;
+            }
+        }
+    }
+
+    i{
+        position: absolute;
+        left:50%;
+        top:50%;
+        margin:-10px 0 0 -12px;
+    }
+    .nav-des{
+        position: absolute;
+        left:50px;
+        top:13px;
+        width:150px;
+        &>span{
+            display: inline-block;
+            line-height: 40px;
+        }
+    }
+    .narrow-left{
+        width:10px;
+        height:10px;
+        border:5px solid transparent;
+        border-right:5px solid #555;
+    }
+    .nav-des-right{
+        width:100px;
+        text-align: center;
+        height:40px;
+        border-radius: 5px;
+        background-color: #555;
+        color:#FFF;
+    }
 }
-.left-sidebar .nav{
-    border-bottom: 1px solid #555;
-    height:50px;
-    width:100%;
-    position: relative;
-}
-.left-sidebar .nav>a{
-    display: block;
-    width:50px;
-    height:50px;
-    font-size: 16px;
-    color:#E1E1E1;
-    cursor: pointer;
-}
-.left-sidebar .nav>a:hover{
-    color:#FFFFFF;
-}
-.left-sidebar i{
-    position: absolute;
-    left:50%;
-    top:50%;
-    margin:-10px 0 0 -12px;
-}
-.left-sidebar .nav-des{
-    position: absolute;
-    left:50px;
-    top:13px;
-    width:150px;
-}
-.narrow-left{
-    width:10px;
-    height:10px;
-    border:5px solid transparent;
-    border-right:5px solid #555;
-}
-.left-sidebar .nav-des>span{
-    display: inline-block;
-    line-height: 40px;
-}
-.nav-des-right{
-    width:100px;
-    text-align: center;
-    height:40px;
-    border-radius: 5px;
-    background-color: #555;
-    color:#FFF;
-}
+
 .contentwarp{
     position: relative;
     top:65px;
